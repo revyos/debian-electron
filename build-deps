@@ -1,0 +1,10 @@
+clang-15
+clang-format-15
+lld-15
+generate-ninja
+ninja
+openjdk-11-jdk
+yarn
+npm
+python3
+python-is-python3
