@@ -1,9 +1,8 @@
-# shopt -s extglob
-shopt -s dotglob
 set -e
+shopt -s dotglob
+source metadata.sh
 
-source versions.sh
-_dirname=electron-22-orig
+_dirname=$_pkgname-$_electron_ver
 
 rm -rf $_dirname
 mkdir $_dirname{,/src}
@@ -11,7 +10,7 @@ _dirpath=$(realpath $_dirname)
 cd $_dirname
 
 pushd ../repos/chromium
-# git checkout $_chromium_ver
+git checkout $_chromium_ver
 cp -rv * $_dirpath/src
 popd
 
@@ -56,20 +55,8 @@ src/tools/update_pgo_profiles.py --target=linux update \
 download_from_google_storage --no_resume --extract --no_auth \
   --bucket chromium-nodejs -s src/third_party/node/node_modules.tar.gz.sha1
 
-
 export PATH=$_oldpath
 unset DEPOT_TOOLS_UPDATE
 
-### These should be executed in debian/rules, debianized
-### As well as replacing vendored dependencies using system ones
-# # Create sysmlink to system clang-format
-# ln -s /usr/bin/clang-format src/buildtools/linux64
-# # Create sysmlink to system Node.js
-# mkdir -p src/third_party/node/linux/node-linux-x64/bin
-# ln -sf /usr/bin/node src/third_party/node/linux/node-linux-x64/bin
-# src/electron/script/apply_all_patches.py \
-#   src/electron/patches/config.json
-# cd src/electron || exit
-# yarn install --frozen-lockfile
-# cd ..
-
+cd ..
+bsdtar cvf - $_dirname | xz -9 -T0 > $_dirname.tar.xz

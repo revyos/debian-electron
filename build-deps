@@ -1,10 +1,10 @@
-clang-15
-clang-format-15
-lld-15
+clang
+clang-format
+lld
 generate-ninja
-ninja
+ninja-build
 openjdk-11-jdk
-yarn
+yarnpkg
 npm
 python3
 python-is-python3
