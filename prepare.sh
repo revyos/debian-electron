@@ -58,5 +58,9 @@ download_from_google_storage --no_resume --extract --no_auth \
 export PATH=$_oldpath
 unset DEPOT_TOOLS_UPDATE
 
-cd ..
-bsdtar cvf - $_dirname | xz -9 -T0 > $_dirname.tar.xz
+# remove unused files (mainly to shrink size)
+readarray -t _files_excluded < ../files-excluded
+for _f in ${_files_excluded[@]}; do
+  rm -rf $_f
+done
+

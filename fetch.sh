@@ -9,3 +9,4 @@ fi
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git $_dir/depot_tools
 git clone https://github.com/electron/electron.git $_dir/electron --branch v$_electron_ver
 git clone https://github.com/chromium/chromium $_dir/chromium --branch $_chromium_ver
+# git clone https://salsa.debian.org/chromium-team/chromium.git $_dir/debian-chromium --branch debian/$_deb_chromium_ver
