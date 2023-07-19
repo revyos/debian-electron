@@ -7,8 +7,7 @@ openjdk-11-jdk
 yarnpkg
 npm
 python3
-python-is-python3
-elfutils # eu-strip
+elfutils
 brotli
 
 libopus-dev
@@ -26,3 +25,6 @@ libxnvctrl-dev
 libsnappy-dev
 libminizip-dev
 libxshmfence-dev
+libjpeg-dev
+libicu-dev
+rapidjson-dev

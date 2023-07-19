@@ -42,15 +42,15 @@ gclient sync -D \
   --with_tags
 
 echo "Running hooks..."
-src/build/landmines.py
-src/build/util/lastchange.py -o src/build/util/LASTCHANGE
-src/build/util/lastchange.py -m GPU_LISTS_VERSION \
+python3 src/build/landmines.py
+python3 src/build/util/lastchange.py -o src/build/util/LASTCHANGE
+python3 src/build/util/lastchange.py -m GPU_LISTS_VERSION \
   --revision-id-only --header src/gpu/config/gpu_lists_version.h
-src/build/util/lastchange.py -m SKIA_COMMIT_HASH \
+python3 src/build/util/lastchange.py -m SKIA_COMMIT_HASH \
   -s src/third_party/skia --header src/skia/ext/skia_commit_hash.h
-src/build/util/lastchange.py \
+python3 src/build/util/lastchange.py \
   -s src/third_party/dawn --revision src/gpu/webgpu/DAWN_VERSION
-src/tools/update_pgo_profiles.py --target=linux update \
+python3 src/tools/update_pgo_profiles.py --target=linux update \
   --gs-url-base=chromium-optimization-profiles/pgo_profiles
 download_from_google_storage --no_resume --extract --no_auth \
   --bucket chromium-nodejs -s src/third_party/node/node_modules.tar.gz.sha1
