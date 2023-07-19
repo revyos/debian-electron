@@ -9,3 +9,14 @@ npm
 python3
 python-is-python3
 elfutils # eu-strip
+
+libopus-dev
+liblcms2-dev
+libjsoncpp-dev
+libopenjp2-7-dev
+libxslt1-dev
+libwoff-dev
+libflac-dev
+libopenh264-dev
+
+brotli
