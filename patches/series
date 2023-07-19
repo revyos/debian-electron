@@ -9,7 +9,7 @@ fixes/clang-and-gcc11.patch
 fixes/widevine-revision.patch
 fixes/widevine-locations.patch
 
-upstream/mojo.patch
+# upstream/mojo.patch
 upstream/re-fix-tflite.patch
 
 disable/tests.patch
