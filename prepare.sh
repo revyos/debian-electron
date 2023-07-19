@@ -19,7 +19,7 @@ ln -sf /usr/bin/node src/third_party/node/linux/node-linux-x64/bin
 # prefer unbundled (system) libraries
 # ./debian/scripts/unbundle
 pushd src
-../../unbundle
+../../unbundle.py
 popd
 
 src/electron/script/apply_all_patches.py src/electron/patches/config.json
