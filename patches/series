@@ -122,3 +122,5 @@ gcc13/more-fixes-for-gcc13.patch
 gcc13/5d1ac2e0d5f61913aad62dadb65a7fea6f1b93ae.patch
 gcc13/dawn-tint-add-cstdint.patch
 gcc13/comp-viz-add-cstdint.patch
+gcc13/blink-auction_config-fix-uint-types.patch
+electron/std-vector-non-const.patch
