@@ -3,7 +3,6 @@ shopt -s dotglob
 source metadata.sh
 
 _dirname=$_pkgname-$_electron_ver
-
 rm -rf $_dirname
 mkdir $_dirname{,/src}
 _dirpath=$(realpath $_dirname)
@@ -34,7 +33,8 @@ solutions = [
 EOF
 
 _oldpath=$PATH
-export PATH+=":$(dirname $_dirpath)/repos/depot_tools" DEPOT_TOOLS_UPDATE=0
+export PATH+=":$(dirname $_dirpath)/repos/depot_tools"
+export DEPOT_TOOLS_UPDATE=0
 
 gclient sync -D \
   --nohooks \
