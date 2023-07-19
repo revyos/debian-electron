@@ -8,3 +8,4 @@ yarnpkg
 npm
 python3
 python-is-python3
+elfutils # eu-strip
