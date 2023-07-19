@@ -18,5 +18,10 @@ libxslt1-dev
 libwoff-dev
 libflac-dev
 libopenh264-dev
+libre2-dev
+libevent-dev
+libdouble-conversion-dev
+libxnvctrl-dev
+libsnappy-dev
 
 brotli
