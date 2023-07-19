@@ -1,0 +1,19 @@
+author: Andres Salomon <dilinger@debian.org>
+description: drop various arguments that clang-13 doesn't support
+
+These usually show up as either warnings or actual errors; eg,
+
+warning: unknown warning option '-Wno-deprecated-non-prototype' [-Wunknown-warning-option]
+error: unknown argument: '-no-opaque-pointers'
+
+
+--- a/build/config/compiler/BUILD.gn
++++ b/build/config/compiler/BUILD.gn
+@@ -1543,7 +1543,6 @@ config("default_warnings") {
+       if (!is_nacl) {
+         cflags += [
+           # TODO(crbug.com/1343975) Evaluate and possibly enable.
+-          "-Wno-deprecated-builtins",
+ 
+           # TODO(crbug.com/1352183) Evaluate and possibly enable.
+           "-Wno-bitfield-constant-conversion",
