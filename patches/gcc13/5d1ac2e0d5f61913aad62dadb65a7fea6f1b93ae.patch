@@ -16,23 +16,10 @@ Commit-Queue: Shahbaz Youssefi <syoussefi@chromium.org>
  include/GLSLANG/ShaderVars.h | 1 +
  2 files changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/include/GLSLANG/ShaderLang.h b/include/GLSLANG/ShaderLang.h
-index f34036f8c74..8218556e6dc 100644
---- a/include/GLSLANG/ShaderLang.h
-+++ b/include/GLSLANG/ShaderLang.h
-@@ -26,7 +26,7 @@
- 
- // Version number for shader translation API.
- // It is incremented every time the API changes.
--#define ANGLE_SH_VERSION 318
-+#define ANGLE_SH_VERSION 319
- 
- enum ShShaderSpec
- {
 diff --git a/include/GLSLANG/ShaderVars.h b/include/GLSLANG/ShaderVars.h
 index 94cb93e01fc..ec7bda372f3 100644
---- a/include/GLSLANG/ShaderVars.h
-+++ b/include/GLSLANG/ShaderVars.h
+--- a/third_party/angle/include/GLSLANG/ShaderVars.h
++++ b/third_party/angle/include/GLSLANG/ShaderVars.h
 @@ -12,6 +12,7 @@
  
  #include <algorithm>
