@@ -124,3 +124,4 @@ gcc13/dawn-tint-add-cstdint.patch
 gcc13/comp-viz-add-cstdint.patch
 gcc13/blink-auction_config-fix-uint-types.patch
 electron/std-vector-non-const.patch
+electron/remove-mac-only-imports.patch

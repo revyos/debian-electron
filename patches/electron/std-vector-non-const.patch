@@ -33,6 +33,24 @@ Index: src/chrome/browser/process_singleton_posix.cc
      SocketReader* reader) {
    DCHECK(ui_task_runner_->BelongsToCurrentThread());
    DCHECK(reader);
+@@ -754,7 +754,7 @@ void ProcessSingleton::LinuxWatcher::Soc
+   base::StringToSizeT(tokens[0], &num_args);
+   std::vector<std::string> command_line(tokens.begin() + 1, tokens.begin() + 1 + num_args);
+ 
+-  std::vector<const uint8_t> additional_data;
++  std::vector<uint8_t> additional_data;
+   if (tokens.size() >= 3 + num_args) {
+     size_t additional_data_size;
+     base::StringToSizeT(tokens[1 + num_args], &additional_data_size);
+@@ -763,7 +763,7 @@ void ProcessSingleton::LinuxWatcher::Soc
+         std::string(1, kTokenDelimiter));
+     const uint8_t* additional_data_bits =
+         reinterpret_cast<const uint8_t*>(remaining_args.c_str());
+-    additional_data = std::vector<const uint8_t>(
++    additional_data = std::vector<uint8_t>(
+         additional_data_bits, additional_data_bits + additional_data_size);
+   }
+ 
 Index: src/electron/shell/browser/api/electron_api_app.cc
 ===================================================================
 --- src.orig/electron/shell/browser/api/electron_api_app.cc
