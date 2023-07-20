@@ -1,5 +1,5 @@
 set -e
-shopt -s dotglob
+shopt -s dotglob extglob globstar
 source metadata.sh
 
 _root=$PWD
@@ -60,3 +60,14 @@ readarray -t _files_excluded < ../../files-excluded.txt
 for _f in ${_files_excluded[@]}; do
   rm -rfv $_f
 done
+
+# apply electron patches beforehand since they need git to apply
+( cd .. && \
+  src/electron/script/apply_all_patches.py \
+    src/electron/patches/config.json )
+
+# same as yarn install
+( cd electron && yarnpkg install --frozen-lockfile )
+
+rm -rfv **/.git **/__pycache__
+( cd .. && rm -rfv !(src) )
