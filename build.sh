@@ -1,6 +1,9 @@
 set -e
 source metadata.sh
 
+# could be either Release or Testing
+_profile=Release
+
 _dirname=$_pkgname-$_electron_ver
 _dirpath=$(realpath $_dirname)
 cd $_dirname
@@ -10,10 +13,16 @@ export CC=clang CXX=clang++ AR=ar NM=nm
 # https://github.com/webpack/webpack/issues/14532
 export NODE_OPTIONS=--openssl-legacy-provider
 
+# facilitate deterministic builds
+export CFLAGS='-Wno-builtin-macro-redefined -Wno-unknown-warning-option'
+export CXXFLAGS='-Wno-builtin-macro-redefined -Wno-unknown-warning-option'
+export CPPFLAGS='-D__DATE__= -D__TIME__= -D__TIMESTAMP__='
+
 _gn_args=(
   'custom_toolchain="//build/toolchain/linux/unbundle:default"'
   'host_toolchain="//build/toolchain/linux/unbundle:default"'
   'clang_use_chrome_plugins=false'
+  'symbol_level = 1'
 
   # disabled features
   'is_debug=false'
@@ -50,7 +59,6 @@ _gn_args=(
   'link_pulseaudio=true'
   'rtc_use_pipewire=true'
   'icu_use_data_file=true'
-  # 'enable_widevine=true'
   'v8_enable_backtrace=true'
   'use_system_zlib=true'
   'use_system_lcms2=true'
@@ -65,6 +73,6 @@ _gn_args=(
 )
 
 cd src
-gn gen out/Release --args="import(\"//electron/build/args/release.gn\") ${_gn_args[*]}"
-ninja -C out/Release electron
-ninja -C out/Release electron_dist_zip
+gn gen out/$_profile --args="import(\"//electron/build/args/${_profile,,}.gn\") ${_gn_args[*]}"
+ninja -C out/$_profile electron
+ninja -C out/$_profile electron_dist_zip
