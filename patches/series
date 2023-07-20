@@ -126,3 +126,13 @@ gcc13/5d1ac2e0d5f61913aad62dadb65a7fea6f1b93ae.patch
 gcc13/dawn-tint-add-cstdint.patch
 gcc13/comp-viz-add-cstdint.patch
 gcc13/blink-auction_config-fix-uint-types.patch
+gcc13/partition-alloc-forward-add-cstdint.patch
+
+riscv64/angle.patch
+riscv64/breakpad.patch
+riscv64/crashpad.patch
+riscv64/dav1d.patch
+riscv64/ffmpeg.patch
+riscv64/ffmpeg-config.patch
+riscv64/sandbox.patch
+riscv64/electron_runtime_api_delegate.patch
