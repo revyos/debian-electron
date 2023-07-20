@@ -167,3 +167,4 @@ third_party/tflite/src/tensorflow/lite/experimental/acceleration/mini_benchmark/
 third_party/devtools-frontend/src/third_party/esbuild/esbuild
 third_party/nearby/src/third_party
 third_party/updater
+third_party/jdk
