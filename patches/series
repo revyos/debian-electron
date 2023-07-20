@@ -101,6 +101,9 @@ bullseye/clang13.patch
 # ppc64le/third_party/dawn-fix-ppc64le-detection.patch
 
 electron/disable-catapult.patch
+electron/std-vector-non-const.patch
+electron/remove-mac-only-imports.patch
+electron/get-version-do-not-use-git.patch
 
 # gcc13/swiftshader-add-cstdint-for-uint64_t.patch
 gcc13/dawn-iwyu-add-cstdint-for-uint8_t.patch
@@ -123,6 +126,3 @@ gcc13/5d1ac2e0d5f61913aad62dadb65a7fea6f1b93ae.patch
 gcc13/dawn-tint-add-cstdint.patch
 gcc13/comp-viz-add-cstdint.patch
 gcc13/blink-auction_config-fix-uint-types.patch
-electron/std-vector-non-const.patch
-electron/remove-mac-only-imports.patch
-electron/get-version-do-not-use-git.patch

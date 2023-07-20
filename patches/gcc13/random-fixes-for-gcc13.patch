@@ -1,7 +1,5 @@
-Index: src/third_party/maldoca/src/maldoca/ole/header.h
-===================================================================
---- src.orig/third_party/maldoca/src/maldoca/ole/header.h
-+++ src/third_party/maldoca/src/maldoca/ole/header.h
+--- a/third_party/maldoca/src/maldoca/ole/header.h
++++ b/third_party/maldoca/src/maldoca/ole/header.h
 @@ -43,6 +43,7 @@
  #ifndef MALDOCA_OLE_HEADER_H_
  #define MALDOCA_OLE_HEADER_H_
@@ -10,11 +8,9 @@ Index: src/third_party/maldoca/src/maldoca/ole/header.h
  #include "absl/strings/string_view.h"
  
  namespace maldoca {
-Index: src/third_party/ruy/src/ruy/profiler/instrumentation.h
-===================================================================
---- src.orig/third_party/ruy/src/ruy/profiler/instrumentation.h
-+++ src/third_party/ruy/src/ruy/profiler/instrumentation.h
-@@ -19,6 +19,7 @@ limitations under the License.
+--- a/third_party/ruy/src/ruy/profiler/instrumentation.h
++++ b/third_party/ruy/src/ruy/profiler/instrumentation.h
+@@ -19,6 +19,7 @@
  #ifdef RUY_PROFILER
  #include <cstdio>
  #include <mutex>
@@ -22,11 +18,9 @@ Index: src/third_party/ruy/src/ruy/profiler/instrumentation.h
  #include <vector>
  #endif
  
-Index: src/third_party/tflite/src/tensorflow/lite/kernels/internal/spectrogram.cc
-===================================================================
---- src.orig/third_party/tflite/src/tensorflow/lite/kernels/internal/spectrogram.cc
-+++ src/third_party/tflite/src/tensorflow/lite/kernels/internal/spectrogram.cc
-@@ -17,6 +17,7 @@ limitations under the License.
+--- a/third_party/tflite/src/tensorflow/lite/kernels/internal/spectrogram.cc
++++ b/third_party/tflite/src/tensorflow/lite/kernels/internal/spectrogram.cc
+@@ -17,6 +17,7 @@
  
  #include <assert.h>
  #include <math.h>
@@ -34,11 +28,9 @@ Index: src/third_party/tflite/src/tensorflow/lite/kernels/internal/spectrogram.c
  
  #include "third_party/fft2d/fft.h"
  
-Index: src/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
-===================================================================
---- src.orig/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
-+++ src/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
-@@ -2389,6 +2389,7 @@ VMA_CALL_PRE void VMA_CALL_POST vmaFreeV
+--- a/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
++++ b/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
+@@ -2389,6 +2389,7 @@
  #undef VMA_IMPLEMENTATION
  
  #include <cstdint>
@@ -46,11 +38,9 @@ Index: src/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
  #include <cstdlib>
  #include <cstring>
  #include <utility>
-Index: src/third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h
-===================================================================
---- src.orig/third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h
-+++ src/third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h
-@@ -2578,6 +2578,7 @@ VMA_CALL_PRE void VMA_CALL_POST vmaFreeS
+--- a/third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h
++++ b/third_party/vulkan-deps/vulkan-validation-layers/src/layers/vk_mem_alloc.h
+@@ -2578,6 +2578,7 @@
  #undef VMA_IMPLEMENTATION
  
  #include <cstdint>

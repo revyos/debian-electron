@@ -1,8 +1,6 @@
-Index: src/chrome/browser/process_singleton.h
-===================================================================
---- src.orig/chrome/browser/process_singleton.h
-+++ src/chrome/browser/process_singleton.h
-@@ -102,7 +102,7 @@ class ProcessSingleton {
+--- a/chrome/browser/process_singleton.h
++++ b/chrome/browser/process_singleton.h
+@@ -102,7 +102,7 @@
    using NotificationCallback =
         base::RepeatingCallback<bool(const base::CommandLine& command_line,
                                     const base::FilePath& current_directory,
@@ -11,11 +9,9 @@ Index: src/chrome/browser/process_singleton.h
  
  #if BUILDFLAG(IS_WIN)
    ProcessSingleton(const std::string& program_name,
-Index: src/chrome/browser/process_singleton_posix.cc
-===================================================================
---- src.orig/chrome/browser/process_singleton_posix.cc
-+++ src/chrome/browser/process_singleton_posix.cc
-@@ -607,7 +607,7 @@ class ProcessSingleton::LinuxWatcher
+--- a/chrome/browser/process_singleton_posix.cc
++++ b/chrome/browser/process_singleton_posix.cc
+@@ -607,7 +607,7 @@
    // |reader| is for sending back ACK message.
    void HandleMessage(const std::string& current_dir,
                       const std::vector<std::string>& argv,
@@ -24,7 +20,7 @@ Index: src/chrome/browser/process_singleton_posix.cc
                       SocketReader* reader);
  
   private:
-@@ -664,7 +664,7 @@ void ProcessSingleton::LinuxWatcher::Sta
+@@ -664,7 +664,7 @@
  void ProcessSingleton::LinuxWatcher::HandleMessage(
      const std::string& current_dir,
      const std::vector<std::string>& argv,
@@ -33,7 +29,7 @@ Index: src/chrome/browser/process_singleton_posix.cc
      SocketReader* reader) {
    DCHECK(ui_task_runner_->BelongsToCurrentThread());
    DCHECK(reader);
-@@ -754,7 +754,7 @@ void ProcessSingleton::LinuxWatcher::Soc
+@@ -754,7 +754,7 @@
    base::StringToSizeT(tokens[0], &num_args);
    std::vector<std::string> command_line(tokens.begin() + 1, tokens.begin() + 1 + num_args);
  
@@ -42,7 +38,7 @@ Index: src/chrome/browser/process_singleton_posix.cc
    if (tokens.size() >= 3 + num_args) {
      size_t additional_data_size;
      base::StringToSizeT(tokens[1 + num_args], &additional_data_size);
-@@ -763,7 +763,7 @@ void ProcessSingleton::LinuxWatcher::Soc
+@@ -763,7 +763,7 @@
          std::string(1, kTokenDelimiter));
      const uint8_t* additional_data_bits =
          reinterpret_cast<const uint8_t*>(remaining_args.c_str());
@@ -51,11 +47,9 @@ Index: src/chrome/browser/process_singleton_posix.cc
          additional_data_bits, additional_data_bits + additional_data_size);
    }
  
-Index: src/electron/shell/browser/api/electron_api_app.cc
-===================================================================
---- src.orig/electron/shell/browser/api/electron_api_app.cc
-+++ src/electron/shell/browser/api/electron_api_app.cc
-@@ -523,10 +523,10 @@ bool NotificationCallbackWrapper(
+--- a/electron/shell/browser/api/electron_api_app.cc
++++ b/electron/shell/browser/api/electron_api_app.cc
+@@ -523,10 +523,10 @@
      const base::RepeatingCallback<
          void(const base::CommandLine& command_line,
               const base::FilePath& current_directory,
@@ -68,7 +62,7 @@ Index: src/electron/shell/browser/api/electron_api_app.cc
    // Make sure the callback is called after app gets ready.
    if (Browser::Get()->is_ready()) {
      callback.Run(cmd, cwd, std::move(additional_data));
-@@ -1102,7 +1102,7 @@ std::string App::GetLocaleCountryCode()
+@@ -1102,7 +1102,7 @@
  
  void App::OnSecondInstance(const base::CommandLine& cmd,
                             const base::FilePath& cwd,
@@ -77,11 +71,9 @@ Index: src/electron/shell/browser/api/electron_api_app.cc
    v8::Isolate* isolate = JavascriptEnvironment::GetIsolate();
    v8::HandleScope handle_scope(isolate);
    v8::Local<v8::Value> data_value =
-Index: src/electron/shell/browser/api/electron_api_app.h
-===================================================================
---- src.orig/electron/shell/browser/api/electron_api_app.h
-+++ src/electron/shell/browser/api/electron_api_app.h
-@@ -194,7 +194,7 @@ class App : public ElectronBrowserClient
+--- a/electron/shell/browser/api/electron_api_app.h
++++ b/electron/shell/browser/api/electron_api_app.h
+@@ -194,7 +194,7 @@
    std::string GetSystemLocale(gin_helper::ErrorThrower thrower) const;
    void OnSecondInstance(const base::CommandLine& cmd,
                          const base::FilePath& cwd,

@@ -1,7 +1,5 @@
-Index: src/electron/shell/app/electron_main_delegate.cc
-===================================================================
---- src.orig/electron/shell/app/electron_main_delegate.cc
-+++ src/electron/shell/app/electron_main_delegate.cc
+--- a/electron/shell/app/electron_main_delegate.cc
++++ b/electron/shell/app/electron_main_delegate.cc
 @@ -15,7 +15,6 @@
  #include "base/environment.h"
  #include "base/files/file_util.h"
