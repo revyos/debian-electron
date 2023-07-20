@@ -48,7 +48,7 @@
 +    "libavutil/riscv/intmath.h",
 +    "libswscale/riscv/rgb2rgb.c",
 +  ]
-+  ffmpeg_asm_sources += [
++  ffmpeg_gas_sources += [
 +    "libavcodec/riscv/vorbisdsp_rvv.S",
 +    "libavcodec/riscv/pixblockdsp_rvi.S",
 +    "libavcodec/riscv/bswapdsp_rvv.S",
