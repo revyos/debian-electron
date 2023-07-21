@@ -16,8 +16,8 @@ Cr-Commit-Position: refs/heads/main@{#1126023}
 
 diff --git a/device/base/synchronization/one_writer_seqlock.h b/device/base/synchronization/one_writer_seqlock.h
 index 528b6683ca2..e37a16b81be 100644
---- a/device/base/synchronization/one_writer_seqlock.h
-+++ b/device/base/synchronization/one_writer_seqlock.h
+--- a/src/device/base/synchronization/one_writer_seqlock.h
++++ b/src/device/base/synchronization/one_writer_seqlock.h
 @@ -6,6 +6,7 @@
  #define DEVICE_BASE_SYNCHRONIZATION_ONE_WRITER_SEQLOCK_H_
  

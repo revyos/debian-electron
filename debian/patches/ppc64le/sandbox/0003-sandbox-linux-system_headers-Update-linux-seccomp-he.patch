@@ -8,8 +8,8 @@ Subject: [PATCH 3/4] sandbox/linux/system_headers: Update linux seccomp header
  sandbox/linux/system_headers/linux_seccomp.h | 10 ++++++++++
  1 file changed, 10 insertions(+)
 
---- a/sandbox/linux/system_headers/linux_seccomp.h
-+++ b/sandbox/linux/system_headers/linux_seccomp.h
+--- a/src/sandbox/linux/system_headers/linux_seccomp.h
++++ b/src/sandbox/linux/system_headers/linux_seccomp.h
 @@ -38,6 +38,9 @@
  #ifndef EM_AARCH64
  #define EM_AARCH64 183

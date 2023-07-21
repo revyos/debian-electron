@@ -16,8 +16,8 @@ Cr-Commit-Position: refs/heads/main@{#1125558}
 
 diff --git a/base/debug/profiler.h b/base/debug/profiler.h
 index 5f0deadd5d3..035affc7c4d 100644
---- a/base/debug/profiler.h
-+++ b/base/debug/profiler.h
+--- a/src/base/debug/profiler.h
++++ b/src/base/debug/profiler.h
 @@ -6,6 +6,7 @@
  #define BASE_DEBUG_PROFILER_H_
  
@@ -28,8 +28,8 @@ index 5f0deadd5d3..035affc7c4d 100644
  
 diff --git a/base/strings/string_piece.h b/base/strings/string_piece.h
 index 899b654cbe8..9dde6ec29bb 100644
---- a/base/strings/string_piece.h
-+++ b/base/strings/string_piece.h
+--- a/src/base/strings/string_piece.h
++++ b/src/base/strings/string_piece.h
 @@ -22,6 +22,7 @@
  #define BASE_STRINGS_STRING_PIECE_H_
  

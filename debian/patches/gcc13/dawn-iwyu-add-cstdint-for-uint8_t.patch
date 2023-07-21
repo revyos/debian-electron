@@ -16,8 +16,8 @@ Kokoro: Kokoro <noreply+kokoro@google.com>
 
 diff --git a/src/dawn/native/stream/ByteVectorSink.h b/src/dawn/native/stream/ByteVectorSink.h
 index 3b6016c082..5537820b1a 100644
---- a/third_party/dawn/src/dawn/native/stream/ByteVectorSink.h
-+++ b/third_party/dawn/src/dawn/native/stream/ByteVectorSink.h
+--- a/src/third_party/dawn/src/dawn/native/stream/ByteVectorSink.h
++++ b/src/third_party/dawn/src/dawn/native/stream/ByteVectorSink.h
 @@ -15,6 +15,7 @@
  #ifndef SRC_DAWN_NATIVE_STREAM_BYTEVECTORSINK_H_
  #define SRC_DAWN_NATIVE_STREAM_BYTEVECTORSINK_H_

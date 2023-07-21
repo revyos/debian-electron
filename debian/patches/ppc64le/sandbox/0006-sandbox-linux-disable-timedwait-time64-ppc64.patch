@@ -1,5 +1,5 @@
---- a/sandbox/linux/seccomp-bpf-helpers/syscall_sets.cc
-+++ b/sandbox/linux/seccomp-bpf-helpers/syscall_sets.cc
+--- a/src/sandbox/linux/seccomp-bpf-helpers/syscall_sets.cc
++++ b/src/sandbox/linux/seccomp-bpf-helpers/syscall_sets.cc
 @@ -359,7 +359,9 @@ bool SyscallSets::IsAllowedSignalHandlin
  #if defined(__i386__) || defined(__arm__) || \
      (defined(ARCH_CPU_MIPS_FAMILY) && defined(ARCH_CPU_32_BITS)) || \

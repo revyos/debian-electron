@@ -17,8 +17,8 @@ GNU/Linux environments, but may require expansion elsewhere.
  create mode 100644 sandbox/linux/system_headers/ppc64_linux_syscalls.h
  create mode 100644 sandbox/linux/system_headers/ppc64_linux_ucontext.h
 
---- a/sandbox/linux/BUILD.gn
-+++ b/sandbox/linux/BUILD.gn
+--- a/src/sandbox/linux/BUILD.gn
++++ b/src/sandbox/linux/BUILD.gn
 @@ -373,6 +373,8 @@ component("sandbox_services") {
  
  source_set("sandbox_services_headers") {
@@ -28,8 +28,8 @@ GNU/Linux environments, but may require expansion elsewhere.
      "system_headers/arm64_linux_syscalls.h",
      "system_headers/arm_linux_syscalls.h",
      "system_headers/arm_linux_ucontext.h",
---- a/sandbox/linux/system_headers/linux_syscalls.h
-+++ b/sandbox/linux/system_headers/linux_syscalls.h
+--- a/src/sandbox/linux/system_headers/linux_syscalls.h
++++ b/src/sandbox/linux/system_headers/linux_syscalls.h
 @@ -35,5 +35,9 @@
  #include "sandbox/linux/system_headers/arm64_linux_syscalls.h"
  #endif
@@ -41,7 +41,7 @@ GNU/Linux environments, but may require expansion elsewhere.
  #endif  // SANDBOX_LINUX_SYSTEM_HEADERS_LINUX_SYSCALLS_H_
  
 --- /dev/null
-+++ b/sandbox/linux/system_headers/ppc64_linux_syscalls.h
++++ b/src/sandbox/linux/system_headers/ppc64_linux_syscalls.h
 @@ -0,0 +1,12 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -56,7 +56,7 @@ GNU/Linux environments, but may require expansion elsewhere.
 +
 +#endif  // SANDBOX_LINUX_SYSTEM_HEADERS_PPC64_LINUX_SYSCALLS_H_
 --- /dev/null
-+++ b/sandbox/linux/system_headers/ppc64_linux_ucontext.h
++++ b/src/sandbox/linux/system_headers/ppc64_linux_ucontext.h
 @@ -0,0 +1,12 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be

@@ -18,8 +18,8 @@ Reviewed-by: Joshua Peraza <jperaza@chromium.org>
 
 diff --git a/minidump/minidump_context.h b/minidump/minidump_context.h
 index 30988d8..12413de 100644
---- a/third_party/crashpad/crashpad/minidump/minidump_context.h
-+++ b/third_party/crashpad/crashpad/minidump/minidump_context.h
+--- a/src/third_party/crashpad/crashpad/minidump/minidump_context.h
++++ b/src/third_party/crashpad/crashpad/minidump/minidump_context.h
 @@ -637,6 +637,56 @@
    uint64_t fir;
  };
@@ -79,8 +79,8 @@ index 30988d8..12413de 100644
  #endif  // CRASHPAD_MINIDUMP_MINIDUMP_CONTEXT_H_
 diff --git a/minidump/minidump_context_writer.cc b/minidump/minidump_context_writer.cc
 index 5f741ed..84c0148 100644
---- a/third_party/crashpad/crashpad/minidump/minidump_context_writer.cc
-+++ b/third_party/crashpad/crashpad/minidump/minidump_context_writer.cc
+--- a/src/third_party/crashpad/crashpad/minidump/minidump_context_writer.cc
++++ b/src/third_party/crashpad/crashpad/minidump/minidump_context_writer.cc
 @@ -102,6 +102,13 @@
        break;
      }
@@ -140,8 +140,8 @@ index 5f741ed..84c0148 100644
  }  // namespace crashpad
 diff --git a/minidump/minidump_context_writer.h b/minidump/minidump_context_writer.h
 index 6660be4..8e39c66 100644
---- a/third_party/crashpad/crashpad/minidump/minidump_context_writer.h
-+++ b/third_party/crashpad/crashpad/minidump/minidump_context_writer.h
+--- a/src/third_party/crashpad/crashpad/minidump/minidump_context_writer.h
++++ b/src/third_party/crashpad/crashpad/minidump/minidump_context_writer.h
 @@ -369,6 +369,50 @@
    MinidumpContextMIPS64 context_;
  };
@@ -195,8 +195,8 @@ index 6660be4..8e39c66 100644
  #endif  // CRASHPAD_MINIDUMP_MINIDUMP_CONTEXT_WRITER_H_
 diff --git a/minidump/minidump_context_writer_test.cc b/minidump/minidump_context_writer_test.cc
 index e2a04d1..9eebe81 100644
---- a/third_party/crashpad/crashpad/minidump/minidump_context_writer_test.cc
-+++ b/third_party/crashpad/crashpad/minidump/minidump_context_writer_test.cc
+--- a/src/third_party/crashpad/crashpad/minidump/minidump_context_writer_test.cc
++++ b/src/third_party/crashpad/crashpad/minidump/minidump_context_writer_test.cc
 @@ -143,6 +143,49 @@
    }
  }
@@ -273,8 +273,8 @@ index e2a04d1..9eebe81 100644
  }  // namespace crashpad
 diff --git a/minidump/minidump_extensions.h b/minidump/minidump_extensions.h
 index f96cf25..a5f442b 100644
---- a/third_party/crashpad/crashpad/minidump/minidump_extensions.h
-+++ b/third_party/crashpad/crashpad/minidump/minidump_extensions.h
+--- a/src/third_party/crashpad/crashpad/minidump/minidump_extensions.h
++++ b/src/third_party/crashpad/crashpad/minidump/minidump_extensions.h
 @@ -210,6 +210,9 @@
    //! \deprecated Use #kMinidumpCPUArchitectureARM64 instead.
    kMinidumpCPUArchitectureARM64Breakpad = 0x8003,
@@ -287,8 +287,8 @@ index f96cf25..a5f442b 100644
  };
 diff --git a/minidump/minidump_misc_info_writer.cc b/minidump/minidump_misc_info_writer.cc
 index 133ae30..1abb46c 100644
---- a/third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
-+++ b/third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
+--- a/src/third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
++++ b/src/third_party/crashpad/crashpad/minidump/minidump_misc_info_writer.cc
 @@ -175,6 +175,8 @@
    static constexpr char kCPU[] = "mips";
  #elif defined(ARCH_CPU_MIPS64EL)
@@ -300,8 +300,8 @@ index 133ae30..1abb46c 100644
  #endif
 diff --git a/minidump/minidump_system_info_writer.cc b/minidump/minidump_system_info_writer.cc
 index 4468c41..e2ab775 100644
---- a/third_party/crashpad/crashpad/minidump/minidump_system_info_writer.cc
-+++ b/third_party/crashpad/crashpad/minidump/minidump_system_info_writer.cc
+--- a/src/third_party/crashpad/crashpad/minidump/minidump_system_info_writer.cc
++++ b/src/third_party/crashpad/crashpad/minidump/minidump_system_info_writer.cc
 @@ -132,6 +132,9 @@
      case kCPUArchitectureARM64:
        cpu_architecture = kMinidumpCPUArchitectureARM64;
@@ -314,8 +314,8 @@ index 4468c41..e2ab775 100644
        cpu_architecture = kMinidumpCPUArchitectureUnknown;
 diff --git a/minidump/test/minidump_context_test_util.cc b/minidump/test/minidump_context_test_util.cc
 index 5746e4c..b40558c 100644
---- a/third_party/crashpad/crashpad/minidump/test/minidump_context_test_util.cc
-+++ b/third_party/crashpad/crashpad/minidump/test/minidump_context_test_util.cc
+--- a/src/third_party/crashpad/crashpad/minidump/test/minidump_context_test_util.cc
++++ b/src/third_party/crashpad/crashpad/minidump/test/minidump_context_test_util.cc
 @@ -272,6 +272,31 @@
    context->dsp_control = value++;
  }
@@ -375,8 +375,8 @@ index 5746e4c..b40558c 100644
  }  // namespace crashpad
 diff --git a/minidump/test/minidump_context_test_util.h b/minidump/test/minidump_context_test_util.h
 index 793e2c3..4ce5c1e 100644
---- a/third_party/crashpad/crashpad/minidump/test/minidump_context_test_util.h
-+++ b/third_party/crashpad/crashpad/minidump/test/minidump_context_test_util.h
+--- a/src/third_party/crashpad/crashpad/minidump/test/minidump_context_test_util.h
++++ b/src/third_party/crashpad/crashpad/minidump/test/minidump_context_test_util.h
 @@ -47,6 +47,8 @@
  void InitializeMinidumpContextMIPS(MinidumpContextMIPS* context, uint32_t seed);
  void InitializeMinidumpContextMIPS64(MinidumpContextMIPS* context,
@@ -398,8 +398,8 @@ index 793e2c3..4ce5c1e 100644
  }  // namespace test
 diff --git a/snapshot/capture_memory.cc b/snapshot/capture_memory.cc
 index 0a465d2..c1c6fba 100644
---- a/third_party/crashpad/crashpad/snapshot/capture_memory.cc
-+++ b/third_party/crashpad/crashpad/snapshot/capture_memory.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/capture_memory.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/capture_memory.cc
 @@ -117,6 +117,11 @@
    for (size_t i = 0; i < std::size(context.mipsel->regs); ++i) {
      MaybeCaptureMemoryAround(delegate, context.mipsel->regs[i]);
@@ -414,8 +414,8 @@ index 0a465d2..c1c6fba 100644
  #endif
 diff --git a/snapshot/cpu_architecture.h b/snapshot/cpu_architecture.h
 index 4003a92..26d45f8 100644
---- a/third_party/crashpad/crashpad/snapshot/cpu_architecture.h
-+++ b/third_party/crashpad/crashpad/snapshot/cpu_architecture.h
+--- a/src/third_party/crashpad/crashpad/snapshot/cpu_architecture.h
++++ b/src/third_party/crashpad/crashpad/snapshot/cpu_architecture.h
 @@ -43,7 +43,10 @@
    kCPUArchitectureMIPSEL,
  
@@ -430,8 +430,8 @@ index 4003a92..26d45f8 100644
  }  // namespace crashpad
 diff --git a/snapshot/cpu_context.cc b/snapshot/cpu_context.cc
 index 6eaa853..492a0f7 100644
---- a/third_party/crashpad/crashpad/snapshot/cpu_context.cc
-+++ b/third_party/crashpad/crashpad/snapshot/cpu_context.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/cpu_context.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/cpu_context.cc
 @@ -20,6 +20,7 @@
  #include <iterator>
  
@@ -468,8 +468,8 @@ index 6eaa853..492a0f7 100644
      case kCPUArchitectureARM:
 diff --git a/snapshot/cpu_context.h b/snapshot/cpu_context.h
 index 7bc252b..c3640c3 100644
---- a/third_party/crashpad/crashpad/snapshot/cpu_context.h
-+++ b/third_party/crashpad/crashpad/snapshot/cpu_context.h
+--- a/src/third_party/crashpad/crashpad/snapshot/cpu_context.h
++++ b/src/third_party/crashpad/crashpad/snapshot/cpu_context.h
 @@ -362,6 +362,15 @@
    uint64_t fir;
  };
@@ -496,8 +496,8 @@ index 7bc252b..c3640c3 100644
  
 diff --git a/snapshot/elf/elf_image_reader.cc b/snapshot/elf/elf_image_reader.cc
 index 30e8b98..dcab025 100644
---- a/third_party/crashpad/crashpad/snapshot/elf/elf_image_reader.cc
-+++ b/third_party/crashpad/crashpad/snapshot/elf/elf_image_reader.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/elf/elf_image_reader.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/elf/elf_image_reader.cc
 @@ -733,8 +733,11 @@
    if (!dynamic_array_->GetValue(tag, log, address)) {
      return false;
@@ -514,8 +514,8 @@ index 30e8b98..dcab025 100644
      *address += GetLoadBias();
 diff --git a/snapshot/linux/cpu_context_linux.cc b/snapshot/linux/cpu_context_linux.cc
 index 21db234..6c4cb3e 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/cpu_context_linux.cc
-+++ b/third_party/crashpad/crashpad/snapshot/linux/cpu_context_linux.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/cpu_context_linux.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/cpu_context_linux.cc
 @@ -266,6 +266,21 @@
    context->fpcr = float_context.fpcr;
  }
@@ -540,8 +540,8 @@ index 21db234..6c4cb3e 100644
  }  // namespace internal
 diff --git a/snapshot/linux/cpu_context_linux.h b/snapshot/linux/cpu_context_linux.h
 index 1ea5eec..507d1b4 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/cpu_context_linux.h
-+++ b/third_party/crashpad/crashpad/snapshot/linux/cpu_context_linux.h
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/cpu_context_linux.h
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/cpu_context_linux.h
 @@ -174,6 +174,20 @@
  
  #endif  // ARCH_CPU_MIPS_FAMILY || DOXYGEN
@@ -565,8 +565,8 @@ index 1ea5eec..507d1b4 100644
  
 diff --git a/snapshot/linux/exception_snapshot_linux.cc b/snapshot/linux/exception_snapshot_linux.cc
 index 4e6ec11..677afda 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux.cc
-+++ b/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux.cc
 @@ -325,6 +325,48 @@
        reader, context_address, context_.mips64);
  }
@@ -631,8 +631,8 @@ index 4e6ec11..677afda 100644
    CaptureMemoryDelegateLinux capture_memory_delegate(
 diff --git a/snapshot/linux/exception_snapshot_linux.h b/snapshot/linux/exception_snapshot_linux.h
 index 3ea3d93..f931d33 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux.h
-+++ b/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux.h
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux.h
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux.h
 @@ -89,6 +89,8 @@
  #elif defined(ARCH_CPU_MIPS_FAMILY)
      CPUContextMIPS mipsel;
@@ -644,8 +644,8 @@ index 3ea3d93..f931d33 100644
    CPUContext context_;
 diff --git a/snapshot/linux/exception_snapshot_linux_test.cc b/snapshot/linux/exception_snapshot_linux_test.cc
 index 0f5e21a..94f45f1 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux_test.cc
-+++ b/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux_test.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux_test.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/exception_snapshot_linux_test.cc
 @@ -297,6 +297,34 @@
  #undef CPU_ARCH_NAME
  }
@@ -683,8 +683,8 @@ index 0f5e21a..94f45f1 100644
  #endif
 diff --git a/snapshot/linux/process_reader_linux.cc b/snapshot/linux/process_reader_linux.cc
 index 8ec0edc..4571338 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/process_reader_linux.cc
-+++ b/third_party/crashpad/crashpad/snapshot/linux/process_reader_linux.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/process_reader_linux.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/process_reader_linux.cc
 @@ -127,6 +127,8 @@
  #elif defined(ARCH_CPU_MIPS_FAMILY)
    stack_pointer = reader->Is64Bit() ? thread_info.thread_context.t64.regs[29]
@@ -696,8 +696,8 @@ index 8ec0edc..4571338 100644
  #endif
 diff --git a/snapshot/linux/signal_context.h b/snapshot/linux/signal_context.h
 index 6ac7ade..89e697a 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/signal_context.h
-+++ b/third_party/crashpad/crashpad/snapshot/linux/signal_context.h
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/signal_context.h
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/signal_context.h
 @@ -422,6 +422,40 @@
                "context offset mismatch");
  #endif
@@ -741,8 +741,8 @@ index 6ac7ade..89e697a 100644
  #endif  // ARCH_CPU_X86_FAMILY
 diff --git a/snapshot/linux/system_snapshot_linux.cc b/snapshot/linux/system_snapshot_linux.cc
 index 8487155..20b95fb 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/system_snapshot_linux.cc
-+++ b/third_party/crashpad/crashpad/snapshot/linux/system_snapshot_linux.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/system_snapshot_linux.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/system_snapshot_linux.cc
 @@ -205,6 +205,8 @@
  #elif defined(ARCH_CPU_MIPS_FAMILY)
    return process_reader_->Is64Bit() ? kCPUArchitectureMIPS64EL
@@ -784,8 +784,8 @@ index 8487155..20b95fb 100644
  #endif  // ARCH_CPU_X86_FAMILY
 diff --git a/snapshot/linux/test_modules.cc b/snapshot/linux/test_modules.cc
 index 7d9d08d..c03cbaa 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/test_modules.cc
-+++ b/third_party/crashpad/crashpad/snapshot/linux/test_modules.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/test_modules.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/test_modules.cc
 @@ -110,6 +110,13 @@
    module.ehdr.e_machine = EM_AARCH64;
  #elif defined(ARCH_CPU_MIPSEL) || defined(ARCH_CPU_MIPS64EL)
@@ -802,8 +802,8 @@ index 7d9d08d..c03cbaa 100644
    module.ehdr.e_version = EV_CURRENT;
 diff --git a/snapshot/linux/thread_snapshot_linux.cc b/snapshot/linux/thread_snapshot_linux.cc
 index ba33401..85882e8 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/thread_snapshot_linux.cc
-+++ b/third_party/crashpad/crashpad/snapshot/linux/thread_snapshot_linux.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/thread_snapshot_linux.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/thread_snapshot_linux.cc
 @@ -190,6 +190,12 @@
          thread.thread_info.float_context.f32,
          context_.mipsel);
@@ -819,8 +819,8 @@ index ba33401..85882e8 100644
  #endif
 diff --git a/snapshot/linux/thread_snapshot_linux.h b/snapshot/linux/thread_snapshot_linux.h
 index bd03f58..5795bfb 100644
---- a/third_party/crashpad/crashpad/snapshot/linux/thread_snapshot_linux.h
-+++ b/third_party/crashpad/crashpad/snapshot/linux/thread_snapshot_linux.h
+--- a/src/third_party/crashpad/crashpad/snapshot/linux/thread_snapshot_linux.h
++++ b/src/third_party/crashpad/crashpad/snapshot/linux/thread_snapshot_linux.h
 @@ -74,6 +74,8 @@
  #elif defined(ARCH_CPU_MIPS_FAMILY)
      CPUContextMIPS mipsel;
@@ -832,8 +832,8 @@ index bd03f58..5795bfb 100644
  #endif  // ARCH_CPU_X86_FAMILY
 diff --git a/snapshot/minidump/minidump_context_converter.cc b/snapshot/minidump/minidump_context_converter.cc
 index f2fa2ab..ec02dff 100644
---- a/third_party/crashpad/crashpad/snapshot/minidump/minidump_context_converter.cc
-+++ b/third_party/crashpad/crashpad/snapshot/minidump/minidump_context_converter.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/minidump/minidump_context_converter.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/minidump/minidump_context_converter.cc
 @@ -266,6 +266,33 @@
      context_.mips64->fir = src->fir;
  
@@ -870,8 +870,8 @@ index f2fa2ab..ec02dff 100644
      DLOG(ERROR) << "Unknown architecture";
 diff --git a/snapshot/minidump/system_snapshot_minidump.cc b/snapshot/minidump/system_snapshot_minidump.cc
 index abccda3..58bd7b3 100644
---- a/third_party/crashpad/crashpad/snapshot/minidump/system_snapshot_minidump.cc
-+++ b/third_party/crashpad/crashpad/snapshot/minidump/system_snapshot_minidump.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/minidump/system_snapshot_minidump.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/minidump/system_snapshot_minidump.cc
 @@ -68,6 +68,8 @@
      case kMinidumpCPUArchitectureMIPS:
        return kCPUArchitectureMIPSEL;
@@ -883,8 +883,8 @@ index abccda3..58bd7b3 100644
        return CPUArchitecture::kCPUArchitectureUnknown;
 diff --git a/snapshot/test/test_cpu_context.cc b/snapshot/test/test_cpu_context.cc
 index 7efbf5a..9982294 100644
---- a/third_party/crashpad/crashpad/snapshot/test/test_cpu_context.cc
-+++ b/third_party/crashpad/crashpad/snapshot/test/test_cpu_context.cc
+--- a/src/third_party/crashpad/crashpad/snapshot/test/test_cpu_context.cc
++++ b/src/third_party/crashpad/crashpad/snapshot/test/test_cpu_context.cc
 @@ -295,5 +295,27 @@
    mips64->dsp_control = value++;
  }
@@ -915,8 +915,8 @@ index 7efbf5a..9982294 100644
  }  // namespace crashpad
 diff --git a/snapshot/test/test_cpu_context.h b/snapshot/test/test_cpu_context.h
 index e4372ce..053dec2 100644
---- a/third_party/crashpad/crashpad/snapshot/test/test_cpu_context.h
-+++ b/third_party/crashpad/crashpad/snapshot/test/test_cpu_context.h
+--- a/src/third_party/crashpad/crashpad/snapshot/test/test_cpu_context.h
++++ b/src/third_party/crashpad/crashpad/snapshot/test/test_cpu_context.h
 @@ -63,6 +63,7 @@
  void InitializeCPUContextARM64(CPUContext* context, uint32_t seed);
  void InitializeCPUContextMIPS(CPUContext* context, uint32_t seed);
@@ -927,8 +927,8 @@ index e4372ce..053dec2 100644
  }  // namespace test
 diff --git a/test/linux/get_tls.cc b/test/linux/get_tls.cc
 index c8147f0..405976e 100644
---- a/third_party/crashpad/crashpad/test/linux/get_tls.cc
-+++ b/third_party/crashpad/crashpad/test/linux/get_tls.cc
+--- a/src/third_party/crashpad/crashpad/test/linux/get_tls.cc
++++ b/src/third_party/crashpad/crashpad/test/linux/get_tls.cc
 @@ -49,6 +49,8 @@
        : "=r"(tls)
        :
@@ -940,8 +940,8 @@ index c8147f0..405976e 100644
  #endif  // ARCH_CPU_ARMEL
 diff --git a/util/linux/auxiliary_vector_test.cc b/util/linux/auxiliary_vector_test.cc
 index 0455497..0c97781 100644
---- a/third_party/crashpad/crashpad/util/linux/auxiliary_vector_test.cc
-+++ b/third_party/crashpad/crashpad/util/linux/auxiliary_vector_test.cc
+--- a/src/third_party/crashpad/crashpad/util/linux/auxiliary_vector_test.cc
++++ b/src/third_party/crashpad/crashpad/util/linux/auxiliary_vector_test.cc
 @@ -96,10 +96,15 @@
  
    ProcessMemoryLinux memory(&connection);
@@ -960,8 +960,8 @@ index 0455497..0c97781 100644
  #elif defined(ARCH_CPU_X86_64)
 diff --git a/util/linux/ptracer.cc b/util/linux/ptracer.cc
 index 25c89ea..d8129ad 100644
---- a/third_party/crashpad/crashpad/util/linux/ptracer.cc
-+++ b/third_party/crashpad/crashpad/util/linux/ptracer.cc
+--- a/src/third_party/crashpad/crashpad/util/linux/ptracer.cc
++++ b/src/third_party/crashpad/crashpad/util/linux/ptracer.cc
 @@ -398,6 +398,37 @@
    return true;
  }
@@ -1035,8 +1035,8 @@ index 25c89ea..d8129ad 100644
  ssize_t Ptracer::ReadUpTo(pid_t pid,
 diff --git a/util/linux/thread_info.h b/util/linux/thread_info.h
 index 9f60bd3..808b35a 100644
---- a/third_party/crashpad/crashpad/util/linux/thread_info.h
-+++ b/third_party/crashpad/crashpad/util/linux/thread_info.h
+--- a/src/third_party/crashpad/crashpad/util/linux/thread_info.h
++++ b/src/third_party/crashpad/crashpad/util/linux/thread_info.h
 @@ -29,6 +29,11 @@
  #include <android/api-level.h>
  #endif
@@ -1117,8 +1117,8 @@ index 9f60bd3..808b35a 100644
  #endif  // ARCH_CPU_X86
 diff --git a/util/misc/capture_context.h b/util/misc/capture_context.h
 index a5503d6..e838dba 100644
---- a/third_party/crashpad/crashpad/util/misc/capture_context.h
-+++ b/third_party/crashpad/crashpad/util/misc/capture_context.h
+--- a/src/third_party/crashpad/crashpad/util/misc/capture_context.h
++++ b/src/third_party/crashpad/crashpad/util/misc/capture_context.h
 @@ -69,6 +69,7 @@
  //!     macOS/Linux/Fuchsia | x86_64       | `%%rdi`
  //!     Linux               | ARM/ARM64    | `r0`/`x0`
@@ -1129,8 +1129,8 @@ index a5503d6..e838dba 100644
  //!     this function.
 diff --git a/util/misc/capture_context_linux.S b/util/misc/capture_context_linux.S
 index 9c3a726..cfad857 100644
---- a/third_party/crashpad/crashpad/util/misc/capture_context_linux.S
-+++ b/third_party/crashpad/crashpad/util/misc/capture_context_linux.S
+--- a/src/third_party/crashpad/crashpad/util/misc/capture_context_linux.S
++++ b/src/third_party/crashpad/crashpad/util/misc/capture_context_linux.S
 @@ -36,6 +36,8 @@
    .type CAPTURECONTEXT_SYMBOL2, %function
  #elif defined(__mips__)
@@ -1228,8 +1228,8 @@ index 9c3a726..cfad857 100644
  #endif  // __i386__
 diff --git a/util/misc/capture_context_test_util_linux.cc b/util/misc/capture_context_test_util_linux.cc
 index 35751bf..55820b9 100644
---- a/third_party/crashpad/crashpad/util/misc/capture_context_test_util_linux.cc
-+++ b/third_party/crashpad/crashpad/util/misc/capture_context_test_util_linux.cc
+--- a/src/third_party/crashpad/crashpad/util/misc/capture_context_test_util_linux.cc
++++ b/src/third_party/crashpad/crashpad/util/misc/capture_context_test_util_linux.cc
 @@ -35,6 +35,9 @@
    EXPECT_EQ(context.uc_mcontext.regs[0], FromPointerCast<uintptr_t>(&context));
  #elif defined(ARCH_CPU_MIPS_FAMILY)
@@ -1260,8 +1260,8 @@ index 35751bf..55820b9 100644
  
 diff --git a/util/net/http_transport_libcurl.cc b/util/net/http_transport_libcurl.cc
 index d5c9177..df63a77 100644
---- a/third_party/crashpad/crashpad/util/net/http_transport_libcurl.cc
-+++ b/third_party/crashpad/crashpad/util/net/http_transport_libcurl.cc
+--- a/src/third_party/crashpad/crashpad/util/net/http_transport_libcurl.cc
++++ b/src/third_party/crashpad/crashpad/util/net/http_transport_libcurl.cc
 @@ -237,6 +237,8 @@
  #elif defined(ARCH_CPU_BIG_ENDIAN)
      static constexpr char arch[] = "aarch64_be";

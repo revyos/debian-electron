@@ -10,8 +10,8 @@ More investigation required.
  sandbox/linux/seccomp-bpf/trap.cc | 14 ++++++++++++++
  1 file changed, 14 insertions(+)
 
---- a/sandbox/linux/seccomp-bpf/trap.cc
-+++ b/sandbox/linux/seccomp-bpf/trap.cc
+--- a/src/sandbox/linux/seccomp-bpf/trap.cc
++++ b/src/sandbox/linux/seccomp-bpf/trap.cc
 @@ -232,6 +232,20 @@ void Trap::SigSys(int nr, LinuxSigInfo*
        SetIsInSigHandler();
      }

@@ -16,8 +16,8 @@ Cr-Commit-Position: refs/heads/main@{#1130286}
 
 diff --git a/third_party/s2cellid/README.chromium b/third_party/s2cellid/README.chromium
 index 53c42f7342d..25044e85135 100644
---- a/third_party/s2cellid/README.chromium
-+++ b/third_party/s2cellid/README.chromium
+--- a/src/third_party/s2cellid/README.chromium
++++ b/src/third_party/s2cellid/README.chromium
 @@ -18,6 +18,7 @@ Local Modifications:
     - mathutil.h mathutil.cc
     - vector.h
@@ -28,8 +28,8 @@ index 53c42f7342d..25044e85135 100644
   - r2.h
 diff --git a/third_party/s2cellid/src/s2/util/math/vector.h b/third_party/s2cellid/src/s2/util/math/vector.h
 index ded669c1d71..487edc3f93b 100644
---- a/third_party/s2cellid/src/s2/util/math/vector.h
-+++ b/third_party/s2cellid/src/s2/util/math/vector.h
+--- a/src/third_party/s2cellid/src/s2/util/math/vector.h
++++ b/src/third_party/s2cellid/src/s2/util/math/vector.h
 @@ -22,6 +22,7 @@
  
  #include <algorithm>

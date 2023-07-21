@@ -10,8 +10,8 @@ Subject: [PATCH] Add support for ppc64
  chromium/scripts/generate_gn_unittest.py | 10 ++++++++--
  4 files changed, 19 insertions(+), 6 deletions(-)
 
---- a/third_party/ffmpeg/chromium/scripts/build_ffmpeg.py
-+++ b/third_party/ffmpeg/chromium/scripts/build_ffmpeg.py
+--- a/src/third_party/ffmpeg/chromium/scripts/build_ffmpeg.py
++++ b/src/third_party/ffmpeg/chromium/scripts/build_ffmpeg.py
 @@ -40,7 +40,7 @@ BRANDINGS = [
  ARCH_MAP = {
      'android': ['ia32', 'x64', 'arm-neon', 'arm64'],
@@ -42,8 +42,8 @@ Subject: [PATCH] Add support for ppc64
      else:
        print(
            'Error: Unknown target arch %r for target OS %r!' % (target_arch,
---- a/third_party/ffmpeg/chromium/scripts/copy_config.sh
-+++ b/third_party/ffmpeg/chromium/scripts/copy_config.sh
+--- a/src/third_party/ffmpeg/chromium/scripts/copy_config.sh
++++ b/src/third_party/ffmpeg/chromium/scripts/copy_config.sh
 @@ -10,7 +10,7 @@ for os in android linux linux-noasm mac
      # Copy config files for various architectures:
      #   - ia32/x64 have config.asm, config.h
@@ -53,8 +53,8 @@ Subject: [PATCH] Add support for ppc64
        # Don't waste time on non-existent configs, if no config.h then skip.
        [ ! -e "build.$arch.$os/$target/config.h" ] && continue
        for f in config.h config_components.h config.asm libavutil/avconfig.h libavutil/ffversion.h libavcodec/bsf_list.c libavcodec/codec_list.c libavcodec/parser_list.c libavformat/demuxer_list.c libavformat/muxer_list.c libavformat/protocol_list.c; do
---- a/third_party/ffmpeg/chromium/scripts/generate_gn.py
-+++ b/third_party/ffmpeg/chromium/scripts/generate_gn.py
+--- a/src/third_party/ffmpeg/chromium/scripts/generate_gn.py
++++ b/src/third_party/ffmpeg/chromium/scripts/generate_gn.py
 @@ -78,7 +78,7 @@ _Attrs = ('ARCHITECTURE', 'TARGET', 'PLA
  Attr = collections.namedtuple('Attr', _Attrs)(*_Attrs)
  SUPPORT_MATRIX = {
@@ -64,8 +64,8 @@ Subject: [PATCH] Add support for ppc64
      Attr.TARGET:
          set(['Chromium', 'Chrome', 'ChromeOS']),
      Attr.PLATFORM:
---- a/third_party/ffmpeg/chromium/scripts/generate_gn_unittest.py
-+++ b/third_party/ffmpeg/chromium/scripts/generate_gn_unittest.py
+--- a/src/third_party/ffmpeg/chromium/scripts/generate_gn_unittest.py
++++ b/src/third_party/ffmpeg/chromium/scripts/generate_gn_unittest.py
 @@ -323,6 +323,10 @@ class SourceSetUnittest(unittest.TestCas
      f = SourceSet(
          set(['common', 'arm-neon', 'chrome', 'chromeos']),

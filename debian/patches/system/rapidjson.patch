@@ -7,7 +7,7 @@ portion of it falls under that license. The library is tiny and doesn't change
 much, so this lets chromium build against the system's rapidjson-dev header files.
 
 --- /dev/null
-+++ b/third_party/angle/third_party/rapidjson/BUILD.gn
++++ b/src/third_party/angle/third_party/rapidjson/BUILD.gn
 @@ -0,0 +1,11 @@
 +config("rapidjson_config") {
 +  include_dirs = [ "/usr/include/rapidjson" ]

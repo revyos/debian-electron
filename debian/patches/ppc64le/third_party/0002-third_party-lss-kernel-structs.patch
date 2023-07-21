@@ -1,5 +1,5 @@
---- a/third_party/lss/linux_syscall_support.h
-+++ b/third_party/lss/linux_syscall_support.h
+--- a/src/third_party/lss/linux_syscall_support.h
++++ b/src/third_party/lss/linux_syscall_support.h
 @@ -87,7 +87,7 @@
   * Porting to other related platforms should not be difficult.
   */

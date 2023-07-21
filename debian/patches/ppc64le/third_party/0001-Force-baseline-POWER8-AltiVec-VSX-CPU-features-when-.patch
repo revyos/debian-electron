@@ -8,8 +8,8 @@ Subject: [PATCH] Force baseline POWER8 / AltiVec / VSX CPU features when on a
  BUILD.gn | 6 ++++++
  1 file changed, 6 insertions(+)
 
---- a/v8/BUILD.gn
-+++ b/v8/BUILD.gn
+--- a/src/v8/BUILD.gn
++++ b/src/v8/BUILD.gn
 @@ -1251,6 +1251,12 @@ config("toolchain") {
      }
      if (host_byteorder == "little") {

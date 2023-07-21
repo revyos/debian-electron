@@ -1,5 +1,5 @@
---- a/third_party/crashpad/crashpad/util/net/http_transport_libcurl.cc
-+++ b/third_party/crashpad/crashpad/util/net/http_transport_libcurl.cc
+--- a/src/third_party/crashpad/crashpad/util/net/http_transport_libcurl.cc
++++ b/src/third_party/crashpad/crashpad/util/net/http_transport_libcurl.cc
 @@ -237,6 +237,12 @@ std::string UserAgent() {
  #elif defined(ARCH_CPU_BIG_ENDIAN)
      static constexpr char arch[] = "aarch64_be";

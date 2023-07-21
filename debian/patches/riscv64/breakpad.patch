@@ -8,8 +8,8 @@ Reviewed-on: https://chromium-review.googlesource.com/c/breakpad/breakpad/+/3873
 Reviewed-by: Mike Frysinger <vapier@chromium.org>
 ---
 
---- a/third_party/breakpad/breakpad/Makefile.am
-+++ b/third_party/breakpad/breakpad/Makefile.am
+--- a/src/third_party/breakpad/breakpad/Makefile.am
++++ b/src/third_party/breakpad/breakpad/Makefile.am
 @@ -297,6 +297,10 @@
  	src/processor/stackwalker_ppc.h \
  	src/processor/stackwalker_ppc64.cc \
@@ -111,8 +111,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  	src/processor/stackwalker_sparc.o \
  	src/processor/stackwalker_x86.o \
  	src/processor/symbolic_constants_win.o \
---- a/third_party/breakpad/breakpad/Makefile.in
-+++ b/third_party/breakpad/breakpad/Makefile.in
+--- a/src/third_party/breakpad/breakpad/Makefile.in
++++ b/src/third_party/breakpad/breakpad/Makefile.in
 @@ -200,6 +200,8 @@
  @DISABLE_PROCESSOR_FALSE@	src/processor/stackwalker_address_list_unittest \
  @DISABLE_PROCESSOR_FALSE@	src/processor/stackwalker_mips_unittest \
@@ -554,8 +554,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  	-rm -f src/processor/$(DEPDIR)/stackwalker_selftest.Po
  	-rm -f src/processor/$(DEPDIR)/stackwalker_sparc.Po
  	-rm -f src/processor/$(DEPDIR)/stackwalker_x86.Po
---- a/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/raw_context_cpu.h
-+++ b/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/raw_context_cpu.h
+--- a/src/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/raw_context_cpu.h
++++ b/src/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/raw_context_cpu.h
 @@ -44,6 +44,14 @@
  typedef MDRawContextARM64_Old RawContextCPU;
  #elif defined(__mips__)
@@ -571,8 +571,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #else
  #error "This code has not been ported to your platform yet."
  #endif
---- a/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/thread_info.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/thread_info.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/thread_info.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/thread_info.cc
 @@ -270,7 +270,74 @@
    out->float_save.fir = mcontext.fpc_eir;
  #endif
@@ -687,8 +687,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #else
    if (fp_regs)
      *fp_regs = &fpregs;
---- a/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/thread_info.h
-+++ b/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/thread_info.h
+--- a/src/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/thread_info.h
++++ b/src/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/thread_info.h
 @@ -68,7 +68,7 @@
    // Use the structures defined in <sys/user.h>
    struct user_regs_struct regs;
@@ -698,8 +698,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
    // Use the structure defined in <sys/ucontext.h>.
    mcontext_t mcontext;
  #endif
---- a/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/ucontext_reader.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/ucontext_reader.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/ucontext_reader.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/dump_writer_common/ucontext_reader.cc
 @@ -254,6 +254,75 @@
    out->float_save.fir = uc->uc_mcontext.fpc_eir;  // Unused.
  #endif
@@ -776,8 +776,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #endif
  
  }  // namespace google_breakpad
---- a/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.cc
 @@ -726,8 +726,11 @@
  #elif defined(__mips__)
    context.siginfo.si_addr =
@@ -791,8 +791,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #endif
  
    return GenerateDump(&context);
---- a/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.h
-+++ b/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.h
+--- a/src/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.h
++++ b/src/third_party/breakpad/breakpad/src/client/linux/handler/exception_handler.h
 @@ -192,7 +192,7 @@
      siginfo_t siginfo;
      pid_t tid;  // the crashing thread.
@@ -802,8 +802,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
      // #ifdef this out because FP state is not part of user ABI for Linux ARM.
      // In case of MIPS Linux FP state is already part of ucontext_t so
      // 'float_state' is not required.
---- a/third_party/breakpad/breakpad/src/client/linux/microdump_writer/microdump_writer.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/microdump_writer/microdump_writer.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/microdump_writer/microdump_writer.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/microdump_writer/microdump_writer.cc
 @@ -336,9 +336,17 @@
      const char kArch[] = "mips64";
  # else
@@ -824,8 +824,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #endif
  
      LogAppend("O ");
---- a/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_core_dumper.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_core_dumper.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_core_dumper.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_core_dumper.cc
 @@ -112,8 +112,11 @@
  #elif defined(__mips__)
    stack_pointer =
@@ -867,8 +867,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
          if (first_thread) {
            crash_thread_ = pid;
            crash_signal_ = status->pr_info.si_signo;
---- a/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_dumper.h
-+++ b/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_dumper.h
+--- a/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_dumper.h
++++ b/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_dumper.h
 @@ -60,10 +60,12 @@
  
  // Typedef for our parsing of the auxv variables in /proc/pid/auxv.
@@ -884,8 +884,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  typedef Elf64_auxv_t elf_aux_entry;
  #endif
  
---- a/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_dumper_unittest_helper.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_dumper_unittest_helper.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_dumper_unittest_helper.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_dumper_unittest_helper.cc
 @@ -51,6 +51,8 @@
  #define TID_PTR_REGISTER "rcx"
  #elif defined(__mips__)
@@ -895,8 +895,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #else
  #error This test has not been ported to this platform.
  #endif
---- a/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_ptrace_dumper.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_ptrace_dumper.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_ptrace_dumper.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_ptrace_dumper.cc
 @@ -298,8 +298,11 @@
  #elif defined(__mips__)
    stack_pointer =
@@ -910,8 +910,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #endif
    info->stack_pointer = reinterpret_cast<uintptr_t>(stack_pointer);
  
---- a/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_ptrace_dumper_unittest.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_ptrace_dumper_unittest.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_ptrace_dumper_unittest.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/linux_ptrace_dumper_unittest.cc
 @@ -464,6 +464,9 @@
  #elif defined(__mips__)
      pid_t* process_tid_location =
@@ -931,8 +931,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #else
  #error This test has not been ported to this platform.
  #endif
---- a/third_party/breakpad/breakpad/src/client/linux/minidump_writer/minidump_writer.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/minidump_writer/minidump_writer.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/minidump_writer.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/minidump_writer.cc
 @@ -1138,9 +1138,7 @@
            sys_close(fd);
  
@@ -1004,8 +1004,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
    }
  #else
  #  error "Unsupported CPU"
---- a/third_party/breakpad/breakpad/src/client/linux/minidump_writer/minidump_writer_unittest.cc
-+++ b/third_party/breakpad/breakpad/src/client/linux/minidump_writer/minidump_writer_unittest.cc
+--- a/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/minidump_writer_unittest.cc
++++ b/src/third_party/breakpad/breakpad/src/client/linux/minidump_writer/minidump_writer_unittest.cc
 @@ -717,6 +717,9 @@
  #elif defined(__mips__)
    context.context.uc_mcontext.gregs[MD_CONTEXT_MIPS_REG_SP] =
@@ -1016,8 +1016,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #else
  # error "This code has not been ported to your platform yet."
  #endif
---- a/third_party/breakpad/breakpad/src/common/linux/breakpad_getcontext.S
-+++ b/third_party/breakpad/breakpad/src/common/linux/breakpad_getcontext.S
+--- a/src/third_party/breakpad/breakpad/src/common/linux/breakpad_getcontext.S
++++ b/src/third_party/breakpad/breakpad/src/common/linux/breakpad_getcontext.S
 @@ -527,8 +527,102 @@
    .cfi_endproc
    .size breakpad_getcontext, . - breakpad_getcontext
@@ -1122,8 +1122,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #endif
  
  #if defined(__aarch64__)
---- a/third_party/breakpad/breakpad/src/common/linux/breakpad_getcontext_unittest.cc
-+++ b/third_party/breakpad/breakpad/src/common/linux/breakpad_getcontext_unittest.cc
+--- a/src/third_party/breakpad/breakpad/src/common/linux/breakpad_getcontext_unittest.cc
++++ b/src/third_party/breakpad/breakpad/src/common/linux/breakpad_getcontext_unittest.cc
 @@ -114,6 +114,25 @@
  
    ASSERT_EQ(static_cast<size_t>(MCONTEXT_FPC_CSR),
@@ -1150,8 +1150,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #elif defined(__x86_64__)
  
    COMPILE_ASSERT_EQ(static_cast<size_t>(MCONTEXT_GREGS_OFFSET),
---- a/third_party/breakpad/breakpad/src/common/linux/memory_mapped_file.cc
-+++ b/third_party/breakpad/breakpad/src/common/linux/memory_mapped_file.cc
+--- a/src/third_party/breakpad/breakpad/src/common/linux/memory_mapped_file.cc
++++ b/src/third_party/breakpad/breakpad/src/common/linux/memory_mapped_file.cc
 @@ -65,7 +65,8 @@
    }
  
@@ -1162,8 +1162,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  
    struct kernel_stat st;
    if (sys_fstat(fd, &st) == -1 || st.st_size < 0) {
---- a/third_party/breakpad/breakpad/src/common/linux/ucontext_constants.h
-+++ b/third_party/breakpad/breakpad/src/common/linux/ucontext_constants.h
+--- a/src/third_party/breakpad/breakpad/src/common/linux/ucontext_constants.h
++++ b/src/third_party/breakpad/breakpad/src/common/linux/ucontext_constants.h
 @@ -146,8 +146,107 @@
  #endif
  #define FPREGS_OFFSET_MXCSR  24
@@ -1274,7 +1274,7 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  
  #endif  // GOOGLEBREAKPAD_COMMON_ANDROID_UCONTEXT_CONSTANTS_H
 --- /dev/null
-+++ b/third_party/breakpad/breakpad/src/google_breakpad/common/minidump_cpu_riscv.h
++++ b/src/third_party/breakpad/breakpad/src/google_breakpad/common/minidump_cpu_riscv.h
 @@ -0,0 +1,168 @@
 +/* minidump_format.h: A cross-platform reimplementation of minidump-related
 + * portions of DbgHelp.h from the Windows Platform SDK.
@@ -1444,8 +1444,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
 +
 +
 +#endif  /* GOOGLE_BREAKPAD_COMMON_MINIDUMP_CPU_RISCV_H__ */
---- a/third_party/breakpad/breakpad/src/google_breakpad/common/minidump_format.h
-+++ b/third_party/breakpad/breakpad/src/google_breakpad/common/minidump_format.h
+--- a/src/third_party/breakpad/breakpad/src/google_breakpad/common/minidump_format.h
++++ b/src/third_party/breakpad/breakpad/src/google_breakpad/common/minidump_format.h
 @@ -118,6 +118,7 @@
  #include "minidump_cpu_mips.h"
  #include "minidump_cpu_ppc.h"
@@ -1463,8 +1463,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
    MD_CPU_ARCHITECTURE_UNKNOWN   = 0xffff  /* PROCESSOR_ARCHITECTURE_UNKNOWN */
  } MDCPUArchitecture;
  
---- a/third_party/breakpad/breakpad/src/google_breakpad/processor/dump_context.h
-+++ b/third_party/breakpad/breakpad/src/google_breakpad/processor/dump_context.h
+--- a/src/third_party/breakpad/breakpad/src/google_breakpad/processor/dump_context.h
++++ b/src/third_party/breakpad/breakpad/src/google_breakpad/processor/dump_context.h
 @@ -54,14 +54,16 @@
  
    // Returns raw CPU-specific context data for the named CPU type.  If the
@@ -1528,8 +1528,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
    } context_;
  
    // Store this separately because of the weirdo AMD64 context
---- a/third_party/breakpad/breakpad/src/google_breakpad/processor/stack_frame_cpu.h
-+++ b/third_party/breakpad/breakpad/src/google_breakpad/processor/stack_frame_cpu.h
+--- a/src/third_party/breakpad/breakpad/src/google_breakpad/processor/stack_frame_cpu.h
++++ b/src/third_party/breakpad/breakpad/src/google_breakpad/processor/stack_frame_cpu.h
 @@ -403,6 +403,118 @@
    int context_validity;
  };
@@ -1649,8 +1649,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  }  // namespace google_breakpad
  
  #endif  // GOOGLE_BREAKPAD_PROCESSOR_STACK_FRAME_CPU_H__
---- a/third_party/breakpad/breakpad/src/processor/dump_context.cc
-+++ b/third_party/breakpad/breakpad/src/processor/dump_context.cc
+--- a/src/third_party/breakpad/breakpad/src/processor/dump_context.cc
++++ b/src/third_party/breakpad/breakpad/src/processor/dump_context.cc
 @@ -140,6 +140,24 @@
    return context_.ctx_mips;
  }
@@ -1928,8 +1928,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
      default: {
        break;
      }
---- a/third_party/breakpad/breakpad/src/processor/minidump.cc
-+++ b/third_party/breakpad/breakpad/src/processor/minidump.cc
+--- a/src/third_party/breakpad/breakpad/src/processor/minidump.cc
++++ b/src/third_party/breakpad/breakpad/src/processor/minidump.cc
 @@ -96,6 +96,10 @@
      num_matching_contexts++;
    if (context_size == sizeof(MDRawContextMIPS))
@@ -2150,8 +2150,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
        case MD_CPU_ARCHITECTURE_UNKNOWN:
          *context_cpu_flags = 0;
          break;
---- a/third_party/breakpad/breakpad/src/processor/processor.gyp
-+++ b/third_party/breakpad/breakpad/src/processor/processor.gyp
+--- a/src/third_party/breakpad/breakpad/src/processor/processor.gyp
++++ b/src/third_party/breakpad/breakpad/src/processor/processor.gyp
 @@ -165,6 +165,8 @@
          'stackwalker_arm_unittest.cc',
          'stackwalker_mips_unittest.cc',
@@ -2161,8 +2161,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
          'stackwalker_unittest_utils.h',
          'stackwalker_x86_unittest.cc',
          'static_address_map_unittest.cc',
---- a/third_party/breakpad/breakpad/src/processor/stackwalk_common.cc
-+++ b/third_party/breakpad/breakpad/src/processor/stackwalk_common.cc
+--- a/src/third_party/breakpad/breakpad/src/processor/stackwalk_common.cc
++++ b/src/third_party/breakpad/breakpad/src/processor/stackwalk_common.cc
 @@ -150,7 +150,8 @@
      const StackFrameARM* frame_arm = static_cast<const StackFrameARM*>(frame);
      const StackFrameARM* prev_frame_arm =
@@ -2485,8 +2485,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
        }
      }
      printf("\n    Found by: %s\n", frame->trust_description().c_str());
---- a/third_party/breakpad/breakpad/src/processor/stackwalker.cc
-+++ b/third_party/breakpad/breakpad/src/processor/stackwalker.cc
+--- a/src/third_party/breakpad/breakpad/src/processor/stackwalker.cc
++++ b/src/third_party/breakpad/breakpad/src/processor/stackwalker.cc
 @@ -55,6 +55,8 @@
  #include "processor/stackwalker_arm.h"
  #include "processor/stackwalker_arm64.h"
@@ -2518,7 +2518,7 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  
    BPLOG_IF(ERROR, !cpu_stackwalker) << "Unknown CPU type " << HexString(cpu) <<
 --- /dev/null
-+++ b/third_party/breakpad/breakpad/src/processor/stackwalker_riscv.cc
++++ b/src/third_party/breakpad/breakpad/src/processor/stackwalker_riscv.cc
 @@ -0,0 +1,535 @@
 +// Copyright 2013 Google LLC
 +//
@@ -3056,7 +3056,7 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
 +
 +}  // namespace google_breakpad
 --- /dev/null
-+++ b/third_party/breakpad/breakpad/src/processor/stackwalker_riscv.h
++++ b/src/third_party/breakpad/breakpad/src/processor/stackwalker_riscv.h
 @@ -0,0 +1,100 @@
 +// Copyright 2013 Google LLC
 +//
@@ -3159,7 +3159,7 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
 +
 +#endif // PROCESSOR_STACKWALKER_RISCV_H__
 --- /dev/null
-+++ b/third_party/breakpad/breakpad/src/processor/stackwalker_riscv64.cc
++++ b/src/third_party/breakpad/breakpad/src/processor/stackwalker_riscv64.cc
 @@ -0,0 +1,535 @@
 +// Copyright 2013 Google LLC
 +//
@@ -3697,7 +3697,7 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
 +
 +}  // namespace google_breakpad
 --- /dev/null
-+++ b/third_party/breakpad/breakpad/src/processor/stackwalker_riscv64.h
++++ b/src/third_party/breakpad/breakpad/src/processor/stackwalker_riscv64.h
 @@ -0,0 +1,100 @@
 +// Copyright 2013 Google LLC
 +//
@@ -3800,7 +3800,7 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
 +
 +#endif // PROCESSOR_STACKWALKER_RISCV64_H__
 --- /dev/null
-+++ b/third_party/breakpad/breakpad/src/processor/stackwalker_riscv64_unittest.cc
++++ b/src/third_party/breakpad/breakpad/src/processor/stackwalker_riscv64_unittest.cc
 @@ -0,0 +1,883 @@
 +// Copyright 2013 Google LLC
 +//
@@ -4686,7 +4686,7 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
 +  ASSERT_EQ(1U, frames->size());
 +}
 --- /dev/null
-+++ b/third_party/breakpad/breakpad/src/processor/stackwalker_riscv_unittest.cc
++++ b/src/third_party/breakpad/breakpad/src/processor/stackwalker_riscv_unittest.cc
 @@ -0,0 +1,883 @@
 +// Copyright 2013 Google LLC
 +//
@@ -5571,8 +5571,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
 +            frames = call_stack.frames();
 +  ASSERT_EQ(1U, frames->size());
 +}
---- a/third_party/breakpad/breakpad/src/third_party/curl/curlbuild.h
-+++ b/third_party/breakpad/breakpad/src/third_party/curl/curlbuild.h
+--- a/src/third_party/breakpad/breakpad/src/third_party/curl/curlbuild.h
++++ b/src/third_party/breakpad/breakpad/src/third_party/curl/curlbuild.h
 @@ -156,7 +156,8 @@
  /* The size of `long', as computed by sizeof. */
  #if defined(_M_X64) || (defined(__x86_64__) && !defined(__ILP32__)) ||      \
@@ -5583,8 +5583,8 @@ Reviewed-by: Mike Frysinger <vapier@chromium.org>
  #define CURL_SIZEOF_LONG 8
  #else
  #define CURL_SIZEOF_LONG 4
---- a/third_party/breakpad/breakpad/src/tools/linux/md2core/minidump-2-core.cc
-+++ b/third_party/breakpad/breakpad/src/tools/linux/md2core/minidump-2-core.cc
+--- a/src/third_party/breakpad/breakpad/src/tools/linux/md2core/minidump-2-core.cc
++++ b/src/third_party/breakpad/breakpad/src/tools/linux/md2core/minidump-2-core.cc
 @@ -77,6 +77,8 @@
    #define ELF_ARCH  EM_MIPS
  #elif defined(__aarch64__)

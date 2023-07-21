@@ -1,5 +1,5 @@
---- a/extensions/common/api/runtime.json
-+++ b/extensions/common/api/runtime.json
+--- a/src/extensions/common/api/runtime.json
++++ b/src/extensions/common/api/runtime.json
 @@ -92,14 +92,14 @@
        {
          "id": "PlatformArch",

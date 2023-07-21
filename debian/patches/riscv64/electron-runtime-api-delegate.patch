@@ -1,5 +1,5 @@
---- a/electron/shell/browser/extensions/api/runtime/electron_runtime_api_delegate.cc
-+++ b/electron/shell/browser/extensions/api/runtime/electron_runtime_api_delegate.cc
+--- a/src/electron/shell/browser/extensions/api/runtime/electron_runtime_api_delegate.cc
++++ b/src/electron/shell/browser/extensions/api/runtime/electron_runtime_api_delegate.cc
 @@ -66,6 +66,8 @@
      info->arch = extensions::api::runtime::PLATFORM_ARCH_X86_32;
    } else if (strcmp(arch, "x64") == 0) {

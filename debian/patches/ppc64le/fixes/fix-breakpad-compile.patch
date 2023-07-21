@@ -1,5 +1,5 @@
---- a/third_party/breakpad/BUILD.gn
-+++ b/third_party/breakpad/BUILD.gn
+--- a/src/third_party/breakpad/BUILD.gn
++++ b/src/third_party/breakpad/BUILD.gn
 @@ -615,7 +615,6 @@ if (is_linux || is_chromeos || is_androi
        "breakpad/src/client/minidump_file_writer-inl.h",
        "breakpad/src/client/minidump_file_writer.cc",

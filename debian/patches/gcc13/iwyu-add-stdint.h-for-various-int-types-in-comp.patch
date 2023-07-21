@@ -19,8 +19,8 @@ Cr-Commit-Position: refs/heads/main@{#1128605}
  components/viz/common/view_transition_element_resource_id.h     | 2 ++
  8 files changed, 15 insertions(+)
 
---- a/components/autofill/core/browser/autofill_ablation_study.h
-+++ b/components/autofill/core/browser/autofill_ablation_study.h
+--- a/src/components/autofill/core/browser/autofill_ablation_study.h
++++ b/src/components/autofill/core/browser/autofill_ablation_study.h
 @@ -5,6 +5,8 @@
  #ifndef COMPONENTS_AUTOFILL_CORE_BROWSER_AUTOFILL_ABLATION_STUDY_H_
  #define COMPONENTS_AUTOFILL_CORE_BROWSER_AUTOFILL_ABLATION_STUDY_H_
@@ -30,8 +30,8 @@ Cr-Commit-Position: refs/heads/main@{#1128605}
  #include <string>
  
  class GURL;
---- a/components/crash/core/app/crash_reporter_client.h
-+++ b/components/crash/core/app/crash_reporter_client.h
+--- a/src/components/crash/core/app/crash_reporter_client.h
++++ b/src/components/crash/core/app/crash_reporter_client.h
 @@ -5,6 +5,7 @@
  #ifndef COMPONENTS_CRASH_CORE_APP_CRASH_REPORTER_CLIENT_H_
  #define COMPONENTS_CRASH_CORE_APP_CRASH_REPORTER_CLIENT_H_
@@ -40,8 +40,8 @@ Cr-Commit-Position: refs/heads/main@{#1128605}
  #include <map>
  #include <string>
  
---- a/components/feature_engagement/internal/event_storage_validator.h
-+++ b/components/feature_engagement/internal/event_storage_validator.h
+--- a/src/components/feature_engagement/internal/event_storage_validator.h
++++ b/src/components/feature_engagement/internal/event_storage_validator.h
 @@ -5,6 +5,8 @@
  #ifndef COMPONENTS_FEATURE_ENGAGEMENT_INTERNAL_EVENT_STORAGE_VALIDATOR_H_
  #define COMPONENTS_FEATURE_ENGAGEMENT_INTERNAL_EVENT_STORAGE_VALIDATOR_H_
@@ -51,8 +51,8 @@ Cr-Commit-Position: refs/heads/main@{#1128605}
  #include <string>
  
  namespace feature_engagement {
---- a/components/omnibox/browser/on_device_head_model.h
-+++ b/components/omnibox/browser/on_device_head_model.h
+--- a/src/components/omnibox/browser/on_device_head_model.h
++++ b/src/components/omnibox/browser/on_device_head_model.h
 @@ -5,6 +5,8 @@
  #ifndef COMPONENTS_OMNIBOX_BROWSER_ON_DEVICE_HEAD_MODEL_H_
  #define COMPONENTS_OMNIBOX_BROWSER_ON_DEVICE_HEAD_MODEL_H_
@@ -62,8 +62,8 @@ Cr-Commit-Position: refs/heads/main@{#1128605}
  #include <string>
  #include <utility>
  #include <vector>
---- a/components/password_manager/core/browser/generation/password_generator.h
-+++ b/components/password_manager/core/browser/generation/password_generator.h
+--- a/src/components/password_manager/core/browser/generation/password_generator.h
++++ b/src/components/password_manager/core/browser/generation/password_generator.h
 @@ -5,6 +5,8 @@
  #ifndef COMPONENTS_PASSWORD_MANAGER_CORE_BROWSER_GENERATION_PASSWORD_GENERATOR_H_
  #define COMPONENTS_PASSWORD_MANAGER_CORE_BROWSER_GENERATION_PASSWORD_GENERATOR_H_
@@ -73,8 +73,8 @@ Cr-Commit-Position: refs/heads/main@{#1128605}
  #include <string>
  
  
---- a/components/payments/content/utility/fingerprint_parser.h
-+++ b/components/payments/content/utility/fingerprint_parser.h
+--- a/src/components/payments/content/utility/fingerprint_parser.h
++++ b/src/components/payments/content/utility/fingerprint_parser.h
 @@ -6,6 +6,7 @@
  #define COMPONENTS_PAYMENTS_CONTENT_UTILITY_FINGERPRINT_PARSER_H_
  

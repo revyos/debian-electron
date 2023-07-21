@@ -15,8 +15,8 @@ Cr-Commit-Position: refs/heads/main@{#1128159}
 
 diff --git a/cc/trees/target_property.cc b/cc/trees/target_property.cc
 index f6e873a01a1..7d73467a92f 100644
---- a/cc/trees/target_property.cc
-+++ b/cc/trees/target_property.cc
+--- a/src/cc/trees/target_property.cc
++++ b/src/cc/trees/target_property.cc
 @@ -4,6 +4,8 @@
  
  #include "cc/trees/target_property.h"

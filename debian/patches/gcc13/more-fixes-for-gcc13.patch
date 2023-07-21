@@ -1,7 +1,7 @@
 diff --git a/third_party/perfetto/include/perfetto/ext/base/uuid.h b/third_party/perfetto/include/perfetto/ext/base/uuid.h
 index a23be40a..c62390cc 100644
---- a/third_party/perfetto/include/perfetto/ext/base/uuid.h
-+++ b/third_party/perfetto/include/perfetto/ext/base/uuid.h
+--- a/src/third_party/perfetto/include/perfetto/ext/base/uuid.h
++++ b/src/third_party/perfetto/include/perfetto/ext/base/uuid.h
 @@ -19,6 +19,7 @@
  
  #include <array>
@@ -12,8 +12,8 @@ index a23be40a..c62390cc 100644
  
 diff --git a/net/third_party/quiche/src/quiche/quic/core/crypto/quic_hkdf.h b/net/third_party/quiche/src/quiche/quic/core/crypto/quic_hkdf.h
 index 6a300ed0..af6c0120 100644
---- a/net/third_party/quiche/src/quiche/quic/core/crypto/quic_hkdf.h
-+++ b/net/third_party/quiche/src/quiche/quic/core/crypto/quic_hkdf.h
+--- a/src/net/third_party/quiche/src/quiche/quic/core/crypto/quic_hkdf.h
++++ b/src/net/third_party/quiche/src/quiche/quic/core/crypto/quic_hkdf.h
 @@ -6,6 +6,7 @@
  #define QUICHE_QUIC_CORE_CRYPTO_QUIC_HKDF_H_
  
@@ -24,8 +24,8 @@ index 6a300ed0..af6c0120 100644
  #include "quiche/quic/platform/api/quic_export.h"
 diff --git a/net/third_party/quiche/src/quiche/quic/core/quic_connection_id.h b/net/third_party/quiche/src/quiche/quic/core/quic_connection_id.h
 index 49943495..b4e25fec 100644
---- a/net/third_party/quiche/src/quiche/quic/core/quic_connection_id.h
-+++ b/net/third_party/quiche/src/quiche/quic/core/quic_connection_id.h
+--- a/src/net/third_party/quiche/src/quiche/quic/core/quic_connection_id.h
++++ b/src/net/third_party/quiche/src/quiche/quic/core/quic_connection_id.h
 @@ -5,6 +5,7 @@
  #ifndef QUICHE_QUIC_CORE_QUIC_CONNECTION_ID_H_
  #define QUICHE_QUIC_CORE_QUIC_CONNECTION_ID_H_
@@ -36,8 +36,8 @@ index 49943495..b4e25fec 100644
  
 diff --git a/third_party/webrtc/rtc_base/third_party/base64/base64.h b/third_party/webrtc/rtc_base/third_party/base64/base64.h
 index 4190a79d..e224ffd0 100644
---- a/third_party/webrtc/rtc_base/third_party/base64/base64.h
-+++ b/third_party/webrtc/rtc_base/third_party/base64/base64.h
+--- a/src/third_party/webrtc/rtc_base/third_party/base64/base64.h
++++ b/src/third_party/webrtc/rtc_base/third_party/base64/base64.h
 @@ -14,6 +14,7 @@
  
  #include <string>

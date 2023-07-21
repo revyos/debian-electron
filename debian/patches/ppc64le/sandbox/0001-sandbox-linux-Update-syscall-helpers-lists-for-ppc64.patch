@@ -12,8 +12,8 @@ Subject: [PATCH] sandbox/linux: Update syscall helpers/lists for ppc64
  sandbox/linux/services/syscall_wrappers.cc    |   2 +-
  6 files changed, 73 insertions(+), 55 deletions(-)
 
---- a/sandbox/linux/seccomp-bpf-helpers/baseline_policy.cc
-+++ b/sandbox/linux/seccomp-bpf-helpers/baseline_policy.cc
+--- a/src/sandbox/linux/seccomp-bpf-helpers/baseline_policy.cc
++++ b/src/sandbox/linux/seccomp-bpf-helpers/baseline_policy.cc
 @@ -91,7 +91,8 @@ bool IsBaselinePolicyWatched(int sysno)
           SyscallSets::IsPrctl(sysno) ||
           SyscallSets::IsProcessGroupOrSession(sysno) ||
@@ -52,8 +52,8 @@ Subject: [PATCH] sandbox/linux: Update syscall helpers/lists for ppc64
    if (SyscallSets::IsSocketCall(sysno))
      return RestrictSocketcallCommand();
  #endif
---- a/sandbox/linux/seccomp-bpf-helpers/syscall_parameters_restrictions.cc
-+++ b/sandbox/linux/seccomp-bpf-helpers/syscall_parameters_restrictions.cc
+--- a/src/sandbox/linux/seccomp-bpf-helpers/syscall_parameters_restrictions.cc
++++ b/src/sandbox/linux/seccomp-bpf-helpers/syscall_parameters_restrictions.cc
 @@ -36,7 +36,7 @@
  #include "sandbox/linux/system_headers/linux_time.h"
  
@@ -142,8 +142,8 @@ Subject: [PATCH] sandbox/linux: Update syscall helpers/lists for ppc64
                   PTRACE_GETREGS, PTRACE_GETFPREGS, PTRACE_GET_THREAD_AREA,
                   PTRACE_GETREGSET,
  #endif
---- a/sandbox/linux/seccomp-bpf-helpers/syscall_parameters_restrictions.h
-+++ b/sandbox/linux/seccomp-bpf-helpers/syscall_parameters_restrictions.h
+--- a/src/sandbox/linux/seccomp-bpf-helpers/syscall_parameters_restrictions.h
++++ b/src/sandbox/linux/seccomp-bpf-helpers/syscall_parameters_restrictions.h
 @@ -52,7 +52,7 @@ SANDBOX_EXPORT bpf_dsl::ResultExpr Restr
  // O_NONBLOCK | O_SYNC | O_LARGEFILE | O_CLOEXEC | O_NOATIME.
  SANDBOX_EXPORT bpf_dsl::ResultExpr RestrictFcntlCommands();
@@ -153,8 +153,8 @@ Subject: [PATCH] sandbox/linux: Update syscall helpers/lists for ppc64
  // Restrict socketcall(2) to only allow socketpair(2), send(2), recv(2),
  // sendto(2), recvfrom(2), shutdown(2), sendmsg(2) and recvmsg(2).
  SANDBOX_EXPORT bpf_dsl::ResultExpr RestrictSocketcallCommand();
---- a/sandbox/linux/seccomp-bpf-helpers/syscall_sets.cc
-+++ b/sandbox/linux/seccomp-bpf-helpers/syscall_sets.cc
+--- a/src/sandbox/linux/seccomp-bpf-helpers/syscall_sets.cc
++++ b/src/sandbox/linux/seccomp-bpf-helpers/syscall_sets.cc
 @@ -29,7 +29,8 @@ bool SyscallSets::IsAllowedGettime(int s
    switch (sysno) {
      case __NR_gettimeofday:
@@ -583,8 +583,8 @@ Subject: [PATCH] sandbox/linux: Update syscall helpers/lists for ppc64
      case __NR_vserver:
  #endif
        return true;
---- a/sandbox/linux/seccomp-bpf-helpers/syscall_sets.h
-+++ b/sandbox/linux/seccomp-bpf-helpers/syscall_sets.h
+--- a/src/sandbox/linux/seccomp-bpf-helpers/syscall_sets.h
++++ b/src/sandbox/linux/seccomp-bpf-helpers/syscall_sets.h
 @@ -46,13 +46,14 @@ class SANDBOX_EXPORT SyscallSets {
    static bool IsDeniedGetOrModifySocket(int sysno);
  
@@ -622,8 +622,8 @@ Subject: [PATCH] sandbox/linux: Update syscall helpers/lists for ppc64
    // Big system V multiplexing system call.
    static bool IsSystemVIpc(int sysno);
  #endif
---- a/sandbox/linux/services/syscall_wrappers.cc
-+++ b/sandbox/linux/services/syscall_wrappers.cc
+--- a/src/sandbox/linux/services/syscall_wrappers.cc
++++ b/src/sandbox/linux/services/syscall_wrappers.cc
 @@ -61,7 +61,7 @@ long sys_clone(unsigned long flags,
  #if defined(ARCH_CPU_X86_64)
    return syscall(__NR_clone, flags, child_stack, ptid, ctid, tls);
