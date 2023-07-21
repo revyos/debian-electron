@@ -49,3 +49,8 @@ libgbm-dev
 libpipewire-0.3.pc
 mesa-common-dev
 libnotify-dev
+libx11-xcb-dev
+libcurl4-openssl-dev
+libpci-dev
+libasound2-dev
+libkrb5-dev
