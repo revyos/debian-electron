@@ -15,8 +15,6 @@ Cr-Commit-Position: refs/heads/main@{#1129139}
  net/cookies/cookie_inclusion_status.h | 2 ++
  2 files changed, 4 insertions(+)
 
-diff --git a/net/cert/pki/string_util.h b/net/cert/pki/string_util.h
-index 1687b088606..b18f716f4b2 100644
 --- a/src/net/cert/pki/string_util.h
 +++ b/src/net/cert/pki/string_util.h
 @@ -7,6 +7,8 @@
@@ -26,10 +24,8 @@ index 1687b088606..b18f716f4b2 100644
 +#include <stdint.h>
 +
  #include <string_view>
- #include <vector>
  
-diff --git a/net/cookies/cookie_inclusion_status.h b/net/cookies/cookie_inclusion_status.h
-index e8dd6d8d9fa..129b13ab7ba 100644
+ namespace net::string_util {
 --- a/src/net/cookies/cookie_inclusion_status.h
 +++ b/src/net/cookies/cookie_inclusion_status.h
 @@ -5,6 +5,8 @@
