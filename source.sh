@@ -1,11 +1,10 @@
 set -e
-shopt -s dotglob extglob globstar
 source metadata.sh
 
 _root=$PWD
 _dirname=$_pkgname-$_electron_ver
 rm -rf $_dirname
-mkdir $_dirname{,/src}
+mkdir $_dirname
 _dirpath=$(realpath $_dirname)
 cd $_dirname
 
@@ -13,7 +12,7 @@ cd $_dirname
 
 ( cd ../repos/chromium && \
   git checkout $_chromium_ver && \
-  cp -r --reflink=auto * $_dirpath/src )
+  cp -r --reflink=auto . $_dirpath/src )
 
 cat > .gclient <<EOF
 solutions = [
@@ -55,12 +54,6 @@ download_from_google_storage --no_resume --extract --no_auth \
 export PATH=$_oldpath
 unset DEPOT_TOOLS_UPDATE
 
-# remove unused files (mainly to shrink size)
-readarray -t _files_excluded < ../../files-excluded.txt
-for _f in ${_files_excluded[@]}; do
-  rm -rfv $_f
-done
-
 # apply electron patches beforehand since they need git to apply
 ( cd .. && \
   src/electron/script/apply_all_patches.py \
@@ -69,5 +62,17 @@ done
 # same as yarn install
 ( cd electron && yarnpkg install --frozen-lockfile )
 
-rm -rfv **/.git **/__pycache__
-( cd .. && rm -rfv !(src) )
+# remove unused files (mainly to shrink size)
+readarray -t _files_excluded < ../../files-excluded.txt
+for _f in "${_files_excluded[@]}"; do
+  if [ -n "$_f" ] && [[ "$_f" != "#"* ]]; then
+    for _g in $(bash -O dotglob -O extglob -O globstar -c "echo $_f"); do
+      rm -rfv $_g
+    done
+  fi
+done
+
+find . -type d -empty -print -delete
+find . -type d -name .git -print0 | xargs -0 rm -rf
+find . -type d -name __pycache__ -print0 | xargs -0 rm -rf
+find .. -mindepth 1 -maxdepth 1 ! -name src -print0 | xargs -0 rm -rf
