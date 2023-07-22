@@ -63,6 +63,8 @@ Build-Depends:
  libpci-dev,
  libasound2-dev,
  libkrb5-dev,
+ libnghttp2-dev,
+ libc-ares-dev,
 
 Package: electron-22
 Architecture: any

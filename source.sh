@@ -80,7 +80,7 @@ for _i in brotli cares nghttp2 openssl v8 zlib; do
     -delete
 done
 
-find . -type d -empty -print -delete
+find . -type d -empty -delete
 find . -type d -name .git -print0 | xargs -0 rm -rf
 find . -type d -name __pycache__ -print0 | xargs -0 rm -rf
 find .. -mindepth 1 -maxdepth 1 ! -name src -print0 | xargs -0 rm -rf
