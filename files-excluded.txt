@@ -168,3 +168,5 @@ third_party/devtools-frontend/src/third_party/esbuild/esbuild
 third_party/nearby/src/third_party
 third_party/updater
 third_party/jdk
+third_party/blink/web_tests
+third_party/sqlite/src/test
