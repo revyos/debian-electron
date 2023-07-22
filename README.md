@@ -21,8 +21,8 @@ $ ./pack-source.sh
 Start building:
 
 ```
-$ ln -s ../debian electron-22-*/
 $ cd electron-22-*/
+$ cp -r ../debian .
 $ dpkg-buildpackage -us -uc
 ```
 
