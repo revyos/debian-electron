@@ -1,3 +1,4 @@
+**/*.bak
 **/*.dll
 **/*.exe
 **/*.jar
@@ -20,7 +21,7 @@ base/mac
 base/test/data
 base/third_party/double_conversion
 build/config/freetype/freetype.gni
-buildtools
+# buildtools
 chrome/android
 chrome/browser/resources/chromeos/{ac*,l*,n*,s*}
 chrome/browser/resources/default_apps
@@ -62,7 +63,7 @@ third_party/devtools-frontend/src/node_modules/.bin
 third_party/devtools-frontend/src/third_party/esbuild/esbuild
 third_party/devtools-frontend/src/third_party/image_diff
 third_party/dom_distiller_js/dist/js/domdistiller_wrapped.js
-third_party/electron_node/deps/{googletest/{include,src},icu-small}
+# third_party/electron_node/deps/{googletest/{include,src},icu-small}
 third_party/electron_node/{doc,test}
 third_party/expat/src
 third_party/ffmpeg/{doc,tests,tools,fftools,config*}
