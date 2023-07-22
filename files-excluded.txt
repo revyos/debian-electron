@@ -27,7 +27,6 @@ chrome/browser/resources/default_apps
 chrome/build
 chrome/chrome_cleaner/test/resources/signed_dll
 chrome/installer/{gcapi*,launcher_support,linux,mac,mini_installer,setup,test,tools}
-chrome/test/data/**/!(*.gn|*.gni})
 chrome/utility/safe_browsing/rar_analyzer.*
 components/drive/chromeos
 components/test/android
@@ -63,7 +62,6 @@ third_party/devtools-frontend/src/node_modules/.bin
 third_party/devtools-frontend/src/third_party/esbuild/esbuild
 third_party/devtools-frontend/src/third_party/image_diff
 third_party/dom_distiller_js/dist/js/domdistiller_wrapped.js
-third_party/electron_node/deps/{brotli,cares,nghttp2,openssl,v8,zlib}/**/!(*.gn|*.gni|*.gyp|*.gypi)
 third_party/electron_node/deps/{googletest/{include,src},icu-small}
 third_party/electron_node/{doc,test}
 third_party/expat/src
