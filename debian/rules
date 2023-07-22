@@ -1,18 +1,21 @@
 #!/usr/bin/make -f
 
+pkgname = electron-22
+chromium_ver = 108.0.5359.215
+deb_chromium_ver = 108.0.5359.124-1
+electron_ver = 22.3.16
+
 export DH_VERBOSE = 1
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
-export CFLAGS=$(shell dpkg-buildflags --get CFLAGS)
-export CXXFLAGS=$(shell dpkg-buildflags --get CXXFLAGS)
-export CPPFLAGS=$(shell dpkg-buildflags --get CPPFLAGS)
-
-pkgname = electron-22
-chromium_ver = 108.0.5359.215
-deb_chromium_ver = 108.0.5359.124-1
-electron_ver = 22.3.16
+# export CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
+# export CXXFLAGS = $(shell dpkg-buildflags --get CXXFLAGS)
+# export CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
+export CFLAGS =
+export CXXFLAGS =
+export CPPFLAGS =
 
 export CC = clang
 export CXX = clang++
@@ -82,6 +85,9 @@ gn_args += \
 	ffmpeg_branding=\"Chrome\" \
 	disable_fieldtrial_testing_config=true \
 
+profile = Release
+profile_lower := $(shell echo $(profile) | tr A-Z a-z)
+
 # handle parallel build options
 njobs=1
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
@@ -102,6 +108,11 @@ override_dh_auto_configure:
 	cd src && ../debian/scripts/unbundle.py
 
 override_dh_auto_build:
-	cd src && gn gen out/Release --args="import(\"//electron/build/args/release.gn\") $(gn_args)"
-	cd src && ninja -j$(njobs) -C out/Release electron
-	cd src && ninja -C out/$(njobs) electron_dist_zip
+	cd src && gn gen out/$(profile) --args="import(\"//electron/build/args/$(profile_lower).gn\") $(gn_args)"
+	cd src && ninja -j$(njobs) -C out/$(profile) electron
+	cd src && ninja -C out/$(profile) electron_dist_zip
+
+override_dh_auto_clean:
+	rm -rf src/out
+	rm -rf src/third_party/node/linux/node-linux-x64/bin
+	rm -rf src/third_party/jdk
