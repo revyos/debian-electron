@@ -1,21 +1,27 @@
 #!/usr/bin/make -f
 
+export DH_VERBOSE = 1
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic
+export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
 pkgname = electron-22
 chromium_ver = 108.0.5359.215
 deb_chromium_ver = 108.0.5359.124-1
 electron_ver = 22.3.16
 
-export DH_VERBOSE = 1
-export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+arch = $(shell dpkg-architecture -q DEB_HOST_ARCH)
 
-# export CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
-# export CXXFLAGS = $(shell dpkg-buildflags --get CXXFLAGS)
-# export CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
+export DEB_CXXFLAGS_MAINT_STRIP = -g
+ifeq ($(arch), riscv64)
 export CFLAGS =
 export CXXFLAGS =
 export CPPFLAGS =
+else
+export CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
+export CXXFLAGS = $(shell dpkg-buildflags --get CXXFLAGS)
+export CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
+endif
 
 export CC = clang
 export CXX = clang++
@@ -114,7 +120,16 @@ override_dh_auto_build:
 	cd src && ninja -j$(njobs) -C out/$(profile) electron
 	cd src && ninja -C out/$(profile) electron_dist_zip
 
+override_dh_auto_install:
+	mkdir dist
+	unzip src/out/Release/dist.zip -d dist
+	chmod u+s dist/chrome-sandbox
+	dh_auto_install
+
 override_dh_auto_clean:
 	rm -rf src/out
 	rm -rf src/third_party/node/linux/node-linux-x64/bin
 	rm -rf src/third_party/jdk
+
+# Unknown debugging section .debug_str_offsets
+override_dh_dwz:

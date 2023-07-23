@@ -22,6 +22,7 @@ Build-Depends:
  brotli,
  pkg-config,
  gperf,
+ unzip,
  libopus-dev,
  liblcms2-dev,
  libjsoncpp-dev,
@@ -65,6 +66,7 @@ Build-Depends:
  libkrb5-dev,
  libnghttp2-dev,
  libc-ares-dev,
+ libva-dev,
 
 Package: electron-22
 Architecture: any
