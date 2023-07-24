@@ -71,5 +71,9 @@ Build-Depends:
 Package: electron-22
 Architecture: any
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Build cross platform desktop apps with web technologies
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ x11-utils,
+ xdg-utils,
