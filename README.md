@@ -1,32 +1,54 @@
-# Electron 22, Debianized
+# Electron Debianized
 
-Fetch necessary repos (Chromium, Electron):
+Packaging Electron as .deb dependency for applications e.g. VS Code, just like what Arch Linux did. Currently version 22 is packaged.
+
+Since Electron (together with Chromium) is so huge, and I don't really want to bother using git-buildpackage or something on such package. Also, some preparation done by either Chromium or Electron *needs* to be in a Git repository. So I've settled on only uploading debian/ directory, and creating tarball using scripts from Git.
+
+Coincidentally, this is also how openSUSE packaged [their Electron](https://build.opensuse.org/package/view_file/openSUSE:Factory/nodejs-electron/create_tarball.sh).
+
+## Building
+
+1. Fetch necessary repos (Chromium, Electron):
 
 ```console
 $ ./fetch.sh
 ```
 
-Create source directory structure from repos, with pruning and cleaning:
+2. Create source directory structure from repos, with pruning and cleaning:
 
 ```
 $ ./source.sh
 ```
 
-(Optional) Pack source directory like Debian's .orig.tar.xz:
+3. (Optional) Pack source directory. The result should be a ~737M tarball:
 
 ```
 $ ./pack-source.sh
 ```
 
-Start building:
+4. Start building:
 
 ```
-$ cd electron-22-*/
+$ ln -s electron-22-<version>.tar.xz electron-22_<version>.orig.tar.xz
+$ cd electron-22-<version>/
 $ cp -r ../debian .
-$ dpkg-buildpackage -us -uc
+$ dpkg-buildpackage -us -uc  # or
+$ sbuild ...
 ```
 
-## Why put all the code in `src/` directory and not directly in the root?
+## Building on riscv64
+
+This package also includes unofficial support for riscv64, as first done in [Arch Linux RISC-V]().
+
+Note that since Google doesn't build depot_tools for riscv64 (and fortunately it is only used in preparation), you need to:
+
+  1. Follow the step 1-3 above
+  2. Move the tarball to the riscv64 machine and extract it
+  3. Finish step 4
+
+## Sidenote
+
+### Why put all the code in `src/` directory and not directly in the root?
 
 Some Electron scripts run before packing actually depend on this file structure, and I didn't bother move them into a different name. Also, this is what Arch Linux did in their build scripts (although they do not need something like .orig.tar)
 
