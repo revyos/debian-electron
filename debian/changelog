@@ -1,3 +1,10 @@
+electron-22 (22.3.18-1) unstable; urgency=medium
+
+  * New upstream release
+  * Build using Clang and LLD 15
+
+ -- Eric Long <i@hack3r.moe>  Wed, 02 Aug 2023 16:52:48 +0800
+
 electron-22 (22.3.16-1) unstable; urgency=low
 
   * Initial release.
