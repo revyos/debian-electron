@@ -1,6 +1,6 @@
 diff -ur a/third_party/skia/BUILD.gn b/third_party/skia/BUILD.gn
---- a/src/third_party/skia/BUILD.gn	2022-01-28 11:01:18.000000000 -0600
-+++ b/src/third_party/skia/BUILD.gn	2022-01-28 11:15:22.270835089 -0600
+--- a/third_party/skia/BUILD.gn	2022-01-28 11:01:18.000000000 -0600
++++ b/third_party/skia/BUILD.gn	2022-01-28 11:15:22.270835089 -0600
 @@ -151,7 +151,8 @@
  is_x86 = current_cpu == "x64" || current_cpu == "x86"
  
@@ -40,8 +40,8 @@ diff -ur a/third_party/skia/BUILD.gn b/third_party/skia/BUILD.gn
  
    sources = []
 diff -ur a/third_party/skia/gn/shared_sources.gni b/third_party/skia/gn/shared_sources.gni
---- a/src/third_party/skia/gn/shared_sources.gni	2022-01-20 04:37:51.000000000 -0600
-+++ b/src/third_party/skia/gn/shared_sources.gni	2022-01-28 11:16:01.506171346 -0600
+--- a/third_party/skia/gn/shared_sources.gni	2022-01-20 04:37:51.000000000 -0600
++++ b/third_party/skia/gn/shared_sources.gni	2022-01-28 11:16:01.506171346 -0600
 @@ -28,4 +28,5 @@
    avx_sources = avx
    hsw_sources = hsw
@@ -49,8 +49,8 @@ diff -ur a/third_party/skia/gn/shared_sources.gni b/third_party/skia/gn/shared_s
 +  vsx_sources = ssse3
  }
 diff -ur a/third_party/skia/gn/skia/BUILD.gn b/third_party/skia/gn/skia/BUILD.gn
---- a/src/third_party/skia/gn/skia/BUILD.gn	2022-01-20 04:37:51.000000000 -0600
-+++ b/src/third_party/skia/gn/skia/BUILD.gn	2022-01-28 11:15:22.274834613 -0600
+--- a/third_party/skia/gn/skia/BUILD.gn	2022-01-20 04:37:51.000000000 -0600
++++ b/third_party/skia/gn/skia/BUILD.gn	2022-01-28 11:15:22.274834613 -0600
 @@ -162,6 +162,8 @@
        "-mfpmath=sse",
      ]
@@ -61,8 +61,8 @@ diff -ur a/third_party/skia/gn/skia/BUILD.gn b/third_party/skia/gn/skia/BUILD.gn
  
    if (malloc != "" && !is_win) {
 diff -ur a/third_party/skia/include/core/SkTypes.h b/third_party/skia/include/core/SkTypes.h
---- a/src/third_party/skia/include/core/SkTypes.h	2022-01-20 04:37:51.000000000 -0600
-+++ b/src/third_party/skia/include/core/SkTypes.h	2022-01-28 11:15:22.282833662 -0600
+--- a/third_party/skia/include/core/SkTypes.h	2022-01-20 04:37:51.000000000 -0600
++++ b/third_party/skia/include/core/SkTypes.h	2022-01-28 11:15:22.282833662 -0600
 @@ -161,6 +161,42 @@
      #define SK_ARM_HAS_CRC32
  #endif
@@ -107,8 +107,8 @@ diff -ur a/third_party/skia/include/core/SkTypes.h b/third_party/skia/include/co
  // DLL/.so exports.
  #if !defined(SKIA_IMPLEMENTATION)
 diff -ur a/third_party/skia/include/private/SkVx.h b/third_party/skia/include/private/SkVx.h
---- a/src/third_party/skia/include/private/SkVx.h	2022-01-20 04:37:51.000000000 -0600
-+++ b/src/third_party/skia/include/private/SkVx.h	2022-01-28 11:18:08.031132989 -0600
+--- a/third_party/skia/include/private/SkVx.h	2022-01-20 04:37:51.000000000 -0600
++++ b/third_party/skia/include/private/SkVx.h	2022-01-28 11:18:08.031132989 -0600
 @@ -32,6 +32,15 @@
      #include <immintrin.h>
  #elif defined(__ARM_NEON)
@@ -151,8 +151,8 @@ diff -ur a/third_party/skia/include/private/SkVx.h b/third_party/skia/include/pr
  
  #endif//SKVX_DEFINED
 diff -ur a/third_party/skia/src/core/SkSpinlock.cpp b/third_party/skia/src/core/SkSpinlock.cpp
---- a/src/third_party/skia/src/core/SkSpinlock.cpp	2022-01-20 04:37:52.000000000 -0600
-+++ b/src/third_party/skia/src/core/SkSpinlock.cpp	2022-01-28 11:15:22.286833187 -0600
+--- a/third_party/skia/src/core/SkSpinlock.cpp	2022-01-20 04:37:52.000000000 -0600
++++ b/third_party/skia/src/core/SkSpinlock.cpp	2022-01-28 11:15:22.286833187 -0600
 @@ -31,7 +31,8 @@
  #endif
  
@@ -164,8 +164,8 @@ diff -ur a/third_party/skia/src/core/SkSpinlock.cpp b/third_party/skia/src/core/
      static void do_pause() { _mm_pause(); }
  #else
 diff -ur a/third_party/skia/src/opts/SkBitmapProcState_opts.h b/third_party/skia/src/opts/SkBitmapProcState_opts.h
---- a/src/third_party/skia/src/opts/SkBitmapProcState_opts.h	2022-01-20 04:37:52.000000000 -0600
-+++ b/src/third_party/skia/src/opts/SkBitmapProcState_opts.h	2022-01-28 11:15:22.286833187 -0600
+--- a/third_party/skia/src/opts/SkBitmapProcState_opts.h	2022-01-20 04:37:52.000000000 -0600
++++ b/third_party/skia/src/opts/SkBitmapProcState_opts.h	2022-01-28 11:15:22.286833187 -0600
 @@ -21,7 +21,9 @@
  // The rest are scattershot at the moment but I want to get them
  // all migrated to be normal code inside SkBitmapProcState.cpp.
@@ -178,8 +178,8 @@ diff -ur a/third_party/skia/src/opts/SkBitmapProcState_opts.h b/third_party/skia
  #elif defined(SK_ARM_HAS_NEON)
      #include <arm_neon.h>
 diff -ur a/third_party/skia/src/opts/SkBlitRow_opts.h b/third_party/skia/src/opts/SkBlitRow_opts.h
---- a/src/third_party/skia/src/opts/SkBlitRow_opts.h	2022-01-20 04:37:52.000000000 -0600
-+++ b/src/third_party/skia/src/opts/SkBlitRow_opts.h	2022-01-28 11:19:00.584887121 -0600
+--- a/third_party/skia/src/opts/SkBlitRow_opts.h	2022-01-20 04:37:52.000000000 -0600
++++ b/third_party/skia/src/opts/SkBlitRow_opts.h	2022-01-28 11:19:00.584887121 -0600
 @@ -100,7 +100,7 @@
  #endif
  
@@ -190,8 +190,8 @@ diff -ur a/third_party/skia/src/opts/SkBlitRow_opts.h b/third_party/skia/src/opt
      static inline __m128i SkPMSrcOver_SSE2(const __m128i& src, const __m128i& dst) {
          __m128i scale = _mm_sub_epi32(_mm_set1_epi32(256),
 diff -ur a/third_party/skia/src/opts/SkRasterPipeline_opts.h b/third_party/skia/src/opts/SkRasterPipeline_opts.h
---- a/src/third_party/skia/src/opts/SkRasterPipeline_opts.h	2022-01-20 04:37:52.000000000 -0600
-+++ b/src/third_party/skia/src/opts/SkRasterPipeline_opts.h	2022-01-28 11:21:09.609554124 -0600
+--- a/third_party/skia/src/opts/SkRasterPipeline_opts.h	2022-01-20 04:37:52.000000000 -0600
++++ b/third_party/skia/src/opts/SkRasterPipeline_opts.h	2022-01-28 11:21:09.609554124 -0600
 @@ -69,6 +69,8 @@
      #define JUMPER_IS_SCALAR
  #elif defined(SK_ARM_HAS_NEON)
@@ -287,8 +287,8 @@ diff -ur a/third_party/skia/src/opts/SkRasterPipeline_opts.h b/third_party/skia/
      F roundtrip = cast<F>(cast<I32>(x));
      return roundtrip - if_then_else(roundtrip > x, F(1), F(0));
 diff -ur a/third_party/skia/src/opts/SkSwizzler_opts.h b/third_party/skia/src/opts/SkSwizzler_opts.h
---- a/src/third_party/skia/src/opts/SkSwizzler_opts.h	2022-01-20 04:37:52.000000000 -0600
-+++ b/src/third_party/skia/src/opts/SkSwizzler_opts.h	2022-01-28 11:15:22.290832712 -0600
+--- a/third_party/skia/src/opts/SkSwizzler_opts.h	2022-01-20 04:37:52.000000000 -0600
++++ b/third_party/skia/src/opts/SkSwizzler_opts.h	2022-01-28 11:15:22.290832712 -0600
 @@ -12,7 +12,9 @@
  #include "include/private/SkVx.h"
  #include <utility>
@@ -301,8 +301,8 @@ diff -ur a/third_party/skia/src/opts/SkSwizzler_opts.h b/third_party/skia/src/op
  #elif defined(SK_ARM_HAS_NEON)
      #include <arm_neon.h>
 diff -ur a/third_party/skia/third_party/skcms/skcms.cc b/third_party/skia/third_party/skcms/skcms.cc
---- a/src/third_party/skia/third_party/skcms/skcms.cc	2022-01-20 04:37:53.000000000 -0600
-+++ b/src/third_party/skia/third_party/skcms/skcms.cc	2022-01-28 11:15:22.290832712 -0600
+--- a/third_party/skia/third_party/skcms/skcms.cc	2022-01-20 04:37:53.000000000 -0600
++++ b/third_party/skia/third_party/skcms/skcms.cc	2022-01-28 11:15:22.290832712 -0600
 @@ -30,6 +30,8 @@
          #include <avx512fintrin.h>
          #include <avx512dqintrin.h>
@@ -313,8 +313,8 @@ diff -ur a/third_party/skia/third_party/skcms/skcms.cc b/third_party/skia/third_
  
  static bool runtime_cpu_detection = true;
 diff -ur a/third_party/skia/third_party/skcms/src/Transform_inl.h b/third_party/skia/third_party/skcms/src/Transform_inl.h
---- a/src/third_party/skia/third_party/skcms/src/Transform_inl.h	2022-01-20 04:37:53.000000000 -0600
-+++ b/src/third_party/skia/third_party/skcms/src/Transform_inl.h	2022-01-28 11:15:22.294832236 -0600
+--- a/third_party/skia/third_party/skcms/src/Transform_inl.h	2022-01-20 04:37:53.000000000 -0600
++++ b/third_party/skia/third_party/skcms/src/Transform_inl.h	2022-01-28 11:15:22.294832236 -0600
 @@ -44,6 +44,9 @@
  #if !defined(USING_AVX512F)  && N == 16 && defined(__AVX512F__)
      #define  USING_AVX512F

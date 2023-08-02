@@ -10,8 +10,8 @@ still support i386] can patch the file."
 At this point, i386 on linux is completely unsupported upstream, so
 we're on our own with bugs.
 
---- a/src/BUILD.gn
-+++ b/src/BUILD.gn
+--- a/BUILD.gn
++++ b/BUILD.gn
 @@ -1626,9 +1626,7 @@ if (!is_ios) {
  }
  

@@ -62,25 +62,25 @@ unset DEPOT_TOOLS_UPDATE
 # same as yarn install
 ( cd electron && yarnpkg install --frozen-lockfile )
 
-# remove unused files (mainly to shrink size)
-readarray -t _files_excluded < ../../files-excluded.txt
-for _f in "${_files_excluded[@]}"; do
-  if [ -n "$_f" ] && [[ "$_f" != "#"* ]]; then
-    for _g in $(bash -O dotglob -O globstar -c "echo $_f"); do
-      rm -rf $_g
-    done
-  fi
-done
+# # remove unused files (mainly to shrink size)
+# readarray -t _files_excluded < ../../files-excluded.txt
+# for _f in "${_files_excluded[@]}"; do
+#   if [ -n "$_f" ] && [[ "$_f" != "#"* ]]; then
+#     for _g in $(bash -O dotglob -O globstar -c "echo $_f"); do
+#       rm -rf $_g
+#     done
+#   fi
+# done
 
-# some extra files
-find chrome/test/data -type f ! -name "*.gn" -a ! -name "*.gni" -delete
-for _i in brotli cares nghttp2 openssl v8 zlib; do
-  find third_party/electron_node/deps/$_i -type f \
-    ! -name "*.gn" -a ! -name "*.gni" -a ! -name "*.gyp" -a ! -name "*.gypi" \
-    -delete
-done
+# # some extra files
+# find chrome/test/data -type f ! -name "*.gn" -a ! -name "*.gni" -delete
+# for _i in brotli cares nghttp2 openssl v8 zlib; do
+#   find third_party/electron_node/deps/$_i -type f \
+#     ! -name "*.gn" -a ! -name "*.gni" -a ! -name "*.gyp" -a ! -name "*.gypi" \
+#     -delete
+# done
 
-find . -type d -empty -delete
-find . -type d -name .git -print0 | xargs -0 rm -rf
-find . -type d -name __pycache__ -print0 | xargs -0 rm -rf
-find .. -mindepth 1 -maxdepth 1 ! -name src -print0 | xargs -0 rm -rf
+# find . -type d -empty -delete
+# find . -type d -name .git -print0 | xargs -0 rm -rf
+# find . -type d -name __pycache__ -print0 | xargs -0 rm -rf
+# find .. -mindepth 1 -maxdepth 1 ! -name src -print0 | xargs -0 rm -rf

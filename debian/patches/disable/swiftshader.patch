@@ -1,8 +1,8 @@
 description: avoid building the swiftshader library
 author: Michael Gilbert <mgilbert@debian.org>
 
---- a/src/BUILD.gn
-+++ b/src/BUILD.gn
+--- a/BUILD.gn
++++ b/BUILD.gn
 @@ -521,7 +521,7 @@ group("gn_all") {
      ]
    }
@@ -12,8 +12,8 @@ author: Michael Gilbert <mgilbert@debian.org>
        (target_cpu == "x86" || target_cpu == "x64")) {
      deps += [
        "//third_party/swiftshader/src/Vulkan:icd_file",
---- a/src/third_party/angle/gni/angle.gni
-+++ b/src/third_party/angle/gni/angle.gni
+--- a/third_party/angle/gni/angle.gni
++++ b/third_party/angle/gni/angle.gni
 @@ -157,7 +157,7 @@ declare_args() {
         ((angle_use_x11 && !is_chromeos) || angle_use_wayland)) && !is_fuchsia &&
        !angle_is_winuwp && !is_ggp && !is_win_arm64
@@ -23,8 +23,8 @@ author: Michael Gilbert <mgilbert@debian.org>
        angle_has_build &&
        !(is_android && build_with_chromium && is_official_build) &&
        ((is_win && !angle_is_winuwp) ||
---- a/src/gpu/vulkan/features.gni
-+++ b/src/gpu/vulkan/features.gni
+--- a/gpu/vulkan/features.gni
++++ b/gpu/vulkan/features.gni
 @@ -14,5 +14,5 @@ declare_args() {
    # Enable swiftshader vulkan. Disabling it can save build time, however
    # --use-vulkan=swiftshader and some tests which use swiftshader vulkan will

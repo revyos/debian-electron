@@ -1,4 +1,4 @@
-Source: electron-22
+Source: electron-23
 Section: unknown
 Priority: optional
 Maintainer: Eric Long <i@hack3r.moe>
@@ -9,9 +9,9 @@ Vcs-Git: https://github.com/hack3ric/debian-electron.git
 Vcs-Browser: https://github.com/hack3ric/debian-electron
 Build-Depends:
  debhelper-compat (= 13),
- clang,
- clang-format,
- lld,
+ clang-15,
+ clang-format-15,
+ lld-15,
  generate-ninja,
  ninja-build,
  openjdk-11-jdk-headless,
@@ -68,7 +68,7 @@ Build-Depends:
  libc-ares-dev,
  libva-dev,
 
-Package: electron-22
+Package: electron-23
 Architecture: any
 Multi-Arch: foreign
 Description: Build cross platform desktop apps with web technologies

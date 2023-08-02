@@ -5,10 +5,10 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
-pkgname = electron-22
-chromium_ver = 108.0.5359.215
-deb_chromium_ver = 108.0.5359.124-1
-electron_ver = 22.3.16
+pkgname = electron-23
+chromium_ver = 110.0.5481.208
+deb_chromium_ver = 111.0.5563.110-1_deb11u1
+electron_ver = 23.3.11
 
 arch = $(shell dpkg-architecture -q DEB_HOST_ARCH)
 
@@ -23,8 +23,8 @@ export CXXFLAGS = $(shell dpkg-buildflags --get CXXFLAGS)
 export CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
 endif
 
-export CC = clang
-export CXX = clang++
+export CC = clang-15
+export CXX = clang++-15
 export AR = ar
 export NM = nm
 

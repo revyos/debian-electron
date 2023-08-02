@@ -1,17 +1,19 @@
 debianization/manpage.patch
 debianization/sandbox.patch
-debianization/optimization.patch
 debianization/master-preferences.patch
 debianization/support-i386.patch
 
 fixes/ps-print.patch
 fixes/clang-and-gcc11.patch
-fixes/gcc-13-with-clang14.patch
 fixes/widevine-revision.patch
 fixes/widevine-locations.patch
 
-# upstream/mojo.patch
-upstream/re-fix-tflite.patch
+upstream/mojo.patch
+upstream/clamp.patch
+upstream/pwman-const.patch
+upstream/move-stack-to-isolate.patch
+upstream/blink-dbl-float.patch
+upstream/v4l2-fix.patch
 
 disable/tests.patch
 disable/unrar.patch
@@ -41,6 +43,7 @@ system/eu-strip.patch
 system/rapidjson.patch
 
 bullseye/clang13.patch
+bullseye/mulodic.patch
 
 # # POWER support
 # ppc64le/sandbox/0001-linux-seccomp-bpf-ppc64-glibc-workaround-in-SIGSYS-h.patch
@@ -77,7 +80,10 @@ bullseye/clang13.patch
 # ppc64le/libaom/0001-Add-ppc64-target-to-libaom.patch
 # ppc64le/libaom/0001-Add-pregenerated-config-for-libaom-on-ppc64.patch
 
+# ppc64le/third_party/0002-third_party-libvpx-Remove-bad-ppc64-config.patch
 # ppc64le/third_party/0003-third_party-libvpx-Add-ppc64-generated-config.patch
+# # Enabling VSX causes artifacts to appear in VP9 videos
+# #ppc64le/third_party/0003-third_party-libvpx-Add-ppc64-vsx-files.patch
 # ppc64le/third_party/0003-third_party-ffmpeg-Add-ppc64-generated-config.patch
 # ppc64le/third_party/0004-third_party-libvpx-work-around-ambiguous-vsx.patch
 
@@ -91,6 +97,7 @@ bullseye/clang13.patch
 
 # ppc64le/third_party/0001-Add-PPC64-support-for-libdav1d.patch
 # ppc64le/third_party/0001-Fix-libdav1d-compilation-on-clang-ppc.patch
+# ppc64le/third_party/0005-third_party-dav1d-crash-fix.patch
 # # Multiple Clang 11 bugs hit with VSX enabled, including bug #50520 (D103386)
 # #ppc64le/third_party/skia-vsx-instructions.patch
 # ppc64le/sandbox/fix-ppc64-linux-syscalls-headers.patch
@@ -100,42 +107,4 @@ bullseye/clang13.patch
 # ppc64le/third_party/dawn-fix-typos.patch
 # ppc64le/third_party/dawn-fix-ppc64le-detection.patch
 
-electron/disable-catapult.patch
-electron/std-vector-non-const.patch
-electron/remove-mac-only-imports.patch
-electron/get-version-do-not-use-git.patch
-
-# gcc13/swiftshader-add-cstdint-for-uint64_t.patch
-gcc13/dawn-iwyu-add-cstdint-for-uint8_t.patch
-gcc13/iwyu-add-stdint.h-for-various-int-types-in-base.patch
-gcc13/iwyu-add-cstdint-for-uintptr_t-in-device.patch
-gcc13/iwyu-add-stdint.h-for-uint32_t-in-chrome_pdf.patch
-gcc13/iwyu-add-stdint.h-for-uint64_t-in-EncounteredSurface.patch
-gcc13/iwyu-add-stdint.h-for-integer-types-in-ui.patch
-gcc13/openscreen-iwyu-add-stdint.h.patch
-gcc13/pdfium-iwyu-add-stdint.h-for-uint32_t.patch
-gcc13/iwyu-add-stdint.h-for-uint32_t-in-cc.patch
-gcc13/add-missing-includes-causing-build-errors.patch
-gcc13/iwyu-add-stdint.h-for-int-types-in-gpu_feature_info.patch
-gcc13/iwyu-add-stdint.h-for-various-int-types-in-comp.patch
-gcc13/iwyu-add-stdint.h-for-various-integer-types-in-net.patch
-gcc13/iwyu-add-cstdint-for-int-types-in-s2cellid.patch
-gcc13/random-fixes-for-gcc13.patch
-gcc13/more-fixes-for-gcc13.patch
-gcc13/5d1ac2e0d5f61913aad62dadb65a7fea6f1b93ae.patch
-gcc13/dawn-tint-add-cstdint.patch
-gcc13/comp-viz-add-cstdint.patch
-gcc13/blink-auction_config-fix-uint-types.patch
-gcc13/partition-alloc-forward-add-cstdint.patch
-
-riscv64/angle.patch
-riscv64/breakpad.patch
-riscv64/crashpad.patch
-riscv64/dav1d.patch
-riscv64/extensions.patch
-riscv64/ffmpeg-upgrade.patch
-riscv64/ffmpeg-scripts.patch
-riscv64/ffmpeg-config.patch
-riscv64/ffmpeg-disable-rvb-rvv.patch
-riscv64/sandbox.patch
-riscv64/electron-runtime-api-delegate.patch
+lld-15.patch

@@ -1,8 +1,8 @@
 description: disable browser sign-in
 origin: https://raw.githubusercontent.com/Eloston/ungoogled-chromium/master/resources/patches/ungoogled-chromium/disable-signin.patch
 
---- a/src/chrome/browser/ui/webui/signin/inline_login_handler_impl.cc
-+++ b/src/chrome/browser/ui/webui/signin/inline_login_handler_impl.cc
+--- a/chrome/browser/ui/webui/signin/inline_login_handler_impl.cc
++++ b/chrome/browser/ui/webui/signin/inline_login_handler_impl.cc
 @@ -404,17 +404,6 @@ void InlineSigninHelper::OnClientOAuthSu
  
      signin_metrics::LogSigninReason(signin_metrics::Reason::kReauthentication);
@@ -21,8 +21,8 @@ origin: https://raw.githubusercontent.com/Eloston/ungoogled-chromium/master/reso
      CreateSyncStarter(result.refresh_token);
    }
  
---- a/src/components/signin/internal/identity_manager/primary_account_manager.cc
-+++ b/src/components/signin/internal/identity_manager/primary_account_manager.cc
+--- a/components/signin/internal/identity_manager/primary_account_manager.cc
++++ b/components/signin/internal/identity_manager/primary_account_manager.cc
 @@ -50,9 +50,9 @@ void PrimaryAccountManager::RegisterProf
                                 std::string());
    registry->RegisterStringPref(prefs::kGoogleServicesAccountId, std::string());

@@ -10,13 +10,12 @@ I'm not sure how much of them are actually needed, but it's easier to
 just copy all of them for now. Hopefully this will be fixed upstream
 shortly.
 
-It's not clear how much these files changes, but this copy is from
-chromium-98.0.4758.80.
+This copy is from chromium 110.0.5481.77.
 
 --- /dev/null
-+++ b/src/content/test/data/web_ui_test.test-mojom
++++ b/content/test/data/web_ui_test.test-mojom
 @@ -0,0 +1,13 @@
-+// Copyright 2020 The Chromium Authors. All rights reserved.
++// Copyright 2020 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -30,9 +29,9 @@ chromium-98.0.4758.80.
 +  GetAll() => (array<CacheItem> items);
 +};
 --- /dev/null
-+++ b/src/content/test/data/web_ui_test_types.test-mojom
++++ b/content/test/data/web_ui_test_types.test-mojom
 @@ -0,0 +1,16 @@
-+// Copyright 2020 The Chromium Authors. All rights reserved.
++// Copyright 2020 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -49,9 +48,9 @@ chromium-98.0.4758.80.
 +};
 +
 --- /dev/null
-+++ b/src/content/test/data/mojo_bindings_web_test.test-mojom
++++ b/content/test/data/mojo_bindings_web_test.test-mojom
 @@ -0,0 +1,86 @@
-+// Copyright 2018 The Chromium Authors. All rights reserved.
++// Copyright 2018 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -138,9 +137,9 @@ chromium-98.0.4758.80.
 +  OnCloneDisconnected();
 +};
 --- /dev/null
-+++ b/src/content/test/data/mojo_bindings_web_test_types.test-mojom
++++ b/content/test/data/mojo_bindings_web_test_types.test-mojom
 @@ -0,0 +1,25 @@
-+// Copyright 2020 The Chromium Authors. All rights reserved.
++// Copyright 2020 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -166,9 +165,9 @@ chromium-98.0.4758.80.
 +};
 +
 --- /dev/null
-+++ b/src/content/test/data/lite_js_test.mojom
++++ b/content/test/data/lite_js_test.mojom
 @@ -0,0 +1,67 @@
-+// Copyright 2018 The Chromium Authors. All rights reserved.
++// Copyright 2018 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -236,9 +235,9 @@ chromium-98.0.4758.80.
 +  DidFlush(array<int32> values);
 +};
 --- /dev/null
-+++ b/src/content/test/data/mojo_web_test_helper_test.mojom
++++ b/content/test/data/mojo_web_test_helper_test.mojom
 @@ -0,0 +1,10 @@
-+// Copyright 2014 The Chromium Authors. All rights reserved.
++// Copyright 2014 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -249,7 +248,7 @@ chromium-98.0.4758.80.
 +};
 +
 --- /dev/null
-+++ b/src/content/test/data/accept-header-iframe.html
++++ b/content/test/data/accept-header-iframe.html
 @@ -0,0 +1,7 @@
 +<html>
 +<body>
@@ -259,7 +258,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/accept-header.html
++++ b/content/test/data/accept-header.html
 @@ -0,0 +1,46 @@
 +<html>
 +<head>
@@ -308,7 +307,7 @@ chromium-98.0.4758.80.
 +</script>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/allowed_frames.html
++++ b/content/test/data/allowed_frames.html
 @@ -0,0 +1,14 @@
 +<!DOCTYPE html>
 +<head>
@@ -325,7 +324,7 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/body_overflow_hidden.html
++++ b/content/test/data/body_overflow_hidden.html
 @@ -0,0 +1,17 @@
 +<html>
 +<head>
@@ -345,7 +344,7 @@ chromium-98.0.4758.80.
 +</div>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/click-nocontent-link.html
++++ b/content/test/data/click-nocontent-link.html
 @@ -0,0 +1,73 @@
 +<html>
 +
@@ -421,7 +420,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/click-noreferrer-links.html
++++ b/content/test/data/click-noreferrer-links.html
 @@ -0,0 +1,163 @@
 +<html>
 +
@@ -587,7 +586,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/client_redirect.html
++++ b/content/test/data/client_redirect.html
 @@ -0,0 +1,7 @@
 +<html>
 +<head>
@@ -597,7 +596,7 @@ chromium-98.0.4758.80.
 +<body>Client redirect</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/color-scheme-2.html
++++ b/content/test/data/color-scheme-2.html
 @@ -0,0 +1,21 @@
 +<!DOCTYPE html>
 +<html>
@@ -621,13 +620,13 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/color-scheme-dark.html
++++ b/content/test/data/color-scheme-dark.html
 @@ -0,0 +1,3 @@
 +<head>
 +  <meta name="color-scheme" content="dark">
 +</head>
 --- /dev/null
-+++ b/src/content/test/data/color-scheme.html
++++ b/content/test/data/color-scheme.html
 @@ -0,0 +1,21 @@
 +<!DOCTYPE html>
 +<html>
@@ -651,42 +650,42 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/content-disposition-empty.html
++++ b/content/test/data/content-disposition-empty.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>success</title></head>
 +<body>this page should be displayed instead of downloaded</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/content-disposition-inline.html
++++ b/content/test/data/content-disposition-inline.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>success</title></head>
 +<body>this page should be displayed instead of downloaded</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/content-sniffer-test0.html
++++ b/content/test/data/content-sniffer-test0.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>Content Sniffer Test 0</title></head>
 +<body>We should sniff this content as HTML.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/content-sniffer-test1.html
++++ b/content/test/data/content-sniffer-test1.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>Content Sniffer Test 1</title></head>
 +<body>We should not sniff this content as HTML.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/content-sniffer-test2.html
++++ b/content/test/data/content-sniffer-test2.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>Content Sniffer Test 2</title></head>
 +<body>We should not sniff this as HTML as server says its a GIF.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/content-sniffer-test3.html
++++ b/content/test/data/content-sniffer-test3.html
 @@ -0,0 +1,16 @@
 +<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 +<html>
@@ -706,7 +705,7 @@ chromium-98.0.4758.80.
 +</html>
 \ No newline at end of file
 --- /dev/null
-+++ b/src/content/test/data/coreferencingframe_1.html
++++ b/content/test/data/coreferencingframe_1.html
 @@ -0,0 +1,7 @@
 +<!DOCTYPE html>
 +<html>
@@ -716,7 +715,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/coreferencingframe_2.html
++++ b/content/test/data/coreferencingframe_2.html
 @@ -0,0 +1,7 @@
 +<!DOCTYPE html>
 +<html>
@@ -726,11 +725,11 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/corp-cross-origin.html
++++ b/content/test/data/corp-cross-origin.html
 @@ -0,0 +1 @@
 +File with "Cross-Origin-Resource-Policy: cross-origin" header set.
 --- /dev/null
-+++ b/src/content/test/data/counter.html
++++ b/content/test/data/counter.html
 @@ -0,0 +1,14 @@
 +<html>
 +<body>
@@ -747,19 +746,19 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/cross-origin-opener-policy_redirect_final.html
++++ b/content/test/data/cross-origin-opener-policy_redirect_final.html
 @@ -0,0 +1 @@
 +Document with "Cross-Origin-Opener-Policy: same-origin"
 --- /dev/null
-+++ b/src/content/test/data/cross-origin-opener-policy_redirect_initial.html
++++ b/content/test/data/cross-origin-opener-policy_redirect_initial.html
 @@ -0,0 +1 @@
 +Document with "Cross-Origin-Opener-Policy: same-origin"
 --- /dev/null
-+++ b/src/content/test/data/cross-origin-opener-policy_sandbox_popup.html
++++ b/content/test/data/cross-origin-opener-policy_sandbox_popup.html
 @@ -0,0 +1 @@
 +<iframe id="frame" sandbox="allow-scripts allow-popups" src='empty.html'></iframe>
 --- /dev/null
-+++ b/src/content/test/data/cross-origin-redirect-blocked.html
++++ b/content/test/data/cross-origin-redirect-blocked.html
 @@ -0,0 +1,57 @@
 +<html>
 +<head>
@@ -819,8 +818,8 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/cross_site_iframe_factory.html
-@@ -0,0 +1,298 @@
++++ b/content/test/data/cross_site_iframe_factory.html
+@@ -0,0 +1,354 @@
 +<html>
 +<!-- This page can create whatever iframe structure you want, across whatever
 +sites you want. This is useful for testing site isolation.
@@ -862,6 +861,8 @@ chromium-98.0.4758.80.
 +  allowpaymentrequest
 +  allow-{featurename} - Adds {featurename} to the "allow" attribute
 +  sandbox-{flagname} - Adds {flagname} to the "sandbox" attribute
++  with-shared-worker - Creates a shared worker in each frame.
++  with-worker - Creates a dedicated worker in each frame.
 +
 +To make this page work, your browsertest needs a MockHostResolver, like:
 +
@@ -1021,6 +1022,32 @@ chromium-98.0.4758.80.
 +}
 +
 +/**
++ * Determines whether or not the frame should create a worker by checking
++ * whether "with-worker" is among the list of attributes.
++ */
++ function shouldCreateWorker(attributes) {
++  for (var attribute of attributes) {
++    if (attribute == "with-worker") {
++      return true;
++    }
++  }
++  return false;
++}
++
++/**
++ * Determines whether or not the frame should create a shared worker by checking
++ * whether "with-shared-worker" is among the list of attributes.
++ */
++ function shouldCreateSharedWorker(attributes) {
++  for (var attribute of attributes) {
++    if (attribute == "with-shared-worker") {
++      return true;
++    }
++  }
++  return false;
++}
++
++/**
 + * Simple recursive layout heuristic, since frames can't size themselves.
 + * This scribbles .layoutX and .layoutY properties into |tree|.
 + */
@@ -1064,6 +1091,16 @@ chromium-98.0.4758.80.
 +  var currentSite = isUrl(frameTree.value)
 +                      ? frameTree.value
 +                      : canonicalizeSiteAndPort(frameTree.value, "");
++  // If the top-level site doesn't match the hostname, the user is
++  // probably making a mistake, e.g. hostname is "a.test" and it's
++  // likely that subframes are incorrectly being left to default to
++  // ".com". In that case we bail out and refuse to create subframes,
++  // which should hopefully cause the test to fail.
++  if (currentSite != window.location.hostname) {
++    console.error(`The first hostname in the query-string does not match the` +
++      ` hostname of the URL: ${currentSite} != ${window.location.hostname}`);
++    return;
++  }
 +
 +  // Render text unless the attribute "no-text-render" is specified, in which
 +  // case load some bytes anyway in order to trigger histogram recording for
@@ -1071,6 +1108,24 @@ chromium-98.0.4758.80.
 +  if (shouldRenderText(frameTree.attributes)) {
 +      document.getElementById('siteNameHeading').appendChild(
 +          document.createTextNode(currentSite));
++  }
++
++  // Create a worker with matching query-string if the "with-worker" attribute
++  // is specified.
++  if (shouldCreateWorker(frameTree.attributes)) {
++    let worker_url = 'workers/empty.js';
++    worker_url += '?' + queryString;
++    console.log(worker_url);
++    self.worker = new Worker(worker_url);
++  }
++
++  // Create a shared worker with matching query-string if the "with-worker" 
++  // attribute is specified.
++  if (shouldCreateSharedWorker(frameTree.attributes)) {
++    let worker_url = 'workers/empty.js';
++    worker_url += '?' + queryString;
++    console.log(worker_url);
++    self.worker = new SharedWorker(worker_url);
 +  }
 +
 +  // Apply style to the current document.
@@ -1120,7 +1175,7 @@ chromium-98.0.4758.80.
 +</script>
 +</body></html>
 --- /dev/null
-+++ b/src/content/test/data/csp_sandboxed_frame.html
++++ b/content/test/data/csp_sandboxed_frame.html
 @@ -0,0 +1,8 @@
 +<html>
 +<title>sandboxed_frames</title>
@@ -1131,7 +1186,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/csp_wasm_eval.html
++++ b/content/test/data/csp_wasm_eval.html
 @@ -0,0 +1,9 @@
 +<!DOCTYPE html>
 +<html>
@@ -1143,7 +1198,7 @@ chromium-98.0.4758.80.
 +  </script>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/ctrl-click-subframe-link.html
++++ b/content/test/data/ctrl-click-subframe-link.html
 @@ -0,0 +1,23 @@
 +<html>
 +<head>
@@ -1169,13 +1224,13 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/dark_color_scheme_meta_slow.html
++++ b/content/test/data/dark_color_scheme_meta_slow.html
 @@ -0,0 +1,3 @@
 +<!doctype html>
 +<meta name="color-scheme" content="dark">
 +<link rel="stylesheet" href="/slow-response">
 --- /dev/null
-+++ b/src/content/test/data/data_url_navigations.html
++++ b/content/test/data/data_url_navigations.html
 @@ -0,0 +1,110 @@
 +<html>
 +
@@ -1288,7 +1343,7 @@ chromium-98.0.4758.80.
 +</script>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/detach_frame_in_copy.html
++++ b/content/test/data/detach_frame_in_copy.html
 @@ -0,0 +1,13 @@
 +<!DOCTYPE html>
 +<html>
@@ -1304,7 +1359,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/div_with_touch_action_auto.html
++++ b/content/test/data/div_with_touch_action_auto.html
 @@ -0,0 +1,9 @@
 +<html>
 +<head></head>
@@ -1316,7 +1371,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/div_with_touch_action_none.html
++++ b/content/test/data/div_with_touch_action_none.html
 @@ -0,0 +1,9 @@
 +<html>
 +<head></head>
@@ -1328,7 +1383,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/dynamic1.html
++++ b/content/test/data/dynamic1.html
 @@ -0,0 +1,27 @@
 +<html>
 +<head>
@@ -1358,7 +1413,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/dynamic2.html
++++ b/content/test/data/dynamic2.html
 @@ -0,0 +1,31 @@
 +<html>
 +<head>
@@ -1392,14 +1447,14 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/echo-referrer.html
++++ b/content/test/data/echo-referrer.html
 @@ -0,0 +1,4 @@
 +<!doctype html>
 +<script>
 +document.title = "Referrer = '" + document.referrer + "'";
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/event-latency-animation.html
++++ b/content/test/data/event-latency-animation.html
 @@ -0,0 +1,77 @@
 +<!DOCTYPE html>
 +<html lang="en">
@@ -1479,7 +1534,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/fetch-keepalive.html
++++ b/content/test/data/fetch-keepalive.html
 @@ -0,0 +1,16 @@
 +<!doctype html>
 +<title>Fetching</title>
@@ -1498,16 +1553,16 @@ chromium-98.0.4758.80.
 +});
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/file_input.html
++++ b/content/test/data/file_input.html
 @@ -0,0 +1 @@
 +<input type="file" id="fileinput" />
 --- /dev/null
-+++ b/src/content/test/data/file_input_subframe.html
++++ b/content/test/data/file_input_subframe.html
 @@ -0,0 +1,2 @@
 +<iframe srcdoc="<form action='title2.html' enctype='multipart/form-data' method='post'><input type='file' id='fileinput' /></form>">
 +</iframe>
 --- /dev/null
-+++ b/src/content/test/data/filesystem_url_navigations.html
++++ b/content/test/data/filesystem_url_navigations.html
 @@ -0,0 +1,161 @@
 +<html>
 +<body onload="setupHandlers()">
@@ -1671,7 +1726,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_dynamic_page.html
++++ b/content/test/data/find_in_dynamic_page.html
 @@ -0,0 +1,16 @@
 +<!DOCTYPE html>
 +<html>
@@ -1690,7 +1745,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_embedded_pdf_page.html
++++ b/content/test/data/find_in_embedded_pdf_page.html
 @@ -0,0 +1,13 @@
 +<!DOCTYPE html>
 +<html>
@@ -1706,12 +1761,12 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_hidden_frame.html
++++ b/content/test/data/find_in_hidden_frame.html
 @@ -0,0 +1,2 @@
 +<div>hello</div><iframe style="display:inline;width:0;height:0;border:none" src="data:text/html,hello"></iframe>
 +<iframe style="visibility:hidden" src="data:text/html,hello"></iframe>
 --- /dev/null
-+++ b/src/content/test/data/find_in_long_page.html
++++ b/content/test/data/find_in_long_page.html
 @@ -0,0 +1,2011 @@
 +<!DOCTYPE html>
 +<html>
@@ -3725,7 +3780,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_page.html
++++ b/content/test/data/find_in_page.html
 @@ -0,0 +1,13 @@
 +<!DOCTYPE html>
 +<html>
@@ -3741,7 +3796,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_page_desktop.html
++++ b/content/test/data/find_in_page_desktop.html
 @@ -0,0 +1,22 @@
 +<!DOCTYPE html>
 +<html>
@@ -3766,7 +3821,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_page_frame.html
++++ b/content/test/data/find_in_page_frame.html
 @@ -0,0 +1,109 @@
 +<!DOCTYPE html>
 +<html>
@@ -3878,7 +3933,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_page_multi_frame.html
++++ b/content/test/data/find_in_page_multi_frame.html
 @@ -0,0 +1,14 @@
 +<!DOCTYPE html>
 +<html>
@@ -3895,7 +3950,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_page_simple_frame.html
++++ b/content/test/data/find_in_page_simple_frame.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<html>
@@ -3908,7 +3963,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_page_two_frames.html
++++ b/content/test/data/find_in_page_two_frames.html
 @@ -0,0 +1,8 @@
 +<!DOCTYPE html>
 +<html>
@@ -3919,7 +3974,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_page_with_portal.html
++++ b/content/test/data/find_in_page_with_portal.html
 @@ -0,0 +1,13 @@
 +<!DOCTYPE html>
 +<html>
@@ -3935,7 +3990,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/find_in_simple_page.html
++++ b/content/test/data/find_in_simple_page.html
 @@ -0,0 +1,8 @@
 +<!DOCTYPE html>
 +<html>
@@ -3946,8 +4001,8 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/font_src_local_matching.html
-@@ -0,0 +1,136 @@
++++ b/content/test/data/font_src_local_matching.html
+@@ -0,0 +1,130 @@
 +<meta charset="utf-8">
 +<style id="fontfaces">
 +</style>
@@ -3968,9 +4023,7 @@ chromium-98.0.4758.80.
 +      ["NotoSansBengali-Bold", "0"],
 +      ["NotoSansBengaliUI-Bold", "0"],
 +      ["NotoSansDevanagari-Bold", "0"],
-+      ["NotoSansDevanagari", "0"],
 +      ["NotoSansDevanagariUI-Bold", "0"],
-+      ["NotoSansDevanagariUI", "0"],
 +      ["NotoSansKannada-Bold", "0"],
 +      ["NotoSansKannada", "0"],
 +      ["NotoSansKannadaUI-Bold", "0"],
@@ -3980,13 +4033,9 @@ chromium-98.0.4758.80.
 +      ["NotoSansLaoUI-Bold", "0"],
 +      ["NotoSansLaoUI", "0"],
 +      ["NotoSansMalayalam-Bold", "0"],
-+      ["NotoSansMalayalam", "0"],
 +      ["NotoSansMalayalamUI-Bold", "0"],
-+      ["NotoSansMalayalamUI", "0"],
 +      ["NotoSansTamil-Bold", "0"],
-+      ["NotoSansTamil", "0"],
 +      ["NotoSansTamilUI-Bold", "0"],
-+      ["NotoSansTamilUI", "0"],
 +      ["NotoSansTelugu-Bold", "0"],
 +      ["NotoSansTelugu", "0"],
 +      ["NotoSansTeluguUI-Bold", "0"],
@@ -4085,7 +4134,7 @@ chromium-98.0.4758.80.
 +}
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/form_that_posts_cross_site.html
++++ b/content/test/data/form_that_posts_cross_site.html
 @@ -0,0 +1,16 @@
 +<!DOCTYPE html>
 +<html>
@@ -4104,7 +4153,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/form_that_posts_to_echoall.html
++++ b/content/test/data/form_that_posts_to_echoall.html
 @@ -0,0 +1,14 @@
 +<!DOCTYPE html>
 +<html>
@@ -4121,7 +4170,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/form_that_posts_to_echoall_nocache.html
++++ b/content/test/data/form_that_posts_to_echoall_nocache.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<html>
@@ -4134,7 +4183,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/frame-ancestors-none.html
++++ b/content/test/data/frame-ancestors-none.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<html>
@@ -4147,7 +4196,7 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/frame-src-self-and-b.html
++++ b/content/test/data/frame-src-self-and-b.html
 @@ -0,0 +1,21 @@
 +<!DOCTYPE html>
 +<html>
@@ -4171,7 +4220,7 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/frame_owner_properties_csp.html
++++ b/content/test/data/frame_owner_properties_csp.html
 @@ -0,0 +1,9 @@
 +<!DOCTYPE html>
 +<html>
@@ -4183,7 +4232,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/frame_owner_properties_margin.html
++++ b/content/test/data/frame_owner_properties_margin.html
 @@ -0,0 +1,9 @@
 +<!DOCTYPE html>
 +<html>
@@ -4195,7 +4244,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/frame_owner_properties_scrolling.html
++++ b/content/test/data/frame_owner_properties_scrolling.html
 @@ -0,0 +1,11 @@
 +<!DOCTYPE html>
 +<html>
@@ -4209,7 +4258,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/frame_with_load_event.html
++++ b/content/test/data/frame_with_load_event.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<html>
@@ -4222,7 +4271,7 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/fullscreen_frame.html
++++ b/content/test/data/fullscreen_frame.html
 @@ -0,0 +1,47 @@
 +<!DOCTYPE html>
 +<html>
@@ -4272,7 +4321,7 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/hang_before_unload.html
++++ b/content/test/data/hang_before_unload.html
 @@ -0,0 +1,29 @@
 +<html>
 +
@@ -4304,12 +4353,12 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/hello.html
++++ b/content/test/data/hello.html
 @@ -0,0 +1,2 @@
 +<!doctype html>
 +<p>hello</p>
 --- /dev/null
-+++ b/src/content/test/data/https_upgrade_cross_site.html
++++ b/content/test/data/https_upgrade_cross_site.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<html>
@@ -4322,7 +4371,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/https_upgrade_same_site.html
++++ b/content/test/data/https_upgrade_same_site.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<html>
@@ -4335,7 +4384,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/iframe_clipped.html
++++ b/content/test/data/iframe_clipped.html
 @@ -0,0 +1,136 @@
 +<!DOCTYPE html>
 +<html>
@@ -4474,7 +4523,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/iframe_out_of_view.html
++++ b/content/test/data/iframe_out_of_view.html
 @@ -0,0 +1,117 @@
 +<!DOCTYPE html>
 +<html>
@@ -4594,11 +4643,11 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/infinitely_loading_image.html
++++ b/content/test/data/infinitely_loading_image.html
 @@ -0,0 +1 @@
 +<img src="/hung">
 --- /dev/null
-+++ b/src/content/test/data/input_box.html
++++ b/content/test/data/input_box.html
 @@ -0,0 +1,52 @@
 +<!DOCTYPE html>
 +<html>
@@ -4653,7 +4702,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/input_in_iframe.html
++++ b/content/test/data/input_in_iframe.html
 @@ -0,0 +1,42 @@
 +<!DOCTYPE html>
 +<html>
@@ -4699,7 +4748,7 @@ chromium-98.0.4758.80.
 +</html>
 \ No newline at end of file
 --- /dev/null
-+++ b/src/content/test/data/interaction-mq-dynamic.html
++++ b/content/test/data/interaction-mq-dynamic.html
 @@ -0,0 +1,30 @@
 +<!DOCTYPE html>
 +<html>
@@ -4732,7 +4781,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/isolated_base_origin_with_subframe.html
++++ b/content/test/data/isolated_base_origin_with_subframe.html
 @@ -0,0 +1,7 @@
 +<html>
 +  <head></head>
@@ -4742,7 +4791,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/large-cursor.html
++++ b/content/test/data/large-cursor.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<meta charset="utf-8">
@@ -4755,7 +4804,7 @@ chromium-98.0.4758.80.
 +</style>
 +
 --- /dev/null
-+++ b/src/content/test/data/link_rel_prefetch.html
++++ b/content/test/data/link_rel_prefetch.html
 @@ -0,0 +1,6 @@
 +<!DOCTYPE html>
 +<html>
@@ -4764,7 +4813,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/link_rel_prefetch_referrer_policy.html
++++ b/content/test/data/link_rel_prefetch_referrer_policy.html
 @@ -0,0 +1,9 @@
 +<!DOCTYPE html>
 +<html>
@@ -4776,7 +4825,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/local_storage.html
++++ b/content/test/data/local_storage.html
 @@ -0,0 +1,14 @@
 +<!DOCTYPE HTML>
 +<body>
@@ -4793,7 +4842,7 @@ chromium-98.0.4758.80.
 +  localStorage at first load.
 +</body>
 --- /dev/null
-+++ b/src/content/test/data/navigate_on_load.html
++++ b/content/test/data/navigate_on_load.html
 @@ -0,0 +1,12 @@
 +<html>
 +<head>
@@ -4808,7 +4857,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/navigate_opener.html
++++ b/content/test/data/navigate_opener.html
 @@ -0,0 +1,12 @@
 +<html>
 +
@@ -4823,21 +4872,21 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/nested-unload-0.html
++++ b/content/test/data/nested-unload-0.html
 @@ -0,0 +1,4 @@
 +<!DOCTYPE html>
 +<html>
 +  <body><iframe src="/cross-site/b.com/nested-unload-1.html"></iframe></body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/nested-unload-1.html
++++ b/content/test/data/nested-unload-1.html
 @@ -0,0 +1,4 @@
 +<!DOCTYPE html>
 +<html>
 +  <body><iframe src="/cross-site/a.com/nested-unload-2.html"></iframe></body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/nested-unload-2.html
++++ b/content/test/data/nested-unload-2.html
 @@ -0,0 +1,8 @@
 +<!DOCTYPE html>
 +<html>
@@ -4848,7 +4897,7 @@ chromium-98.0.4758.80.
 +  </script>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/nested_page_with_subresources.html
++++ b/content/test/data/nested_page_with_subresources.html
 @@ -0,0 +1,8 @@
 +<!DOCTYPE html>
 +<body>
@@ -4859,7 +4908,7 @@ chromium-98.0.4758.80.
 +</script>
 +</body>
 --- /dev/null
-+++ b/src/content/test/data/net_info.html
++++ b/content/test/data/net_info.html
 @@ -0,0 +1,38 @@
 +<html>
 +<head></head>
@@ -4900,40 +4949,40 @@ chromium-98.0.4758.80.
 +</script>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/no_color_scheme_meta_slow.html
++++ b/content/test/data/no_color_scheme_meta_slow.html
 @@ -0,0 +1,2 @@
 +<!doctype html>
 +<link rel="stylesheet" href="/slow-response">
 --- /dev/null
-+++ b/src/content/test/data/nocache-with-etag.html
++++ b/content/test/data/nocache-with-etag.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>Nocache Test Page</title></head>
 +<body>Nocache test body</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/nosniff-test.html
++++ b/content/test/data/nosniff-test.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>nosniff Test</title></head>
 +<body>We should NOT sniff this content as HTML.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/nostore.html
++++ b/content/test/data/nostore.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>Cache-Control: no-store Test Page</title></head>
 +<body>Cache-Control: no-store test body</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/object-frame.html
++++ b/content/test/data/object-frame.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head></head>
 +<body><object data="/title1.html"><p>fallback</p></object></body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/onunload_cookie.html
++++ b/content/test/data/onunload_cookie.html
 @@ -0,0 +1,18 @@
 +<html> 
 +  <head>
@@ -4954,7 +5003,7 @@ chromium-98.0.4758.80.
 +  </body> 
 +</html> 
 --- /dev/null
-+++ b/src/content/test/data/overlapping_cross_site_iframe.html
++++ b/content/test/data/overlapping_cross_site_iframe.html
 @@ -0,0 +1,18 @@
 +<html>
 +<title>Overlapping cross site iframe</title>
@@ -4975,7 +5024,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/overscroll_navigation.html
++++ b/content/test/data/overscroll_navigation.html
 @@ -0,0 +1,90 @@
 +<html>
 +<title>Title: 0</title>
@@ -5068,7 +5117,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page-executing-trust-token-signing-from-204-subframe.html
++++ b/content/test/data/page-executing-trust-token-signing-from-204-subframe.html
 @@ -0,0 +1,27 @@
 +<!DOCTYPE html>
 +<meta charset="utf-8">
@@ -5098,7 +5147,7 @@ chromium-98.0.4758.80.
 +  window.onload = createChildAndExecuteSigningOp;
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/page-with-trust-token-permissions-policy-disabled.html
++++ b/content/test/data/page-with-trust-token-permissions-policy-disabled.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<meta charset="utf-8">
@@ -5111,21 +5160,21 @@ chromium-98.0.4758.80.
 +  <iframe src="/cross-site/b.com/title1.html" id="test_iframe" />
 +</body>
 --- /dev/null
-+++ b/src/content/test/data/page204.html
++++ b/content/test/data/page204.html
 @@ -0,0 +1 @@
 +<title>This page intentionally left blank</title>
 --- /dev/null
-+++ b/src/content/test/data/page404.html
++++ b/content/test/data/page404.html
 @@ -0,0 +1,2 @@
 +<title>SUCCESS</title>
 + 
 \ No newline at end of file
 --- /dev/null
-+++ b/src/content/test/data/page500.html
++++ b/content/test/data/page500.html
 @@ -0,0 +1 @@
 +<title>Server Error</title>
 --- /dev/null
-+++ b/src/content/test/data/page_with_allowfullscreen_frame.html
++++ b/content/test/data/page_with_allowfullscreen_frame.html
 @@ -0,0 +1,7 @@
 +<!DOCTYPE html>
 +<html>
@@ -5135,7 +5184,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_animation.html
++++ b/content/test/data/page_with_animation.html
 @@ -0,0 +1,29 @@
 +<!doctype html>
 +<html>
@@ -5167,7 +5216,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_anonymous_iframe.html
++++ b/content/test/data/page_with_anonymous_iframe.html
 @@ -0,0 +1,9 @@
 +<html>
 +<head></head>
@@ -5179,7 +5228,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_blank_iframe.html
++++ b/content/test/data/page_with_blank_iframe.html
 @@ -0,0 +1,7 @@
 +<html>
 +<head></head>
@@ -5189,7 +5238,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_blank_iframe_tree.html
++++ b/content/test/data/page_with_blank_iframe_tree.html
 @@ -0,0 +1,17 @@
 +<html>
 +<head>
@@ -5209,7 +5258,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_blur.html
++++ b/content/test/data/page_with_blur.html
 @@ -0,0 +1,19 @@
 +<!DOCTYPE html>
 +<html>
@@ -5231,7 +5280,7 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/page_with_cached_subresource.html
++++ b/content/test/data/page_with_cached_subresource.html
 @@ -0,0 +1,7 @@
 +<html>
 +<head>
@@ -5241,7 +5290,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_click_handler.html
++++ b/content/test/data/page_with_click_handler.html
 @@ -0,0 +1,36 @@
 +<!DOCTYPE html>
 +<html style="width: 100%; height: 100%">
@@ -5280,7 +5329,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_data_iframe_and_allow.html
++++ b/content/test/data/page_with_data_iframe_and_allow.html
 @@ -0,0 +1,8 @@
 +<html>
 +<head></head>
@@ -5291,7 +5340,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_frameset.html
++++ b/content/test/data/page_with_frameset.html
 @@ -0,0 +1,6 @@
 +<html>
 +<frameset cols="50%,50%">
@@ -5301,7 +5350,7 @@ chromium-98.0.4758.80.
 +</html>
 \ No newline at end of file
 --- /dev/null
-+++ b/src/content/test/data/page_with_hidden_iframe.html
++++ b/content/test/data/page_with_hidden_iframe.html
 @@ -0,0 +1,7 @@
 +<html>
 +<head></head>
@@ -5312,7 +5361,7 @@ chromium-98.0.4758.80.
 +</html>
 \ No newline at end of file
 --- /dev/null
-+++ b/src/content/test/data/page_with_iframe.html
++++ b/content/test/data/page_with_iframe.html
 @@ -0,0 +1,8 @@
 +<html>
 +<head></head>
@@ -5323,7 +5372,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_iframe_and_image.html
++++ b/content/test/data/page_with_iframe_and_image.html
 @@ -0,0 +1,9 @@
 +<html>
 +<head></head>
@@ -5335,7 +5384,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_iframe_and_link.html
++++ b/content/test/data/page_with_iframe_and_link.html
 @@ -0,0 +1,31 @@
 +<html>
 +
@@ -5369,7 +5418,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_image.html
++++ b/content/test/data/page_with_image.html
 @@ -0,0 +1,7 @@
 +<html>
 +<head></head>
@@ -5379,7 +5428,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_image_redirect.html
++++ b/content/test/data/page_with_image_redirect.html
 @@ -0,0 +1,4 @@
 +<html>
 +This page has an image that is going through a redirect.
@@ -5387,7 +5436,7 @@ chromium-98.0.4758.80.
 +</html>
 \ No newline at end of file
 --- /dev/null
-+++ b/src/content/test/data/page_with_input_field.html
++++ b/content/test/data/page_with_input_field.html
 @@ -0,0 +1,35 @@
 +<!DOCTYPE html>
 +<html>
@@ -5425,7 +5474,7 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/page_with_meta_refresh_frame.html
++++ b/content/test/data/page_with_meta_refresh_frame.html
 @@ -0,0 +1,31 @@
 +<!doctype html>
 +<html>
@@ -5459,7 +5508,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_multiple_cached_subresources.html
++++ b/content/test/data/page_with_multiple_cached_subresources.html
 @@ -0,0 +1,8 @@
 +<html>
 +<head>
@@ -5470,7 +5519,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_multiple_iframes.html
++++ b/content/test/data/page_with_multiple_iframes.html
 @@ -0,0 +1,11 @@
 +<html>
 +<head></head>
@@ -5484,7 +5533,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_non_webby_iframe.html
++++ b/content/test/data/page_with_non_webby_iframe.html
 @@ -0,0 +1,7 @@
 +<html>
 +<head></head>
@@ -5494,7 +5543,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_nostore_iframe.html
++++ b/content/test/data/page_with_nostore_iframe.html
 @@ -0,0 +1,8 @@
 +<html>
 +  <head></head>
@@ -5505,7 +5554,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_object_fallback.html
++++ b/content/test/data/page_with_object_fallback.html
 @@ -0,0 +1,43 @@
 +<!doctype html>
 +<html>
@@ -5551,7 +5600,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_popup.html
++++ b/content/test/data/page_with_popup.html
 @@ -0,0 +1,7 @@
 +<html>
 +<title>page with a iframe for popup</title>
@@ -5561,7 +5610,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_raf_counter.html
++++ b/content/test/data/page_with_raf_counter.html
 @@ -0,0 +1,17 @@
 +<!doctype html>
 +<h1>This page contains a RAF loop and does some measurements of the interval</h1>
@@ -5581,7 +5630,7 @@ chromium-98.0.4758.80.
 +window.requestAnimationFrame(on_raf);
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/page_with_resize_handler.html
++++ b/content/test/data/page_with_resize_handler.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<html>
@@ -5594,7 +5643,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_rss.html
++++ b/content/test/data/page_with_rss.html
 @@ -0,0 +1,23 @@
 +<html>
 +<head>
@@ -5620,7 +5669,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_rss_in_body.html
++++ b/content/test/data/page_with_rss_in_body.html
 @@ -0,0 +1,35 @@
 +<html>
 +<head>
@@ -5658,7 +5707,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_samesite_iframe.html
++++ b/content/test/data/page_with_samesite_iframe.html
 @@ -0,0 +1,9 @@
 +<!doctype html>
 +<html>
@@ -5670,7 +5719,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_sandboxed_iframe.html
++++ b/content/test/data/page_with_sandboxed_iframe.html
 @@ -0,0 +1,11 @@
 +<html>
 +
@@ -5684,7 +5733,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_scrollable_div.html
++++ b/content/test/data/page_with_scrollable_div.html
 @@ -0,0 +1,24 @@
 +<!DOCTYPE html>
 +<html>
@@ -5711,7 +5760,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_subresources.html
++++ b/content/test/data/page_with_subresources.html
 @@ -0,0 +1,26 @@
 +<!DOCTYPE html>
 +<html>
@@ -5740,7 +5789,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_touch_handler.html
++++ b/content/test/data/page_with_touch_handler.html
 @@ -0,0 +1,42 @@
 +<!DOCTYPE html>
 +<html style="width: 100%; height: 100%">
@@ -5785,7 +5834,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_touch_start_default_prevented.html
++++ b/content/test/data/page_with_touch_start_default_prevented.html
 @@ -0,0 +1,18 @@
 +<!DOCTYPE html>
 +<html style="width: 100%; height: 100%">
@@ -5806,7 +5855,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_touch_start_janking_main_thread.html
++++ b/content/test/data/page_with_touch_start_janking_main_thread.html
 @@ -0,0 +1,19 @@
 +<html>
 +<style>
@@ -5828,7 +5877,7 @@ chromium-98.0.4758.80.
 +</script>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/page_with_webotp.html
++++ b/content/test/data/page_with_webotp.html
 @@ -0,0 +1,9 @@
 +<input autocomplete="one-time-code">
 +<script>
@@ -5840,7 +5889,7 @@ chromium-98.0.4758.80.
 +</script>
 +
 --- /dev/null
-+++ b/src/content/test/data/page_with_wheel_handler.html
++++ b/content/test/data/page_with_wheel_handler.html
 @@ -0,0 +1,22 @@
 +<!DOCTYPE html>
 +<html>
@@ -5865,7 +5914,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/paste_listener.html
++++ b/content/test/data/paste_listener.html
 @@ -0,0 +1,15 @@
 +<title>Waiting for paste</title>
 +<body>
@@ -5883,7 +5932,7 @@ chromium-98.0.4758.80.
 +});
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/pause_schedule_task.html
++++ b/content/test/data/pause_schedule_task.html
 @@ -0,0 +1,18 @@
 +<!DOCTYPE html>
 +<html>
@@ -5904,7 +5953,7 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/permissions-policy-main.html
++++ b/content/test/data/permissions-policy-main.html
 @@ -0,0 +1,5 @@
 +<html>
 +<head></head>
@@ -5912,21 +5961,21 @@ chromium-98.0.4758.80.
 +<iframe src="permissions-policy1.html"></iframe>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/permissions-policy1.html
++++ b/content/test/data/permissions-policy1.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head></head>
 +<body>This page has a permissions policy header.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/permissions-policy2.html
++++ b/content/test/data/permissions-policy2.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head></head>
 +<body>This page has a different permissions policy header.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/permissions-policy3.html
++++ b/content/test/data/permissions-policy3.html
 @@ -0,0 +1,9 @@
 +<html>
 +<head></head>
@@ -5938,7 +5987,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/permissions-policy4.html
++++ b/content/test/data/permissions-policy4.html
 @@ -0,0 +1,9 @@
 +<html>
 +<head></head>
@@ -5950,7 +5999,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/pointerlock_on_dropped_elem.html
++++ b/content/test/data/pointerlock_on_dropped_elem.html
 @@ -0,0 +1,20 @@
 +<div id="target">
 +  <div></div>
@@ -5973,7 +6022,7 @@ chromium-98.0.4758.80.
 +  });
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/popup.html
++++ b/content/test/data/popup.html
 @@ -0,0 +1,35 @@
 +<html>
 +<head>
@@ -6011,7 +6060,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/post_message.html
++++ b/content/test/data/post_message.html
 @@ -0,0 +1,97 @@
 +<html>
 +
@@ -6111,7 +6160,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/post_message2.html
++++ b/content/test/data/post_message2.html
 @@ -0,0 +1,21 @@
 +<html>
 +
@@ -6135,7 +6184,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/push_state.html
++++ b/content/test/data/push_state.html
 @@ -0,0 +1,12 @@
 +<html>
 +<head>
@@ -6150,7 +6199,7 @@ chromium-98.0.4758.80.
 +</head>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/register_service_worker.html
++++ b/content/test/data/register_service_worker.html
 @@ -0,0 +1,11 @@
 +<script>
 +async function register(worker_url, scope) {
@@ -6164,7 +6213,7 @@ chromium-98.0.4758.80.
 +}
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/remove_frame_on_load.html
++++ b/content/test/data/remove_frame_on_load.html
 @@ -0,0 +1,19 @@
 +<html>
 +  <head>
@@ -6186,7 +6235,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/remove_frame_on_unload.html
++++ b/content/test/data/remove_frame_on_unload.html
 @@ -0,0 +1,21 @@
 +<html>
 +  <head>
@@ -6210,7 +6259,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/remove_object_element_with_invalid_data.html
++++ b/content/test/data/remove_object_element_with_invalid_data.html
 @@ -0,0 +1,17 @@
 +<html>
 +<head>
@@ -6230,7 +6279,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/run_async_code_on_worker.html
++++ b/content/test/data/run_async_code_on_worker.html
 @@ -0,0 +1,25 @@
 +<!doctype html>
 +<title>Run async code on a worker helper</title>
@@ -6258,14 +6307,14 @@ chromium-98.0.4758.80.
 +}
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/rwh_simple.html
++++ b/content/test/data/rwh_simple.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>The background is red.</title></head>
 +<body style="background-color:#FF0000"></body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/rwhv_compositing_animation.html
++++ b/content/test/data/rwhv_compositing_animation.html
 @@ -0,0 +1,28 @@
 +<!DOCTYPE HTML>
 +<html>
@@ -6296,7 +6345,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/sandbox_main_frame_csp.html
++++ b/content/test/data/sandbox_main_frame_csp.html
 @@ -0,0 +1,11 @@
 +<!DOCTYPE html>
 +<html>
@@ -6310,7 +6359,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/sandboxed_child_frame.html
++++ b/content/test/data/sandboxed_child_frame.html
 @@ -0,0 +1,5 @@
 +<html>
 +<title>sandboxed_child_frame</title>
@@ -6318,7 +6367,7 @@ chromium-98.0.4758.80.
 +<body>Document sandboxed with Content-Security-Policy HTTP header</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/sandboxed_frames.html
++++ b/content/test/data/sandboxed_frames.html
 @@ -0,0 +1,9 @@
 +<html>
 +<title>sandboxed_frames</title>
@@ -6330,7 +6379,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/sandboxed_frames_csp.html
++++ b/content/test/data/sandboxed_frames_csp.html
 @@ -0,0 +1,8 @@
 +<html>
 +<title>sandboxed_frames</title>
@@ -6341,7 +6390,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/sandboxed_main_frame_script.html
++++ b/content/test/data/sandboxed_main_frame_script.html
 @@ -0,0 +1,7 @@
 +<html>
 +<title>sandboxed_main_frame_script</title>
@@ -6351,7 +6400,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/scrollable_page.html
++++ b/content/test/data/scrollable_page.html
 @@ -0,0 +1,10 @@
 +<html>
 +<head>
@@ -6364,8 +6413,8 @@ chromium-98.0.4758.80.
 +}
 +</style>
 --- /dev/null
-+++ b/src/content/test/data/scrollable_page_with_anchor.html
-@@ -0,0 +1,29 @@
++++ b/content/test/data/scrollable_page_with_anchor.html
+@@ -0,0 +1,34 @@
 +<html>
 +  <head>
 +    <meta name="viewport" content="width=device-width, minimum-scale=1.0">
@@ -6376,6 +6425,9 @@ chromium-98.0.4758.80.
 +        });
 +        document.getElementById("focusableElement2").addEventListener('focus', () => {
 +          window.domAutomationController.send('FocusDone2');
++        });
++        document.getElementById("focusableElement3").addEventListener('focus', () => {
++          window.domAutomationController.send('FocusDone3');
 +        });
 +      });
 +    </script>
@@ -6392,11 +6444,13 @@ chromium-98.0.4758.80.
 +      <a href="#" id="focusableElement1">Test1</a>
 +      Some text
 +      <a href="#" id="focusableElement2">Test2</a>
++      Even more
++      <a href="#" id="focusableElement3">Test3</a>
 +    </p>
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/scrollable_page_with_content.html
++++ b/content/test/data/scrollable_page_with_content.html
 @@ -0,0 +1,22 @@
 +<html>
 +  <head>
@@ -6421,7 +6475,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/scrollable_page_with_iframe.html
++++ b/content/test/data/scrollable_page_with_iframe.html
 @@ -0,0 +1,18 @@
 +<html>
 +<head>
@@ -6442,14 +6496,14 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/send-beacon.html
++++ b/content/test/data/send-beacon.html
 @@ -0,0 +1,4 @@
 +<!doctype html>
 +<script>
 +navigator.sendBeacon('/beacon', 'hello');
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/set_cookie.html
++++ b/content/test/data/set_cookie.html
 @@ -0,0 +1,12 @@
 +<!DOCTYPE html>
 +<html>
@@ -6464,7 +6518,7 @@ chromium-98.0.4758.80.
 +</head>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/set_document_cookie.html
++++ b/content/test/data/set_document_cookie.html
 @@ -0,0 +1,6 @@
 +<!doctype html>
 +<meta charset=utf-8>
@@ -6473,7 +6527,7 @@ chromium-98.0.4758.80.
 +document.cookie = document.location.search.substring(1);
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/simple_database.html
++++ b/content/test/data/simple_database.html
 @@ -0,0 +1,145 @@
 +<html>
 +<script>
@@ -6621,8 +6675,8 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/simple_links.html
-@@ -0,0 +1,71 @@
++++ b/content/test/data/simple_links.html
+@@ -0,0 +1,81 @@
 +<html>
 +
 + <head><title>Simple links</title>
@@ -6656,6 +6710,14 @@ chromium-98.0.4758.80.
 +    return simulateClick(document.getElementById("same_site_new_window_link"));
 +  }
 +
++  function clickSameSiteNewWindowWithNoopenerLink() {
++    return simulateClick(document.getElementById("same_site_new_window_with_noopener_link"));
++  }
++
++  function clickSameSiteNewWindowWithOpenerLink() {
++    return simulateClick(document.getElementById("same_site_new_window_with_opener_link"));
++  }
++
 +  function clickCrossSiteLink() {
 +    return simulateClick(document.getElementById("cross_site_link"));
 +  }
@@ -6685,7 +6747,9 @@ chromium-98.0.4758.80.
 +<a href="title2.html" id="same_site_link">same-site</a><br>
 +<a href="http://foo.com/title2.html" id="cross_site_link">cross-site</a><br>
 +<a href="view-source:about:blank" id="view_source_link">view-source:</a><br>
-+<a href="title2.html" id="same_site_new_window_link" rel="opener" target="_blank">same-site new window</a>
++<a href="title2.html" id="same_site_new_window_link" target="_blank">same-site new window</a>
++<a href="title2.html" id="same_site_new_window_with_noopener_link" rel="noopener" target="_blank">same-site new window with noopener</a>
++<a href="title2.html" id="same_site_new_window_with_opener_link" rel="opener" target="_blank">same-site new window with opener</a>
 +<a href="http://foo.com/title2.html" id="cross_site_new_window_link" rel="opener" target="_blank">cross-site new window</a>
 +<a href="http://foo.com/title2.html" id="cross_site_new_window_no_opener_link" rel="noopener" target="_blank">cross-site new window no opener</a>
 +<a href="" id="linkToSelf" rel="opener" target="_blank">self new window</a>
@@ -6695,7 +6759,7 @@ chromium-98.0.4758.80.
 +<a href="googlechrome://" id="google_chrome_link">googlechrome:</a></br>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/simple_page.html
++++ b/content/test/data/simple_page.html
 @@ -0,0 +1,6 @@
 +<html>
 +<head><title>OK</title></head>
@@ -6704,7 +6768,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/site_per_process_main.html
++++ b/content/test/data/site_per_process_main.html
 @@ -0,0 +1,8 @@
 +<html>
 +<title>site_per_process_main</title>
@@ -6715,7 +6779,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/stale-while-revalidate.html
++++ b/content/test/data/stale-while-revalidate.html
 @@ -0,0 +1,24 @@
 +<script>
 +function wait25ms() {
@@ -6742,7 +6806,7 @@ chromium-98.0.4758.80.
 +}
 +</script>
 --- /dev/null
-+++ b/src/content/test/data/super_tall_page.html
++++ b/content/test/data/super_tall_page.html
 @@ -0,0 +1,9 @@
 +<html>
 +  <head>
@@ -6754,7 +6818,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/super_tall_parent.html
++++ b/content/test/data/super_tall_parent.html
 @@ -0,0 +1,9 @@
 +<html>
 +  <head>
@@ -6766,7 +6830,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/sync_xmlhttprequest.html
++++ b/content/test/data/sync_xmlhttprequest.html
 @@ -0,0 +1,32 @@
 +<html>
 +<head>
@@ -6801,7 +6865,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/sync_xmlhttprequest_cancelled.html
++++ b/content/test/data/sync_xmlhttprequest_cancelled.html
 @@ -0,0 +1,28 @@
 +<!doctype html>
 +<script>
@@ -6832,7 +6896,7 @@ chromium-98.0.4758.80.
 +Status: <div id="status">Before sending the request.</div>
 +</body>
 --- /dev/null
-+++ b/src/content/test/data/sync_xmlhttprequest_disallowed.html
++++ b/content/test/data/sync_xmlhttprequest_disallowed.html
 @@ -0,0 +1,29 @@
 +<html>
 +<head>
@@ -6864,7 +6928,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/sync_xmlhttprequest_during_unload.html
++++ b/content/test/data/sync_xmlhttprequest_during_unload.html
 @@ -0,0 +1,20 @@
 +<html> 
 +  <head>
@@ -6887,7 +6951,7 @@ chromium-98.0.4758.80.
 +  </body> 
 +</html> 
 --- /dev/null
-+++ b/src/content/test/data/tall_page.html
++++ b/content/test/data/tall_page.html
 @@ -0,0 +1,7 @@
 +<html>
 +<head></head>
@@ -6897,7 +6961,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/tall_page_with_local_iframe.html
++++ b/content/test/data/tall_page_with_local_iframe.html
 @@ -0,0 +1,9 @@
 +<html>
 +<head></head>
@@ -6909,7 +6973,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/target_text_link.html
++++ b/content/test/data/target_text_link.html
 @@ -0,0 +1,8 @@
 +<html>
 +  <head>
@@ -6920,7 +6984,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/theme_color.html
++++ b/content/test/data/theme_color.html
 @@ -0,0 +1,11 @@
 +<!DOCTYPE html>
 +<html>
@@ -6934,35 +6998,35 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/title1.html
++++ b/content/test/data/title1.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head></head>
 +<body>This page has no title.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/title2.html
++++ b/content/test/data/title2.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>Title Of Awesomeness</title></head>
 +<body>This page has a title.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/title3.html
++++ b/content/test/data/title3.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><title>Title Of More Awesomeness</title></head>
 +<body>This page has a title.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/title4.html
++++ b/content/test/data/title4.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head></head>
 +<body>This page has no title.</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/touch_selection.html
++++ b/content/test/data/touch_selection.html
 @@ -0,0 +1,42 @@
 +<html>
 +<style>
@@ -7007,7 +7071,7 @@ chromium-98.0.4758.80.
 +
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/unload.html
++++ b/content/test/data/unload.html
 @@ -0,0 +1,11 @@
 +<html>
 +  <head>
@@ -7021,7 +7085,7 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/unload_handler_force_layout.html
++++ b/content/test/data/unload_handler_force_layout.html
 @@ -0,0 +1,22 @@
 +<!DOCTYPE html>
 +<html>
@@ -7046,7 +7110,7 @@ chromium-98.0.4758.80.
 +</script>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/virtual-keyboard.html
++++ b/content/test/data/virtual-keyboard.html
 @@ -0,0 +1,41 @@
 +<html>
 +<head>
@@ -7090,14 +7154,14 @@ chromium-98.0.4758.80.
 +  </body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/web_ui_mojo_native.html
++++ b/content/test/data/web_ui_mojo_native.html
 @@ -0,0 +1,4 @@
 +<html>
 +<head><script src="web_ui_mojo_native.js"></script></head>
 +<body>hi</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/web_ui_mojo_test.html
++++ b/content/test/data/web_ui_mojo_test.html
 @@ -0,0 +1,8 @@
 +<html>
 +<head>
@@ -7108,7 +7172,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/wide_page.html
++++ b/content/test/data/wide_page.html
 @@ -0,0 +1,7 @@
 +<html>
 +<head></head>
@@ -7118,7 +7182,7 @@ chromium-98.0.4758.80.
 +</body>
 +</html>
 --- /dev/null
-+++ b/src/content/test/data/x-frame-options-deny.html
++++ b/content/test/data/x-frame-options-deny.html
 @@ -0,0 +1,10 @@
 +<!DOCTYPE html>
 +<html>
@@ -7131,9 +7195,9 @@ chromium-98.0.4758.80.
 +</html>
 +
 --- /dev/null
-+++ b/src/content/test/data/fetch_event_octet_stream.js
++++ b/content/test/data/fetch_event_octet_stream.js
 @@ -0,0 +1,13 @@
-+// Copyright 2018 The Chromium Authors. All rights reserved.
++// Copyright 2018 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -7147,25 +7211,25 @@ chromium-98.0.4758.80.
 +  e.respondWith(new Response('This is a binary', {headers}));
 +});
 --- /dev/null
-+++ b/src/content/test/data/fetch_event_passthrough.js
++++ b/content/test/data/fetch_event_passthrough.js
 @@ -0,0 +1,5 @@
-+// Copyright 2018 The Chromium Authors. All rights reserved.
++// Copyright 2018 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
 +self.addEventListener('fetch', e => {});
 --- /dev/null
-+++ b/src/content/test/data/fetch_event_respond_with_fetch.js
++++ b/content/test/data/fetch_event_respond_with_fetch.js
 @@ -0,0 +1,5 @@
-+// Copyright 2018 The Chromium Authors. All rights reserved.
++// Copyright 2018 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
 +self.addEventListener('fetch', e => { e.respondWith(fetch(e.request)) });
 --- /dev/null
-+++ b/src/content/test/data/result_queue.js
++++ b/content/test/data/result_queue.js
 @@ -0,0 +1,52 @@
-+// Copyright 2017 The Chromium Authors. All rights reserved.
++// Copyright 2017 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -7218,17 +7282,17 @@ chromium-98.0.4758.80.
 +  sendResultToTest(error.name + ' - ' + error.message);
 +}
 --- /dev/null
-+++ b/src/content/test/data/stale-script.js
++++ b/content/test/data/stale-script.js
 @@ -0,0 +1,5 @@
-+// Copyright 2018 The Chromium Authors. All rights reserved.
++// Copyright 2018 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
 +// nothing to see here.
 --- /dev/null
-+++ b/src/content/test/data/tree_parser_util.js
-@@ -0,0 +1,222 @@
-+// Copyright 2015 The Chromium Authors. All rights reserved.
++++ b/content/test/data/tree_parser_util.js
+@@ -0,0 +1,223 @@
++// Copyright 2015 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -7356,8 +7420,9 @@ chromium-98.0.4758.80.
 +    // cross_site_iframe_factory.html as leaf node locations. Colon is for port
 +    // numbers, which may also be specified. Semicolon and equals are for cookie
 +    // strings, which may sometimes be provided in URL query strings such as for
-+    // the EmbeddedTestServer default handler /set-cookie.
-+    const re = new RegExp('^[a-zA-Z0-9\\/_?&;:.=-]+$');
++    // the EmbeddedTestServer default handler /set-cookie. Percent is for
++    // allowing escaped squences in the URL, like %2F.
++    const re = new RegExp('^[a-zA-Z0-9\\/%_?&;:.=-]+$');
 +    if (!token.match(re))
 +      throw new Error('Expected an identifier, but found "' + token + '".');
 +    return token;
@@ -7451,9 +7516,9 @@ chromium-98.0.4758.80.
 +
 +document.scriptExecuted = true;
 --- /dev/null
-+++ b/src/content/test/data/web_ui_dedicated_worker.js
++++ b/content/test/data/web_ui_dedicated_worker.js
 @@ -0,0 +1,9 @@
-+// Copyright 2021 The Chromium Authors. All rights reserved.
++// Copyright 2021 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -7463,9 +7528,9 @@ chromium-98.0.4758.80.
 +  }
 +};
 --- /dev/null
-+++ b/src/content/test/data/web_ui_mojo_native.js
++++ b/content/test/data/web_ui_mojo_native.js
 @@ -0,0 +1,14 @@
-+// Copyright 2017 The Chromium Authors. All rights reserved.
++// Copyright 2017 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +'use strict';
@@ -7480,9 +7545,9 @@ chromium-98.0.4758.80.
 +  return 'chrome' in self && 'send' in chrome;
 +};
 --- /dev/null
-+++ b/src/content/test/data/web_ui_mojo_test.js
++++ b/content/test/data/web_ui_mojo_test.js
 @@ -0,0 +1,46 @@
-+// Copyright 2020 The Chromium Authors. All rights reserved.
++// Copyright 2020 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -7529,9 +7594,9 @@ chromium-98.0.4758.80.
 +  window.domAutomationController.send(await doTest());
 +}
 --- /dev/null
-+++ b/src/content/test/data/web_ui_shared_worker.js
++++ b/content/test/data/web_ui_shared_worker.js
 @@ -0,0 +1,12 @@
-+// Copyright 2020 The Chromium Authors. All rights reserved.
++// Copyright 2020 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
@@ -7543,3 +7608,440 @@ chromium-98.0.4758.80.
 +    }
 +  };
 +};
+--- /dev/null
++++ b/content/test/data/content-disposition-attachment.html
+@@ -0,0 +1,3 @@
++<html>
++<body><p>A page with `content-Disposition: attachment`</p></body>
++</html>
+--- /dev/null
++++ b/content/test/data/content-sniffer-test5.not-html
+@@ -0,0 +1,5 @@
++<html>
++<head><title>Content Sniffer Test 5</title></head>
++<body>We should not sniff this content as HTML,
++    when read as a file URL.</body>
++</html>
+--- /dev/null
++++ b/content/test/data/cross_site_scroll_into_view_factory.html
+@@ -0,0 +1,293 @@
++<!DOCTYPE html>
++<html class="rootScroller">
++<!-- This file is based on cross_site_iframe_factory.html. See comments in that
++file as well as tree_parser_util.js for more details and syntax information.
++
++This page creates a nested, non-branching, frame tree with each child frame being
++fully outside of its embedder's initial viewport. The inner-most frame will
++create a <input> box, also outside the frame's initial viewport.
++
++See window.Attributes map for supported attributes.
++
++Usage Example:
++
++  cross_site_scroll_into_view_factory
++      .html?siteA{MobileViewport,RTL}(siteB(siteC{TouchActionNone}))
++
++ -->
++<head>
++<title>Cross-site scroll-into-view frame tree factory</title>
++<script>
++  window.Attributes = {
++    // Make's a frame's document "dir=rtl" to support testing right-to-left
++    // writing modes.
++    RTL: 0,
++    // Adds a viewport meta tag to a frame, making it "mobile friendly". This
++    // occurs for subframes as well but only has an effect in the root frame.
++    MobileViewport: 1,
++    // Adds a viewport meta tag to a frame, making it
++    // "mobile friendly" and also limiting minimum-zoom. This occurs for
++    // subframes as well but only has an effect in the root frame.
++    MobileViewportNoZoom: 2,
++    // Adds a `touch-action: none` style to the inner-most
++    // frame's <input> box. No-op in other frames.
++    TouchActionNone: 3,
++    // Uses a <fencedframe> element rather than an <iframe> for the child
++    // frame.
++    FencedFrame: 4,
++    // Puts the <input> box into a root scroller element.
++    RootScroller: 5,
++
++    // Keep this up to date with last enum.
++    MAX_VALUE: 5
++  }
++</script>
++<style>
++  html,body {
++    width: 100%;
++    height: 100%;
++  }
++  html {
++    overflow: hidden;
++  }
++  .rootScroller {
++    overflow: auto;
++  }
++  iframe, fencedframe {
++    position: absolute;
++    /* 4 screens worth of inset, to make sure this is off screen on Android
++     * where minimum scale on load is 0.25 */
++    inset-inline-start: 400%;
++    inset-block-start: 400%;
++    width: 60%;
++    height: 60%;
++  }
++  input {
++    position: absolute;
++    inset-inline-start: 400%;
++    inset-block-start: 400%;
++    width: 50%;
++  }
++  div.rootScroller {
++    position: fixed;
++    left: 0;
++    right: 0;
++    top: 0;
++    bottom: 0;
++    background-color: coral;
++  }
++  .spacer {
++    /* make the document scrollable */
++    position: absolute;
++    inset-inline-start: 0;
++    inset-block-start: 0;
++    width: 1200%;
++    height: 1200%;
++  }
++
++  .touchActionNone {
++    touch-action: none;
++  }
++
++  .layoutViewport {
++    /* Used to let the test measure the size of the layout viewport; needed when
++     * testing desktop page on mobile where ICB size doesn't match layout
++     * viewport size (i.e. the "shrinks viewport contents to fit" setting) */
++    position: fixed;
++    left: 0;
++    top: 0;
++    right: 0;
++    bottom: 0;
++    visibility: hidden;
++  }
++</style>
++</head>
++<body>
++<div class="layoutViewport"></div>
++<h2 id='siteNameHeading'></h2>
++<div class="spacer"></div>
++
++
++<script src='tree_parser_util.js'></script>
++<script>
++
++function backgroundColorForSite(site) {
++  var lightness = 0.75;
++
++  // The site names will be of the form siteA, siteB, etc so map the fifth
++  // character to an index. This could be negative, we don't really care.
++  var index = site.charCodeAt(4) - 'a'.charCodeAt(0);
++
++  // If the first character is 'a', this will the the starting color.
++  var hueOfA = 200;  // Spoiler alert: it's blue.
++
++  // Color palette generation articles suggest that spinning the hue wheel by
++  // the golden ratio yields a magically nice color distribution. Something
++  // about sunflower seeds. I am skeptical of the rigor of that claim (probably
++  // any irrational number at a slight offset from 2/3 would do) but it does
++  // look pretty.
++  var phi = 2 / (1 + Math.pow(5, .5));
++  var hue = Math.round((360 * index * phi + hueOfA) % 360);
++  return 'hsl(' + hue + ', 60%, ' + Math.round(100 * lightness) + '%)';
++}
++
++function isUrl(siteString) {
++  try {
++    var url = new URL(siteString);
++  } catch (e) {
++    if (e instanceof TypeError)
++      return false;
++  }
++  return true;
++}
++
++/**
++ * Extract the specified port number, if any. Returns empty string if not
++ * specified.
++ */
++function sitePortNumber(siteString) {
++  let index = siteString.indexOf(':');
++  if (index == -1)
++    return ""
++  return siteString.substring(index + 1);
++}
++
++/**
++ * Adds ".test" to an argument if it doesn't already have a top level domain.
++ * Converts "siteA" to "a.test" to match test host names defined in test SSL
++ * certificate.  Adds the specified port number, if any, or the default port
++ * otherwise.
++ */
++function canonicalizeSiteAndPort(siteString, defaultPort) {
++  var portNumber = sitePortNumber(siteString) || defaultPort;
++  var hostName = siteString.split(':')[0];
++  if (hostName !== "localhost" && hostName.indexOf('.') == -1)
++    hostName = hostName + '.test';
++
++  if (hostName.startsWith('site'))
++    hostName = hostName.substring('site'.length).toLowerCase();
++
++  return hostName + (portNumber ? ':' + portNumber : "");
++}
++
++function hasAttribute(attribute) {
++  if (!Number.isInteger(attribute) || attribute < 0
++      || attribute > Attributes.MAX_VALUE) {
++    throw new Error("hasAttribute parameter invalid: " + attribute);
++  }
++
++  for (var frame_attribute of frame_attributes) {
++    if (frame_attribute == attribute) {
++      return true;
++    }
++  }
++
++  return false;
++}
++
++function processFrameAttributes(frameTree) {
++  window.frame_attributes = [];
++  for (var attribute of frameTree.attributes) {
++    if (!Attributes.hasOwnProperty(attribute))
++      throw new Error("Invalid specified attribute: " + attribute);
++
++    frame_attributes.push(Attributes[attribute]);
++  }
++}
++
++function main() {
++  var goCrossSite = !window.location.protocol.startsWith('file');
++  var queryString = decodeURIComponent(window.location.search.substring(1));
++  var frameTree = TreeParserUtil.parse(queryString);
++  var currentSite = isUrl(frameTree.value)
++                      ? frameTree.value
++                      : canonicalizeSiteAndPort(frameTree.value, "");
++
++  processFrameAttributes(frameTree);
++
++  if (hasAttribute(Attributes.RTL)) {
++    document.documentElement.setAttribute('dir', 'rtl')
++  }
++
++  if (hasAttribute(Attributes.MobileViewport)) {
++    const meta = document.createElement('meta');
++    meta.setAttribute('name', 'viewport');
++    meta.setAttribute('content', 'width=device-width');
++    document.head.appendChild(meta);
++  }
++
++  if (hasAttribute(Attributes.MobileViewportNoZoom)) {
++    const meta = document.createElement('meta');
++    meta.setAttribute('name', 'viewport');
++    meta.setAttribute('content', 'width=device-width,minimum-scale=1');
++    document.head.appendChild(meta);
++  }
++
++  if (hasAttribute(Attributes.RootScroller)) {
++    const html = document.documentElement;
++    const kMaxOffset = 1000000;
++    html.scrollLeft = kMaxOffset;
++    html.scrollTop = kMaxOffset;
++
++    html.classList.remove('rootScroller');
++
++    const rootScroller = document.createElement('div');
++    rootScroller.classList.add('rootScroller');
++
++    const spacer = document.createElement('div');
++    spacer.classList.add('spacer');
++    spacer.innerText = "Root Scroller";
++    rootScroller.appendChild(spacer);
++
++    document.body.appendChild(rootScroller);
++  }
++
++  document.getElementById('siteNameHeading').appendChild(
++      document.createTextNode(currentSite));
++
++  // Apply style to the current document.
++  document.body.style.backgroundColor = backgroundColorForSite(currentSite);
++
++  if (frameTree.children.length == 0) {
++    let input = document.createElement('input');
++
++    if (hasAttribute(Attributes.TouchActionNone))
++      input.classList.add('touchActionNone');
++
++    if (document.documentElement.classList.contains('rootScroller'))
++      document.body.appendChild(input);
++    else
++      document.querySelector('.rootScroller').appendChild(input);
++
++    return;
++  }
++
++  // ScrollIntoView tests don't need multiple children and we don't support it.
++  console.assert(frameTree.children.length == 1);
++
++  // Compute the URL for this child frame.
++  let url = frameTree.children[0].value;
++  let siteAndPort = url;
++  if (!isUrl(url)) {
++    siteAndPort = canonicalizeSiteAndPort(url, window.location.port);
++    const subtreeString = TreeParserUtil.flatten(frameTree.children[0]);
++    url = '';
++    url += window.location.protocol + '//';              // scheme (preserved)
++    url += goCrossSite ? siteAndPort : window.location.host;    // host and port
++    url += window.location.pathname;                     // path (preserved)
++    url += '?' + encodeURIComponent(subtreeString);      // query
++  }
++
++  // Construct the child frame.
++  var elementType = hasAttribute(Attributes.FencedFrame) ? 'fencedframe' : 'iframe';
++  var frame = document.createElement(elementType);
++  frame.src = url;
++  frame.id = "childframe";
++
++  // Add the child frame to the document.
++  document.body.appendChild(frame);
++}
++
++main();
++</script>
++</body></html>
+--- /dev/null
++++ b/content/test/data/file_input_webkitdirectory.html
+@@ -0,0 +1 @@
++<input type="file" id="fileinput" webkitdirectory />
+--- /dev/null
++++ b/content/test/data/page_with_credentialless_iframe.html
+@@ -0,0 +1,5 @@
++<iframe credentialless
++        src="title1.html"
++        id="test_iframe"
++        name="test_iframe">
++</iframe>
+--- /dev/null
++++ b/content/test/data/page_with_stop_iframe.html
+@@ -0,0 +1,5 @@
++<html>
++<body>
++<iframe src="stop.html"></iframe>
++</body>
++</html>
+--- /dev/null
++++ b/content/test/data/stop.html
+@@ -0,0 +1,3 @@
++<html>
++<script>stop();</script>
++</html>
+--- /dev/null
++++ b/content/test/data/web_ui_mojo_ts_test.html
+@@ -0,0 +1,8 @@
++<html>
++<head>
++  <script src="web_ui_mojo_ts_test.js" type="module"></script>
++</head>
++<body>
++  x
++</body>
++</html>
+--- /dev/null
++++ b/content/test/data/web_ui_ts_test.test-mojom
+@@ -0,0 +1,13 @@
++// Copyright 2022 The Chromium Authors
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++module content.mojom;
++
++import "content/test/data/web_ui_ts_test_types.test-mojom";
++import "url/mojom/url.mojom";
++
++interface WebUITsMojoTestCache {
++  Put(url.mojom.Url url, string contents);
++  GetAll() => (array<TsCacheItem> items);
++};
+--- /dev/null
++++ b/content/test/data/web_ui_ts_test_types.test-mojom
+@@ -0,0 +1,16 @@
++// Copyright 2022 The Chromium Authors
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++module content.mojom;
++
++import "url/mojom/url.mojom";
++
++// This struct is imported by web_ui_ts_test.test-mojom and is used to provide
++// test coverage of non-shared WebUI mojom JS modules importing other
++// non-shared WebUI mojom JS modules.
++struct TsCacheItem {
++  url.mojom.Url url;
++  string contents;
++};
++
+--- /dev/null
++++ b/content/test/data/web_ui_mojo_ts_test.ts
+@@ -0,0 +1,52 @@
++// Copyright 2022 The Chromium Authors
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++import {WebUITsMojoTestCache} from './web_ui_ts_test.test-mojom-webui.js';
++
++const TEST_DATA: Array<{url: string, contents: string}> = [
++  { url: 'https://google.com/', contents: 'i am in fact feeling lucky' },
++  { url: 'https://youtube.com/', contents: 'probably cat videos?' },
++  { url: 'https://example.com/', contents: 'internets wow' },
++];
++
++async function doTest(): Promise<boolean> {
++  const cache = WebUITsMojoTestCache.getRemote();
++  for (const entry of TEST_DATA) {
++    cache.put({ url: entry.url }, entry.contents);
++  }
++
++  const {items} = await cache.getAll();
++  if (items.length != TEST_DATA.length) {
++    return false;
++  }
++
++  const entries: {[key: string]: string } = {};
++  for (const item of items) {
++    entries[item.url.url] = item.contents;
++  }
++
++  for (const entry of TEST_DATA) {
++    if (!(entry.url in entries)) {
++      return false;
++    }
++    if (entries[entry.url] != entry.contents) {
++      return false;
++    }
++  }
++
++  return true;
++}
++
++type WindowWithDomAutomationController = Window & {
++  domAutomationController: {
++    send: (success: boolean) => void;
++  }
++};
++
++async function runTest() {
++  (window as unknown as WindowWithDomAutomationController)
++      .domAutomationController.send(await doTest());
++}
++
++Object.assign(window, {runTest});
