@@ -1,0 +1,11 @@
+--- a/src/build/config/compiler/BUILD.gn
++++ b/src/build/config/compiler/BUILD.gn
+@@ -330,7 +330,7 @@
+     }
+ 
+     if (use_lld) {
+-      ldflags += [ "-fuse-ld=lld" ]
++      ldflags += [ "-fuse-ld=lld-15" ]
+       if (lld_path != "") {
+         ldflags += [ "-B$lld_path" ]
+       }

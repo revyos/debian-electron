@@ -139,3 +139,5 @@ riscv64/ffmpeg-config.patch
 riscv64/ffmpeg-disable-rvb-rvv.patch
 riscv64/sandbox.patch
 riscv64/electron-runtime-api-delegate.patch
+
+lld-15.patch
