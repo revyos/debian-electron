@@ -104,3 +104,30 @@ lld-15.patch
 
 # ppc64le/third_party/dawn-fix-typos.patch
 # ppc64le/third_party/dawn-fix-ppc64le-detection.patch
+
+electron/get-version-do-not-use-git.patch
+electron/disable-catapult.patch
+electron/remove-mac-only-imports.patch
+electron/std-vector-non-const.patch
+
+gcc13/2039d5dff0cef8fe3841519f0418caef6ec47d2d.patch
+gcc13/5d1ac2e0d5f61913aad62dadb65a7fea6f1b93ae.patch
+gcc13/dawn-iwyu-add-cstdint-for-uint8_t.patch
+gcc13/iwyu-add-stdint.h-for-various-int-types-in-base.patch
+gcc13/iwyu-add-cstdint-for-uintptr_t-in-device.patch
+gcc13/iwyu-add-stdint.h-for-uint32_t-in-chrome_pdf.patch
+gcc13/iwyu-add-stdint.h-for-uint64_t-in-EncounteredSurface.patch
+gcc13/iwyu-add-stdint.h-for-integer-types-in-ui.patch
+gcc13/openscreen-iwyu-add-stdint.h.patch
+gcc13/pdfium-iwyu-add-stdint.h-for-uint32_t.patch
+gcc13/iwyu-add-stdint.h-for-uint32_t-in-cc.patch
+gcc13/add-missing-includes-causing-build-errors.patch
+gcc13/iwyu-add-stdint.h-for-int-types-in-gpu_feature_info.patch
+gcc13/iwyu-add-stdint.h-for-various-int-types-in-comp.patch
+gcc13/iwyu-add-stdint.h-for-various-integer-types-in-net.patch
+gcc13/iwyu-add-cstdint-for-int-types-in-s2cellid.patch
+gcc13/random-fixes-for-gcc13.patch
+gcc13/more-fixes-for-gcc13.patch
+gcc13/dawn-tint-add-cstdint.patch
+gcc13/blink-auction_config-fix-uint-types.patch
+gcc13/partition-alloc-forward-add-cstdint.patch
