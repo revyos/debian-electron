@@ -1,8 +1,8 @@
 description: use system zlib library instead of embedded lzma in courgette
 author: Michael Gilbert <mgilbert@debian.org>
 
---- a/courgette/BUILD.gn
-+++ b/courgette/BUILD.gn
+--- a/src/courgette/BUILD.gn
++++ b/src/courgette/BUILD.gn
 @@ -58,7 +58,6 @@ static_library("courgette_lib") {
  
    deps = [
@@ -19,8 +19,8 @@ author: Michael Gilbert <mgilbert@debian.org>
    ]
  }
  
---- a/courgette/crc.cc
-+++ b/courgette/crc.cc
+--- a/src/courgette/crc.cc
++++ b/src/courgette/crc.cc
 @@ -7,6 +7,8 @@
  #include <stdint.h>
  #include <stddef.h>

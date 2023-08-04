@@ -1,6 +1,6 @@
 --- a/src/build/config/compiler/BUILD.gn
 +++ b/src/build/config/compiler/BUILD.gn
-@@ -345,7 +345,7 @@ config("compiler") {
+@@ -335,7 +335,7 @@
      }
  
      if (use_lld) {

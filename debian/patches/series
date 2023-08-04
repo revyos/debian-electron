@@ -8,7 +8,6 @@ fixes/clang-and-gcc11.patch
 fixes/widevine-revision.patch
 fixes/widevine-locations.patch
 
-upstream/mojo.patch
 upstream/clamp.patch
 upstream/pwman-const.patch
 upstream/move-stack-to-isolate.patch
@@ -42,8 +41,7 @@ system/opus.patch
 system/eu-strip.patch
 system/rapidjson.patch
 
-bullseye/clang13.patch
-bullseye/mulodic.patch
+lld-15.patch
 
 # # POWER support
 # ppc64le/sandbox/0001-linux-seccomp-bpf-ppc64-glibc-workaround-in-SIGSYS-h.patch
@@ -106,5 +104,3 @@ bullseye/mulodic.patch
 
 # ppc64le/third_party/dawn-fix-typos.patch
 # ppc64le/third_party/dawn-fix-ppc64le-detection.patch
-
-lld-15.patch

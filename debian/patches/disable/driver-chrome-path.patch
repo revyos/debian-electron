@@ -1,8 +1,8 @@
 description: Disable usage of google-chrome in driver
 author: Michel Le Bihan <michel@lebihan.pl>
 
---- a/chrome/test/chromedriver/chrome/chrome_finder.cc
-+++ b/chrome/test/chromedriver/chrome/chrome_finder.cc
+--- a/src/chrome/test/chromedriver/chrome/chrome_finder.cc
++++ b/src/chrome/test/chromedriver/chrome/chrome_finder.cc
 @@ -63,9 +63,6 @@ void GetApplicationDirs(std::vector<base
    locations->push_back(base::FilePath("/usr/bin"));
    locations->push_back(base::FilePath("/sbin"));

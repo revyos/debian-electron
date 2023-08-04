@@ -2,8 +2,8 @@ description: disable support for safe browsing inspection of rar files
 author: Michael Gilbert <mgilbert@debian.org>
 bug: http://bugs.debian.org/914487
 
---- a/chrome/common/safe_browsing/BUILD.gn
-+++ b/chrome/common/safe_browsing/BUILD.gn
+--- a/src/chrome/common/safe_browsing/BUILD.gn
++++ b/src/chrome/common/safe_browsing/BUILD.gn
 @@ -58,39 +58,6 @@ if (safe_browsing_mode == 1) {
      public_deps = [ "//components/safe_browsing/core/common/proto:csd_proto" ]
    }
@@ -52,8 +52,8 @@ bug: http://bugs.debian.org/914487
        "//components/safe_browsing/core/common",
        "//third_party/lzma_sdk/google:seven_zip_reader",
      ]
---- a/chrome/services/file_util/BUILD.gn
-+++ b/chrome/services/file_util/BUILD.gn
+--- a/src/chrome/services/file_util/BUILD.gn
++++ b/src/chrome/services/file_util/BUILD.gn
 @@ -60,7 +60,6 @@ source_set("file_util") {
      deps += [
        "//chrome/common/safe_browsing",
@@ -62,8 +62,8 @@ bug: http://bugs.debian.org/914487
      ]
  
      if (is_linux || is_win) {
---- a/chrome/services/file_util/safe_archive_analyzer.cc
-+++ b/chrome/services/file_util/safe_archive_analyzer.cc
+--- a/src/chrome/services/file_util/safe_archive_analyzer.cc
++++ b/src/chrome/services/file_util/safe_archive_analyzer.cc
 @@ -6,7 +6,6 @@
  
  #include "build/build_config.h"
@@ -83,8 +83,8 @@ bug: http://bugs.debian.org/914487
    std::move(callback).Run(results);
  }
  
---- a/chrome/browser/safe_browsing/download_protection/file_analyzer.cc
-+++ b/chrome/browser/safe_browsing/download_protection/file_analyzer.cc
+--- a/src/chrome/browser/safe_browsing/download_protection/file_analyzer.cc
++++ b/src/chrome/browser/safe_browsing/download_protection/file_analyzer.cc
 @@ -95,7 +95,7 @@ void FileAnalyzer::Start(const base::Fil
    if (inspection_type == DownloadFileType::ZIP) {
      StartExtractZipFeatures();

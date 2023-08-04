@@ -1,5 +1,5 @@
---- a/third_party/libvpx/libvpx_srcs.gni
-+++ b/third_party/libvpx/libvpx_srcs.gni
+--- a/src/third_party/libvpx/libvpx_srcs.gni
++++ b/src/third_party/libvpx/libvpx_srcs.gni
 @@ -4302,6 +4302,7 @@
    "//third_party/libvpx/source/libvpx/vp9/common/vp9_seg_common.c",
    "//third_party/libvpx/source/libvpx/vp9/common/vp9_thread_common.c",

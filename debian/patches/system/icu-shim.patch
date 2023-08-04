@@ -6,8 +6,8 @@ the system's libicu, but it may be necessary for other system libs as well.
 If we switch to using the bundled icu, we can see if it's possible to get rid
 of it.
 
---- a/tools/generate_shim_headers/generate_shim_headers.py
-+++ b/tools/generate_shim_headers/generate_shim_headers.py
+--- a/src/tools/generate_shim_headers/generate_shim_headers.py
++++ b/src/tools/generate_shim_headers/generate_shim_headers.py
 @@ -18,7 +18,7 @@ import sys
  
  

@@ -41,8 +41,8 @@ Date:   Tue Jan 17 17:54:02 2023 +0000
 
 diff --git a/media/gpu/v4l2/v4l2_image_processor_backend.cc b/media/gpu/v4l2/v4l2_image_processor_backend.cc
 index dc72a4ac060a9..f3049f4546e2e 100644
---- a/media/gpu/v4l2/v4l2_image_processor_backend.cc
-+++ b/media/gpu/v4l2/v4l2_image_processor_backend.cc
+--- a/src/media/gpu/v4l2/v4l2_image_processor_backend.cc
++++ b/src/media/gpu/v4l2/v4l2_image_processor_backend.cc
 @@ -925,35 +925,16 @@ bool V4L2ImageProcessorBackend::EnqueueInputRecord(
  
    switch (input_memory_type_) {
@@ -84,8 +84,8 @@ index dc72a4ac060a9..f3049f4546e2e 100644
          VPLOGF(1) << "Failed to queue a DMABUF buffer to input queue";
 diff --git a/media/gpu/v4l2/v4l2_video_encode_accelerator.cc b/media/gpu/v4l2/v4l2_video_encode_accelerator.cc
 index 56389ea3eec08..d452ba48a69e2 100644
---- a/media/gpu/v4l2/v4l2_video_encode_accelerator.cc
-+++ b/media/gpu/v4l2/v4l2_video_encode_accelerator.cc
+--- a/src/media/gpu/v4l2/v4l2_video_encode_accelerator.cc
++++ b/src/media/gpu/v4l2/v4l2_video_encode_accelerator.cc
 @@ -783,7 +783,7 @@ void V4L2VideoEncodeAccelerator::EncodeTask(scoped_refptr<VideoFrame> frame,
      const bool is_expected_storage_type =
          native_input_mode_

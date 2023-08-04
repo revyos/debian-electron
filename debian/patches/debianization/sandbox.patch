@@ -1,8 +1,8 @@
 description: debian specific instructions when no working sandbox is available
 author: Michael Gilbert <mgilbert@debian.org>
 
---- a/content/browser/zygote_host/zygote_host_impl_linux.cc
-+++ b/content/browser/zygote_host/zygote_host_impl_linux.cc
+--- a/src/content/browser/zygote_host/zygote_host_impl_linux.cc
++++ b/src/content/browser/zygote_host/zygote_host_impl_linux.cc
 @@ -114,14 +114,13 @@ void ZygoteHostImpl::Init(const base::Co
      // root.
      use_suid_sandbox_for_adj_oom_score_ = use_suid_sandbox_;

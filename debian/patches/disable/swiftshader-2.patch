@@ -1,8 +1,8 @@
 description: additional swiftshader stuff exposed by official builds
 author: Andres Salomon <dilinger@debian.org>
 
---- a/chrome/BUILD.gn
-+++ b/chrome/BUILD.gn
+--- a/src/chrome/BUILD.gn
++++ b/src/chrome/BUILD.gn
 @@ -1719,7 +1719,6 @@ if (is_linux || is_chromeos) {
          ":chrome_symbols",
        ]

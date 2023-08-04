@@ -16,8 +16,8 @@ Date:   Mon Dec 19 19:07:37 2022 +0000
 
 diff --git a/ui/native_theme/native_theme_base.cc b/ui/native_theme/native_theme_base.cc
 index 169c60cc7f6fc..36db49a310506 100644
---- a/ui/native_theme/native_theme_base.cc
-+++ b/ui/native_theme/native_theme_base.cc
+--- a/src/ui/native_theme/native_theme_base.cc
++++ b/src/ui/native_theme/native_theme_base.cc
 @@ -1336,7 +1336,7 @@ SkColor NativeThemeBase::OutlineColor(SkScalar* hsv1, SkScalar* hsv2) const {
    // The following code has been tested to look OK with all of the
    // default GTK themes.

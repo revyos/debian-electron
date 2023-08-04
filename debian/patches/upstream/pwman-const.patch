@@ -1,7 +1,5 @@
-Index: chromium-110.0.5481.77/components/password_manager/core/browser/ui/credential_ui_entry.cc
-===================================================================
---- chromium-110.0.5481.77.orig/components/password_manager/core/browser/ui/credential_ui_entry.cc
-+++ chromium-110.0.5481.77/components/password_manager/core/browser/ui/credential_ui_entry.cc
+--- a/src/components/password_manager/core/browser/ui/credential_ui_entry.cc
++++ b/src/components/password_manager/core/browser/ui/credential_ui_entry.cc
 @@ -97,7 +97,7 @@ CredentialUIEntry::CredentialUIEntry(con
    // For cases when the notes differ within grouped passwords (e.g: a
    // credential exists in both account and profile stores), respective notes

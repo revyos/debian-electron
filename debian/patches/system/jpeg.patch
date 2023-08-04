@@ -1,8 +1,8 @@
 description: use system jpeg library
 author: Michael Gilbert <mgilbert@debian.org>
 
---- a/BUILD.gn
-+++ b/BUILD.gn
+--- a/src/BUILD.gn
++++ b/src/BUILD.gn
 @@ -752,7 +752,6 @@ group("gn_all") {
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
