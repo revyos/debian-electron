@@ -4,7 +4,7 @@
  const path = require('path');
  
  module.exports.getElectronVersion = () => {
-+  return '22.3.16';
++  return '22.3.18';
    // Find the nearest tag to the current HEAD
    // This is equivilant to our old logic of "use a value in package.json" for the following reasons
    //
@@ -22,7 +22,7 @@
 -                                 ".git/HEAD",
 -                                 "script/lib/get-version.js",
 -                               ])
-+electron_version = "22.3.16"
++electron_version = "22.3.18"
  
  if (is_mas_build) {
    assert(is_mac,
