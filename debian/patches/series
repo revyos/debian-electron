@@ -131,3 +131,12 @@ gcc13/more-fixes-for-gcc13.patch
 gcc13/dawn-tint-add-cstdint.patch
 gcc13/blink-auction_config-fix-uint-types.patch
 gcc13/partition-alloc-forward-add-cstdint.patch
+
+riscv64/angle.patch
+riscv64/crashpad.patch
+riscv64/dav1d.patch
+riscv64/sandbox.patch
+riscv64/ffmpeg-scripts.patch
+riscv64/ffmpeg-config.patch
+riscv64/extensions.patch
+riscv64/electron-runtime-api-delegate.patch
