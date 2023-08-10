@@ -8,7 +8,7 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 pkgname = electron-22
 chromium_ver = 108.0.5359.215
 deb_chromium_ver = 108.0.5359.124-1
-electron_ver = 22.3.16
+electron_ver = 22.3.18
 
 arch = $(shell dpkg-architecture -q DEB_HOST_ARCH)
 
