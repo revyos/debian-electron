@@ -1,5 +1,4 @@
 Bump version in the following files:
-- metadata.sh
 - debian/
   - control
   - rules

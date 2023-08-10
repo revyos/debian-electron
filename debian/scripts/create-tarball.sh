@@ -1,24 +1,23 @@
 set -e
-source metadata.sh
 
 _root=$PWD
-_dirname=$_pkgname-$_electron_ver
+_dirname=$RULES_pkgname-$RULES_electron_ver
 rm -rf $_dirname
 mkdir $_dirname
 _dirpath=$(realpath $_dirname)
 cd $_dirname
 
-( cd ../repos/electron && git checkout v$_electron_ver )
+( cd ../repos/electron && git checkout v$RULES_electron_ver )
 
 ( cd ../repos/chromium && \
-  git checkout $_chromium_ver && \
+  git checkout $RULES_chromium_ver && \
   cp -r --reflink=auto . $_dirpath/src )
 
 cat > .gclient <<EOF
 solutions = [
   {
     "name": "src/electron",
-    "url": "file://$_root/repos/electron@v$_electron_ver",
+    "url": "file://$_root/repos/electron@v$RULES_electron_ver",
     "deps_file": "DEPS",
     "managed": False,
     "custom_deps": {
@@ -65,7 +64,7 @@ unset DEPOT_TOOLS_UPDATE
 set +e
 
 # remove unused files (mainly to shrink size)
-readarray -t _files_excluded < ../../files-excluded.txt
+readarray -t _files_excluded < ../../debian/files-excluded.txt
 for _f in "${_files_excluded[@]}"; do
   if [ -n "$_f" ] && [[ "$_f" != "#"* ]]; then
     for _g in $(bash -O dotglob -O globstar -c "echo $_f"); do

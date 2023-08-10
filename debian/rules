@@ -5,10 +5,12 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
-pkgname = electron-23
-chromium_ver = 110.0.5481.208
-deb_chromium_ver = 111.0.5563.110-1_deb11u1
-electron_ver = 23.3.11
+# For utilities
+export RULES_electron_ver_major = 23
+export RULES_pkgname = electron-23
+export RULES_chromium_ver = 110.0.5481.208
+export RULES_deb_chromium_ver = 111.0.5563.110-1_deb11u1
+export RULES_electron_ver = 23.3.11
 
 arch = $(shell dpkg-architecture -q DEB_HOST_ARCH)
 
@@ -133,3 +135,14 @@ override_dh_auto_clean:
 
 # Unknown debugging section .debug_str_offsets
 override_dh_dwz:
+
+# *** Utilities ***
+
+fetch-repos:
+	debian/scripts/fetch-repos.sh
+
+create-tarball:
+	debian/scripts/create-tarball.sh
+
+pack-tarball:
+	debian/scripts/pack-tarball.sh
