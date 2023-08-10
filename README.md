@@ -1,8 +1,8 @@
 # Electron Debianized
 
-Packaging Electron as .deb dependency for applications e.g. VS Code, just like what Arch Linux did. Currently version 22 is packaged.
+Packaging Electron as .deb dependency for applications e.g. VS Code, just like what Arch Linux did. Currently version 22 and 23 is packaged.
 
-Since Electron (together with Chromium) is so huge, and I don't really want to bother using git-buildpackage or something on such package. Also, some preparation done by either Chromium or Electron *needs* to be in a Git repository. So I've settled on only uploading debian/ directory, and creating tarball using scripts from Git.
+Since Electron (together with Chromium) is so huge, and I don't really want to bother using git-buildpackage or something on such package. Also, some preparation done by either Chromium or Electron *needs* to be in a Git repository. So I've settled on only uploading debian/ directory, and creating tarball using scripts from projects' Git repositories.
 
 Coincidentally, this is also how openSUSE packaged [their Electron](https://build.opensuse.org/package/view_file/openSUSE:Factory/nodejs-electron/create_tarball.sh).
 
