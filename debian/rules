@@ -117,6 +117,11 @@ override_dh_auto_configure:
 
 	cd src && ../debian/scripts/unbundle.py
 
+	sed 's|@@ELECTRON_VER_MAJOR@@|$(RULES_electron_ver_major)|g' \
+		debian/electron.install.in > debian/electron-$(RULES_electron_ver_major).install
+	sed 's|@@ELECTRON_VER_MAJOR@@|$(RULES_electron_ver_major)|g' \
+		debian/electron.links.in > debian/electron-$(RULES_electron_ver_major).links
+
 override_dh_auto_build:
 	cd src && gn gen out/$(profile) --args="import(\"//electron/build/args/$(profile_lower).gn\") $(gn_args)"
 	cd src && ninja -j$(njobs) -C out/$(profile) electron
@@ -132,6 +137,8 @@ override_dh_auto_clean:
 	rm -rf src/out
 	rm -rf src/third_party/node/linux/node-linux-x64/bin
 	rm -rf src/third_party/jdk
+	rm -f debian/electron-$(RULES_electron_ver_major).install
+	rm -f debian/electron-$(RULES_electron_ver_major).links
 
 # Unknown debugging section .debug_str_offsets
 override_dh_dwz:

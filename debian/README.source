@@ -2,5 +2,4 @@ Bump version in the following files:
 - debian/
   - control
   - rules
-  - electron-*.{install,links}
   - patches/electron/get-version-do-not-use-git.patch
