@@ -148,8 +148,8 @@ override_dh_dwz:
 fetch-repos:
 	debian/scripts/fetch-repos.sh
 
-create-tarball:
-	debian/scripts/create-tarball.sh
+create-source:
+	debian/scripts/create-source.sh
 
 pack-tarball:
 	debian/scripts/pack-tarball.sh

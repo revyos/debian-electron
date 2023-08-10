@@ -1,3 +1,5 @@
+#!/bin/bash
+
 _dir=repos
 if [ ! -d $_dir ]; then
   mkdir $_dir
