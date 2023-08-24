@@ -8,29 +8,35 @@ Coincidentally, this is also how openSUSE packaged [their Electron](https://buil
 
 ## Building
 
+0. Install yarn:
+
+```console
+# apt install yarnpkg
+```
+
 1. Fetch necessary repos (Chromium, Electron):
 
 ```console
-$ ./fetch.sh
+$ debian/rules fetch-repos
 ```
 
 2. Create source directory structure from repos, with pruning and cleaning:
 
 ```
-$ ./source.sh
+$ debian/rules create-source
 ```
 
 3. (Optional) Pack source directory. The result should be a ~737M tarball:
 
 ```
-$ ./pack-source.sh
+$ debian/rules pack-tarball
 ```
 
 4. Start building:
 
 ```
-$ ln -s electron-22-<version>.tar.xz electron-22_<version>.orig.tar.xz
-$ cd electron-22-<version>/
+$ ln -s electron-<major>-<version>.tar.xz electron-<major>_<version>.orig.tar.xz
+$ cd electron-<major>-<version>/
 $ cp -r ../debian .
 $ dpkg-buildpackage -us -uc  # or
 $ sbuild ...
@@ -38,7 +44,7 @@ $ sbuild ...
 
 ## Building on riscv64
 
-This package also includes unofficial support for riscv64, as first done in [Arch Linux RISC-V]().
+This package also includes unofficial support for riscv64, as first done in [Arch Linux RISC-V](https://github.com/felixonmars/archriscv-packages/tree/master/electron22).
 
 Note that since Google doesn't build depot_tools for riscv64 (and fortunately it is only used in preparation), you need to:
 
