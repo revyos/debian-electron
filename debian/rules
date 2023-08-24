@@ -25,8 +25,8 @@ export CXXFLAGS = $(shell dpkg-buildflags --get CXXFLAGS)
 export CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
 endif
 
-export CC = clang-15
-export CXX = clang++-15
+export CC = gcc-13
+export CXX = g++-13
 export AR = ar
 export NM = nm
 
@@ -46,6 +46,7 @@ gn_args = \
 
 # disabled features
 gn_args += \
+	is_clang=false \
 	is_debug=false \
 	use_goma=false \
 	use_sysroot=false \
