@@ -33,10 +33,9 @@ export NM = nm
 # https://github.com/webpack/webpack/issues/14532
 export NODE_OPTIONS = --openssl-legacy-provider
 
-# facilitate deterministic builds
-export CFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
-export CXXFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
-export CPPFLAGS += -D__DATE__= -D__TIME__= -D__TIMESTAMP__=
+# Fix GCC build
+export CFLAGS += -flax-vector-conversions
+export CXXFLAGS += -flax-vector-conversions -Wno-error=changes-meaning -fpermissive
 
 gn_args = \
 	custom_toolchain=\"//build/toolchain/linux/unbundle:default\" \
@@ -113,7 +112,7 @@ override_dh_auto_configure:
 	ln -sf /usr/bin/node src/third_party/node/linux/node-linux-x64/bin
 
 	mkdir -p src/third_party/jdk
-	ln -s /usr/lib/jvm/java-11-openjdk-$(shell dpkg-architecture -q DEB_HOST_ARCH) \
+	ln -sf /usr/lib/jvm/java-11-openjdk-$(shell dpkg-architecture -q DEB_HOST_ARCH) \
 		src/third_party/jdk/current
 
 	cd src && ../debian/scripts/unbundle.py

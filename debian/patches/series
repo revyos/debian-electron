@@ -7,6 +7,7 @@ fixes/ps-print.patch
 fixes/clang-and-gcc11.patch
 fixes/widevine-revision.patch
 fixes/widevine-locations.patch
+fixes/ffmpeg-x86-mathops.patch
 
 upstream/clamp.patch
 upstream/pwman-const.patch
@@ -132,6 +133,19 @@ gcc13/dawn-tint-add-cstdint.patch
 gcc13/blink-auction_config-fix-uint-types.patch
 gcc13/partition-alloc-forward-add-cstdint.patch
 
+gcc/chromium-109-glibcxx_assertions.patch
+gcc/chromium-110-CanvasResourceProvider-pragma.patch
+gcc/chromium-110-compiler.patch
+gcc/chromium-110-dpf-arm64.patch
+gcc/chromium-110-InProgressDownloadManager-include.patch
+gcc/chromium-110-kCustomizeChromeColors-type.patch
+gcc/chromium-110-Presenter-include.patch
+gcc/chromium-110-raw_ptr-constexpr.patch
+gcc/chromium-110-StorageQueue-decltype.patch
+gcc/chromium-110-SyncIterator-template.patch
+gcc/chromium-110-url_canon_internal-cast.patch
+gcc/chromium-110-v8-gcc.patch
+
 riscv64/angle.patch
 riscv64/crashpad.patch
 riscv64/dav1d.patch
@@ -142,3 +156,4 @@ riscv64/ffmpeg-disable-rvb-rvv.patch
 riscv64/extensions.patch
 riscv64/electron-runtime-api-delegate.patch
 riscv64/electron-patch-2c8a019f39d2-fix.patch
+gcc/electron-observer.patch
