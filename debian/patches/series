@@ -158,3 +158,4 @@ riscv64/electron-runtime-api-delegate.patch
 riscv64/electron-patch-2c8a019f39d2-fix.patch
 gcc/electron-observer.patch
 riscv64/vulkan-loader-asm-offset.patch
+gcc/net-absl-optional-explicit.patch
