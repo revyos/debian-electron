@@ -145,6 +145,9 @@ gcc/chromium-110-StorageQueue-decltype.patch
 gcc/chromium-110-SyncIterator-template.patch
 gcc/chromium-110-url_canon_internal-cast.patch
 gcc/chromium-110-v8-gcc.patch
+gcc/net-absl-optional-explicit.patch
+gcc/electron-extra-qualification.patch
+gcc/electron-observer.patch
 
 riscv64/angle.patch
 riscv64/crashpad.patch
@@ -156,6 +159,4 @@ riscv64/ffmpeg-disable-rvb-rvv.patch
 riscv64/extensions.patch
 riscv64/electron-runtime-api-delegate.patch
 riscv64/electron-patch-2c8a019f39d2-fix.patch
-gcc/electron-observer.patch
 riscv64/vulkan-loader-asm-offset.patch
-gcc/net-absl-optional-explicit.patch

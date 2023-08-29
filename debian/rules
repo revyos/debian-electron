@@ -33,9 +33,7 @@ export NM = nm
 # https://github.com/webpack/webpack/issues/14532
 export NODE_OPTIONS = --openssl-legacy-provider
 
-# Fix GCC build
-export CFLAGS += -flax-vector-conversions
-export CXXFLAGS += -flax-vector-conversions -Wno-error=changes-meaning -fpermissive
+export CXXFLAGS += -Wno-error=changes-meaning
 
 gn_args = \
 	custom_toolchain=\"//build/toolchain/linux/unbundle:default\" \
@@ -49,7 +47,6 @@ gn_args += \
 	is_debug=false \
 	use_goma=false \
 	use_sysroot=false \
-	use_allocator=\"none\" \
 	use_libjpeg_turbo=true \
 	use_custom_libcxx=false \
 	use_gnome_keyring=false \

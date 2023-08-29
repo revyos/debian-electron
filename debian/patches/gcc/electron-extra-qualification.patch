@@ -1,0 +1,22 @@
+--- a/src/electron/shell/browser/hid/electron_hid_delegate.h
++++ b/src/electron/shell/browser/hid/electron_hid_delegate.h
+@@ -94,7 +94,7 @@
+ namespace base {
+ 
+ template <>
+-struct base::ScopedObservationTraits<
++struct ScopedObservationTraits<
+     electron::HidChooserContext,
+     electron::HidChooserContext::DeviceObserver> {
+   static void AddObserver(
+--- a/src/electron/shell/browser/serial/electron_serial_delegate.h
++++ b/src/electron/shell/browser/serial/electron_serial_delegate.h
+@@ -83,7 +83,7 @@
+ namespace base {
+ 
+ template <>
+-struct base::ScopedObservationTraits<
++struct ScopedObservationTraits<
+     electron::SerialChooserContext,
+     electron::SerialChooserContext::PortObserver> {
+   static void AddObserver(
