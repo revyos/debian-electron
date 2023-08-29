@@ -5,7 +5,7 @@
  
      if (use_lld) {
 -      ldflags += [ "-fuse-ld=lld" ]
-+      ldflags += [ "-fuse-ld=lld-15" ]
++      ldflags += [ "-fuse-ld=lld-17" ]
        if (lld_path != "") {
          ldflags += [ "-B$lld_path" ]
        }

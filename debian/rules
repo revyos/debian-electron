@@ -25,8 +25,8 @@ export CXXFLAGS = $(shell dpkg-buildflags --get CXXFLAGS)
 export CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
 endif
 
-export CC = clang-15
-export CXX = clang++-15
+export CC = clang-17
+export CXX = clang++-17
 export AR = ar
 export NM = nm
 

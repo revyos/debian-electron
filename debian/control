@@ -9,9 +9,9 @@ Vcs-Git: https://github.com/hack3ric/debian-electron.git
 Vcs-Browser: https://github.com/hack3ric/debian-electron
 Build-Depends:
  debhelper-compat (= 13),
- clang-15,
- clang-format-15,
- lld-15,
+ clang-17,
+ clang-format-17,
+ lld-17,
  generate-ninja,
  ninja-build,
  openjdk-11-jdk-headless,
