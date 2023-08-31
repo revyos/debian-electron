@@ -1,4 +1,11 @@
-electron-23 (23.3.11-1) UNRELEASED; urgency=medium
+electron-23 (23.3.11-2) UNRELEASED; urgency=medium
+
+  * Fix clang-format.patch
+  * Remove unused GN argument use_allocator
+
+ -- Eric Long <i@hack3r.moe>  Thu, 31 Aug 2023 14:38:31 +0800
+
+electron-23 (23.3.11-1) unstable; urgency=medium
 
   * Initial release.
 
