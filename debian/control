@@ -5,8 +5,8 @@ Maintainer: Eric Long <i@hack3r.moe>
 Standards-Version: 4.5.1
 Homepage: https://www.electronjs.org
 Rules-Requires-Root: no
-Vcs-Git: https://github.com/hack3ric/debian-electron.git
-Vcs-Browser: https://github.com/hack3ric/debian-electron
+Vcs-Git: https://github.com/revyos/debian-electron.git
+Vcs-Browser: https://github.com/revyos/debian-electron
 Build-Depends:
  debhelper-compat (= 13),
  clang-17,
