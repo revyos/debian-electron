@@ -12,20 +12,6 @@ export RULES_chromium_ver = 110.0.5481.208
 export RULES_deb_chromium_ver = 111.0.5563.110-1_deb11u1
 export RULES_electron_ver = 23.3.11
 
-arch = $(shell dpkg-architecture -q DEB_HOST_ARCH)
-
-export DEB_CXXFLAGS_MAINT_STRIP = -g
-ifeq ($(arch), riscv64)
-thead_flags = -march=rv64imafd_xtheadba_xtheadbb_xtheadbs_xtheadcmo_xtheadcondmov_xtheadfmemidx_xtheadmac_xtheadmemidx_xtheadmempair_xtheadsync
-export CFLAGS = $(thead_flags)
-export CXXFLAGS = $(thead_flags)
-export CPPFLAGS =
-else
-export CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
-export CXXFLAGS = $(shell dpkg-buildflags --get CXXFLAGS)
-export CPPFLAGS = $(shell dpkg-buildflags --get CPPFLAGS)
-endif
-
 export CC = clang-17
 export CXX = clang++-17
 export AR = ar
@@ -33,6 +19,15 @@ export NM = nm
 
 # https://github.com/webpack/webpack/issues/14532
 export NODE_OPTIONS = --openssl-legacy-provider
+
+export DEB_CXXFLAGS_MAINT_STRIP = -g
+
+arch = $(shell dpkg-architecture -q DEB_HOST_ARCH)
+ifeq ($(arch), riscv64)
+thead_flags = -march=rv64gc_zfh_xtheadba_xtheadbb_xtheadbs_xtheadcmo_xtheadcondmov_xtheadfmemidx_xtheadmac_xtheadmemidx_xtheadmempair_xtheadsync
+export CFLAGS += $(thead_flags)
+export CXXFLAGS += $(thead_flags)
+endif
 
 # facilitate deterministic builds
 export CFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
