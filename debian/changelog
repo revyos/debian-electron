@@ -1,4 +1,10 @@
-electron-23 (23.3.11-1) UNRELEASED; urgency=medium
+electron-23 (23.3.11-1revyos1) unstable; urgency=medium
+
+  * Use clang-17 and enable XTHead extensions
+
+ -- Eric Long <i@hack3r.moe>  Thu, 31 Aug 2023 12:19:44 +0800
+
+electron-23 (23.3.11-1) unstable; urgency=medium
 
   * Initial release.
 
