@@ -1,24 +1,19 @@
 debianization/manpage.patch
 debianization/sandbox.patch
 debianization/master-preferences.patch
-debianization/support-i386.patch
 
 fixes/ps-print.patch
 fixes/clang-and-gcc11.patch
 fixes/widevine-revision.patch
 fixes/widevine-locations.patch
 
-upstream/clamp.patch
-upstream/pwman-const.patch
-upstream/move-stack-to-isolate.patch
-upstream/blink-dbl-float.patch
-upstream/v4l2-fix.patch
+upstream/sizet.patch
+upstream/feature-list-static.patch
 
 disable/tests.patch
 disable/unrar.patch
 disable/signin.patch
 disable/android.patch
-disable/openh264.patch
 disable/catapult.patch
 disable/font-tests.patch
 disable/swiftshader.patch
@@ -40,6 +35,18 @@ system/clang-format.patch
 system/opus.patch
 system/eu-strip.patch
 system/rapidjson.patch
+system/rollup.patch
+
+bookworm/clang-attribs.patch
+bookworm/typename.patch
+bookworm/structured-binding-scope-bug.patch
+
+bullseye/clang13.patch
+bullseye/constexpr.patch
+
+# i386 support
+i386/support-i386.patch
+i386/angle-lockfree.patch
 
 # # POWER support
 # ppc64le/sandbox/0001-linux-seccomp-bpf-ppc64-glibc-workaround-in-SIGSYS-h.patch
@@ -60,6 +67,7 @@ system/rapidjson.patch
 # ppc64le/sandbox/0008-sandbox-fix-ppc64le-glibc234.patch
 
 # ppc64le/third_party/0001-third_party-angle-Include-missing-header-cstddef-in-.patch
+# ppc64le/third_party/0001-Add-PPC64-support-for-boringssl.patch
 # ppc64le/third_party/0001-third_party-boringssl-Properly-detect-ppc64le-in-BUI.patch
 # ppc64le/third_party/0001-third_party-libvpx-Properly-generate-gni-on-ppc64.patch
 # ppc64le/third_party/0001-third_party-lss-Don-t-look-for-mmap2-on-ppc64.patch
@@ -72,16 +80,21 @@ system/rapidjson.patch
 # ppc64le/third_party/0004-third_party-crashpad-port-curl-transport-ppc64.patch
 
 # ppc64le/workarounds/HACK-third_party-libvpx-use-generic-gnu.patch
+# ppc64le/workarounds/HACK-debian-clang-disable-skia-musttail.patch
 
 # ppc64le/libaom/0001-Add-ppc64-target-to-libaom.patch
 # ppc64le/libaom/0001-Add-pregenerated-config-for-libaom-on-ppc64.patch
 
 # ppc64le/third_party/0002-third_party-libvpx-Remove-bad-ppc64-config.patch
+# ppc64le/third_party/0002-third-party-boringssl-add-generated-files.patch
 # ppc64le/third_party/0003-third_party-libvpx-Add-ppc64-generated-config.patch
 # # Enabling VSX causes artifacts to appear in VP9 videos
 # #ppc64le/third_party/0003-third_party-libvpx-Add-ppc64-vsx-files.patch
 # ppc64le/third_party/0003-third_party-ffmpeg-Add-ppc64-generated-config.patch
 # ppc64le/third_party/0004-third_party-libvpx-work-around-ambiguous-vsx.patch
+
+# # Enable VSX acceleration in Skia.  Requires POWER8 or higher.
+# ppc64le/third_party/skia-vsx-instructions.patch
 
 # ppc64le/ffmpeg/0001-Add-support-for-ppc64.patch
 # ppc64le/breakpad/0001-Implement-support-for-ppc64-on-Linux.patch
@@ -89,13 +102,12 @@ system/rapidjson.patch
 # ppc64le/database/0001-Properly-detect-little-endian-PPC64-systems.patch
 # ppc64le/third_party/0001-Force-baseline-POWER8-AltiVec-VSX-CPU-features-when-.patch
 # ppc64le/fixes/fix-breakpad-compile.patch
+# ppc64le/fixes/fix-partition-alloc-compile.patch
 # ppc64le/v8/0002-Add-ppc64-trap-instructions.patch
+# ppc64le/third_party/0001-Fix-highway-ppc-hwcap.patch
 
 # ppc64le/third_party/0001-Add-PPC64-support-for-libdav1d.patch
 # ppc64le/third_party/0001-Fix-libdav1d-compilation-on-clang-ppc.patch
-# ppc64le/third_party/0005-third_party-dav1d-crash-fix.patch
-# # Multiple Clang 11 bugs hit with VSX enabled, including bug #50520 (D103386)
-# #ppc64le/third_party/skia-vsx-instructions.patch
 # ppc64le/sandbox/fix-ppc64-linux-syscalls-headers.patch
 # ppc64le/third_party/0003-thirdparty-fix-dav1d-gn.patch
 # ppc64le/third_party/use-sysconf-page-size-on-ppc64.patch
@@ -103,40 +115,27 @@ system/rapidjson.patch
 # ppc64le/third_party/dawn-fix-typos.patch
 # ppc64le/third_party/dawn-fix-ppc64le-detection.patch
 
-electron/get-version-do-not-use-git.patch
+# # Suppress harmless compiler warning messages that appear on ppc64 due to arch-specific warning flags being passed
+# ppc64le/fixes/fix-unknown-warning-option-messages.diff
+
+# # Needed on Debian while POWER8 remains the build target
+# # POWER9 enables hardware 128 bit vector support (ISA 3.0),
+# # and Highway gets confused when building in POWER8 mode
+# # (POWER8 compiler flags) on POWER9 hosts.
+# ppc64le/third_party/0002-Highway-disable-128-bit-vsx.patch
+
+# # These patches enable full POWER ISA 3.0 (POWER9) acceleration when applied
+# # They will not work on POWER8 (ISA 2.07) or below
+# #ppc64le/core/baseline-isa-3-0.patch
+
 electron/disable-catapult.patch
+electron/get-version-do-not-use-git.patch
 electron/remove-mac-only-imports.patch
 electron/std-vector-non-const.patch
 
-gcc13/2039d5dff0cef8fe3841519f0418caef6ec47d2d.patch
-gcc13/5d1ac2e0d5f61913aad62dadb65a7fea6f1b93ae.patch
-gcc13/dawn-iwyu-add-cstdint-for-uint8_t.patch
-gcc13/iwyu-add-stdint.h-for-various-int-types-in-base.patch
-gcc13/iwyu-add-cstdint-for-uintptr_t-in-device.patch
-gcc13/iwyu-add-stdint.h-for-uint32_t-in-chrome_pdf.patch
-gcc13/iwyu-add-stdint.h-for-uint64_t-in-EncounteredSurface.patch
-gcc13/iwyu-add-stdint.h-for-integer-types-in-ui.patch
-gcc13/openscreen-iwyu-add-stdint.h.patch
-gcc13/pdfium-iwyu-add-stdint.h-for-uint32_t.patch
-gcc13/iwyu-add-stdint.h-for-uint32_t-in-cc.patch
-gcc13/add-missing-includes-causing-build-errors.patch
-gcc13/iwyu-add-stdint.h-for-int-types-in-gpu_feature_info.patch
-gcc13/iwyu-add-stdint.h-for-various-int-types-in-comp.patch
-gcc13/iwyu-add-stdint.h-for-various-integer-types-in-net.patch
-gcc13/iwyu-add-cstdint-for-int-types-in-s2cellid.patch
-gcc13/random-fixes-for-gcc13.patch
-gcc13/more-fixes-for-gcc13.patch
-gcc13/dawn-tint-add-cstdint.patch
-gcc13/blink-auction_config-fix-uint-types.patch
-gcc13/partition-alloc-forward-add-cstdint.patch
-
 riscv64/angle.patch
+riscv64/base.patch
 riscv64/crashpad.patch
 riscv64/dav1d.patch
+riscv64/libyuv.patch
 riscv64/sandbox.patch
-riscv64/ffmpeg-scripts.patch
-riscv64/ffmpeg-config.patch
-riscv64/ffmpeg-disable-rvb-rvv.patch
-riscv64/extensions.patch
-riscv64/electron-runtime-api-delegate.patch
-riscv64/electron-patch-2c8a019f39d2-fix.patch

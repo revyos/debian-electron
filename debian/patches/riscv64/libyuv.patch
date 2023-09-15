@@ -1,0 +1,44 @@
+Index: chromium-114.0.5735.106/third_party/libyuv/BUILD.gn
+===================================================================
+--- chromium-114.0.5735.106.orig/src/third_party/libyuv/BUILD.gn
++++ chromium-114.0.5735.106/src/third_party/libyuv/BUILD.gn
+@@ -130,6 +130,7 @@ static_library("libyuv_internal") {
+     "source/row_any.cc",
+     "source/row_common.cc",
+     "source/row_gcc.cc",
++    "source/row_rvv.cc",
+     "source/row_win.cc",
+     "source/scale.cc",
+     "source/scale_any.cc",
+Index: chromium-114.0.5735.106/third_party/libyuv/include/libyuv/row.h
+===================================================================
+--- chromium-114.0.5735.106.orig/src/third_party/libyuv/include/libyuv/row.h
++++ chromium-114.0.5735.106/src/third_party/libyuv/include/libyuv/row.h
+@@ -757,7 +757,7 @@ extern "C" {
+ #define HAS_RAWTOYJROW_LASX
+ #endif
+ 
+-#if !defined(LIBYUV_DISABLE_RVV) && defined(__riscv)
++#if !defined(LIBYUV_DISABLE_RVV) && defined(__riscv_vector)
+ #define HAS_ARGBTORAWROW_RVV
+ #define HAS_ARGBTORGB24ROW_RVV
+ #define HAS_RAWTOARGBROW_RVV
+Index: chromium-114.0.5735.106/third_party/libyuv/source/row_rvv.cc
+===================================================================
+--- chromium-114.0.5735.106.orig/src/third_party/libyuv/source/row_rvv.cc
++++ chromium-114.0.5735.106/src/third_party/libyuv/source/row_rvv.cc
+@@ -19,7 +19,7 @@
+ 
+ #include "libyuv/row.h"
+ 
+-#if !defined(LIBYUV_DISABLE_RVV) && defined(__riscv)
++#if !defined(LIBYUV_DISABLE_RVV) && defined(__riscv_vector)
+ #include <riscv_vector.h>
+ 
+ #ifdef __cplusplus
+@@ -114,4 +114,4 @@ void RGB24ToARGBRow_RVV(const uint8_t* s
+ }  // namespace libyuv
+ #endif
+ 
+-#endif  // !defined(LIBYUV_DISABLE_RVV) && defined(__riscv)
++#endif  // !defined(LIBYUV_DISABLE_RVV) && defined(__riscv_vector)
