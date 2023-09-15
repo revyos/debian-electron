@@ -41,8 +41,6 @@ system/opus.patch
 system/eu-strip.patch
 system/rapidjson.patch
 
-lld-15.patch
-
 # # POWER support
 # ppc64le/sandbox/0001-linux-seccomp-bpf-ppc64-glibc-workaround-in-SIGSYS-h.patch
 # ppc64le/sandbox/0001-sandbox-Enable-seccomp_bpf-for-ppc64.patch

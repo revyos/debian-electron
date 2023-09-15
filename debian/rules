@@ -12,8 +12,8 @@ export RULES_chromium_ver = 114.0.5735.289
 export RULES_deb_chromium_ver = 114.0.5735.198-1_deb12u1
 export RULES_electron_ver = 25.8.1
 
-export CC = clang-15
-export CXX = clang++-15
+export CC = clang
+export CXX = clang++
 export AR = ar
 export NM = nm
 
