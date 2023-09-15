@@ -53,7 +53,6 @@ gn_args += \
 	enable_hangout_services_extension=false \
 	angle_has_histograms=false \
 	build_angle_perftests=false \
-	enable_js_type_check=false \
 	treat_warnings_as_errors=false \
 	use_qt=false \
 	is_cfi=false \

@@ -67,6 +67,7 @@ Build-Depends:
  libnghttp2-dev,
  libc-ares-dev,
  libva-dev,
+ libevdev-dev,
 
 Package: electron-25
 Architecture: any

@@ -1,0 +1,30 @@
+From 1e9dd19923a2a16571f953ae9a048768a699b981 Mon Sep 17 00:00:00 2001
+From: Stephan Hartmann <stha09@googlemail.com>
+Date: Wed, 29 Mar 2023 17:30:34 +0000
+Subject: [PATCH] IWYU: add cstdio for snprintf in vk_mem_alloc.h
+
+---
+ third_party/vulkan_memory_allocator/include/vk_mem_alloc.h                              | 1 +
+ third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h | 1 +
+ 2 file changed, 2 insertions(+)
+
+--- a/src/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
++++ b/src/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
+@@ -2389,6 +2389,7 @@
+ #undef VMA_IMPLEMENTATION
+ 
+ #include <cstdint>
++#include <cstdio>
+ #include <cstdlib>
+ #include <cstring>
+ #include <utility>
+--- a/src/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
++++ b/src/third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
+@@ -2602,6 +2602,7 @@
+ #undef VMA_IMPLEMENTATION
+ 
+ #include <cstdint>
++#include <cstdio>
+ #include <cstdlib>
+ #include <cstring>
+ #include <utility>

@@ -133,6 +133,11 @@ electron/get-version-do-not-use-git.patch
 electron/remove-mac-only-imports.patch
 electron/std-vector-non-const.patch
 
+gcc13/chromium-114-maldoca-include.patch
+gcc13/chromium-114-ruy-include.patch
+gcc13/chromium-114-tflite-include.patch
+gcc13/chromium-114-vk_mem_alloc-include.patch
+
 riscv64/angle.patch
 riscv64/base.patch
 riscv64/crashpad.patch
