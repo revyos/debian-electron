@@ -1,4 +1,4 @@
-Source: electron-23
+Source: electron-25
 Section: unknown
 Priority: optional
 Maintainer: Eric Long <i@hack3r.moe>
@@ -68,7 +68,7 @@ Build-Depends:
  libc-ares-dev,
  libva-dev,
 
-Package: electron-23
+Package: electron-25
 Architecture: any
 Multi-Arch: foreign
 Description: Build cross platform desktop apps with web technologies
