@@ -144,3 +144,6 @@ riscv64/crashpad.patch
 riscv64/dav1d.patch
 riscv64/libyuv.patch
 riscv64/sandbox.patch
+riscv64/ffmpeg-scripts.patch
+riscv64/ffmpeg-config.patch
+riscv64/ffmpeg-disable-rvb-rvv.patch
