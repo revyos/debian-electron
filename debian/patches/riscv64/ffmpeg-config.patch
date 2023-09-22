@@ -8992,7 +8992,7 @@
 +    "libavcodec/riscv/pixblockdsp_init.c",
 +    "libavcodec/riscv/vorbisdsp_init.c",
 +    "libavutil/riscv/cpu.c",
-+    "libavutil/riscv/fixed_dsp_init.c`",
++    "libavutil/riscv/fixed_dsp_init.c",
 +    "libavutil/riscv/float_dsp_init.c",
 +    "libswscale/riscv/rgb2rgb.c",
 +    "libavutil/riscv/bswap.h",
