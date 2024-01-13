@@ -1,4 +1,4 @@
-Source: electron-25
+Source: electron-27
 Section: unknown
 Priority: optional
 Maintainer: Eric Long <i@hack3r.moe>
@@ -23,6 +23,7 @@ Build-Depends:
  pkg-config,
  gperf,
  unzip,
+ dos2unix,
  libopus-dev,
  liblcms2-dev,
  libjsoncpp-dev,
@@ -69,7 +70,7 @@ Build-Depends:
  libva-dev,
  libevdev-dev,
 
-Package: electron-25
+Package: electron-27
 Architecture: any
 Multi-Arch: foreign
 Description: Build cross platform desktop apps with web technologies

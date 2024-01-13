@@ -32,12 +32,13 @@ keepers = ('ffmpeg', 'harfbuzz-ng', 'icu', 'libvpx',
     'absl_time',
     'absl_types',
     'absl_utility',
+    'brotli',
     'crc32c',
     'dav1d',
     'libaom' ,
     'libavif' ,
-    'libjxl' ,
     'libyuv' ,
+    're2',
     'swiftshader-SPIRV-Headers' ,
     'swiftshader-SPIRV-Tools' ,
     'vulkan-SPIRV-Headers' ,
@@ -55,6 +56,5 @@ for lib,rule in replace_gn_files.REPLACEMENTS.items():
             path = os.path.split(path[0])
             symlink += '../'
         symlink += "build/linux/unbundle/%s.gn %s"%(lib,rule)
-        print(symlink)
         if os.system(symlink):
             raise RuntimeError("error creating symlink",symlink)

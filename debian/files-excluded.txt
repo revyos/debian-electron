@@ -9,6 +9,11 @@
 **/*.so
 **/*.ttf
 **/*.wasm
+**/*.node
+**/*.dylib
+**/*.so
+**/*.o
+**/*.a
 **/*config.guess
 **/*config.sub
 **/*corpora
@@ -50,7 +55,6 @@ third_party/blink/{manual,perf,web}_tests
 third_party/boringssl/src/crypto/cipher_extra/test
 third_party/breakpad/breakpad/src/client/mac
 third_party/breakpad/breakpad/src/common/convert_UTF.*
-third_party/brotli
 third_party/catapult
 third_party/chaijs/chai.js
 third_party/checkstyle
@@ -97,7 +101,6 @@ third_party/pdfium/third_party/libopenjpeg
 third_party/perfetto/docs
 third_party/protobuf/{csharp,java,js,objectivec,php,ruby}
 third_party/pyelftools
-third_party/re2
 third_party/skia/platform_tools
 third_party/skia/resources/icc_profiles
 third_party/skia/site/docs/user/api

@@ -1,5 +1,5 @@
-electron-25 (25.8.1-1) UNRELEASED; urgency=medium
+electron-27 (27.2.2-1) UNRELEASED; urgency=medium
 
   * Initial release.
 
- -- Eric Long <i@hack3r.moe>  Fri, 15 Sep 2023 21:12:14 +0800
+ -- Eric Long <i@hack3r.moe>  Sat, 13 Jan 2024 13:50:07 +0800

@@ -6,11 +6,11 @@ export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 # For utilities
-export RULES_electron_ver_major = 25
-export RULES_pkgname = electron-25
-export RULES_chromium_ver = 114.0.5735.289
-export RULES_deb_chromium_ver = 114.0.5735.198-1_deb12u1
-export RULES_electron_ver = 25.8.1
+export RULES_electron_ver_major = 27
+export RULES_pkgname = electron-27
+export RULES_chromium_ver = 118.0.5993.159
+export RULES_deb_chromium_ver = 118.0.5993.117-1
+export RULES_electron_ver = 27.2.2
 
 export CC = clang
 export CXX = clang++
@@ -45,6 +45,7 @@ gn_args += \
 	use_unofficial_version_number=false \
 	enable_vr=false \
 	enable_nacl=false \
+	enable_rust=false \
 	enable_swiftshader=false \
 	dawn_use_swiftshader=false \
 	build_dawn_tests=false \
@@ -86,9 +87,9 @@ profile = Release
 profile_lower := $(shell echo $(profile) | tr A-Z a-z)
 
 # handle parallel build options
-njobs=1
+njobs = 1
 ifneq (,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
-njobs=$(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
+njobs = $(patsubst parallel=%,%,$(filter parallel=%,$(DEB_BUILD_OPTIONS)))
 endif
 
 %:

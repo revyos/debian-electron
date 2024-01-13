@@ -1,0 +1,144 @@
+--- a/src/chrome/browser/BUILD.gn
++++ b/src/chrome/browser/BUILD.gn
+@@ -3446,7 +3446,6 @@
+       "//components/embedder_support/android:util",
+       "//components/embedder_support/android:web_contents_delegate",
+       "//components/endpoint_fetcher:endpoint_fetcher",
+-      "//components/environment_integrity/android",
+       "//components/external_intents/android",
+       "//components/favicon/android",
+       "//components/favicon/core:database",
+--- a/src/components/BUILD.gn
++++ b/src/components/BUILD.gn
+@@ -533,7 +533,6 @@
+       "//components/embedder_support/android:native_java_unittests_java",
+       "//components/embedder_support/android/metrics:test_support_java",
+       "//components/embedder_support/android/metrics:unit_tests",
+-      "//components/environment_integrity/android:unit_tests",
+       "//components/gcm_driver/instance_id:test_support",
+       "//components/gcm_driver/instance_id/android:instance_id_driver_java",
+       "//components/gcm_driver/instance_id/android:instance_id_driver_test_support_java",
+--- a/src/components/environment_integrity/android/android_environment_integrity_service.cc
++++ b/src/components/environment_integrity/android/android_environment_integrity_service.cc
+@@ -83,25 +83,8 @@
+ void AndroidEnvironmentIntegrityService::GetEnvironmentIntegrity(
+     const std::vector<uint8_t>& content_binding,
+     GetEnvironmentIntegrityCallback callback) {
+-  if (!base::FeatureList::IsEnabled(
+-          blink::features::kWebEnvironmentIntegrity)) {
+     ReportBadMessageAndDeleteThis(
+         "Feature not enabled. IPC call not expected.");
+-    return;
+-  }
+-  if (!integrity_service_->IsIntegrityAvailable()) {
+-    std::move(callback).Run(EnvironmentIntegrityResponseCode::kInternalError,
+-                            std::vector<uint8_t>());
+-    return;
+-  }
+-
+-  const url::Origin& origin =
+-      render_frame_host().GetOutermostMainFrame()->GetLastCommittedOrigin();
+-  GetDataManager()->GetHandle(
+-      origin, base::BindOnce(&AndroidEnvironmentIntegrityService::OnGetHandle,
+-                             weak_factory_.GetWeakPtr(),
+-                             EnvironmentIntegrityRequest(std::move(callback),
+-                                                         content_binding)));
+ }
+ 
+ void AndroidEnvironmentIntegrityService::OnGetHandle(
+--- a/src/content/browser/browser_interface_binders.cc
++++ b/src/content/browser/browser_interface_binders.cc
+@@ -128,7 +128,6 @@
+ #include "third_party/blink/public/mojom/cookie_store/cookie_store.mojom.h"
+ #include "third_party/blink/public/mojom/credentialmanagement/credential_manager.mojom.h"
+ #include "third_party/blink/public/mojom/device/device.mojom.h"
+-#include "third_party/blink/public/mojom/environment_integrity/environment_integrity_service.mojom.h"
+ #include "third_party/blink/public/mojom/feature_observer/feature_observer.mojom.h"
+ #include "third_party/blink/public/mojom/file/file_utilities.mojom.h"
+ #include "third_party/blink/public/mojom/file_system_access/file_system_access_manager.mojom.h"
+@@ -1148,10 +1147,6 @@
+     map->Add<blink::mojom::BrowsingTopicsDocumentService>(
+         base::BindRepeating(&BrowsingTopicsDocumentHost::CreateMojoService));
+   }
+-  if (base::FeatureList::IsEnabled(blink::features::kWebEnvironmentIntegrity)) {
+-    map->Add<blink::mojom::EnvironmentIntegrityService>(base::BindRepeating(
+-        &EmptyBinderForFrame<blink::mojom::EnvironmentIntegrityService>));
+-  }
+   if (base::FeatureList::IsEnabled(
+           net::features::kCookieDeprecationFacilitatedTestingLabels)) {
+     map->Add<blink::mojom::CookieDeprecationLabelDocumentService>(
+--- a/src/third_party/blink/public/mojom/BUILD.gn
++++ b/src/third_party/blink/public/mojom/BUILD.gn
+@@ -66,7 +66,6 @@
+     "dom_storage/session_storage_namespace.mojom",
+     "dom_storage/storage_area.mojom",
+     "drag/drag.mojom",
+-    "environment_integrity/environment_integrity_service.mojom",
+     "favicon/favicon_url.mojom",
+     "feature_observer/feature_observer.mojom",
+     "fenced_frame/fenced_frame_config.mojom",
+--- a/src/third_party/blink/renderer/bindings/generated_in_modules.gni
++++ b/src/third_party/blink/renderer/bindings/generated_in_modules.gni
+@@ -1923,8 +1923,6 @@
+   "$root_gen_dir/third_party/blink/renderer/bindings/modules/v8/v8_entry.h",
+   "$root_gen_dir/third_party/blink/renderer/bindings/modules/v8/v8_entry_sync.cc",
+   "$root_gen_dir/third_party/blink/renderer/bindings/modules/v8/v8_entry_sync.h",
+-  "$root_gen_dir/third_party/blink/renderer/bindings/modules/v8/v8_environment_integrity.cc",
+-  "$root_gen_dir/third_party/blink/renderer/bindings/modules/v8/v8_environment_integrity.h",
+   "$root_gen_dir/third_party/blink/renderer/bindings/modules/v8/v8_event_source.cc",
+   "$root_gen_dir/third_party/blink/renderer/bindings/modules/v8/v8_event_source.h",
+   "$root_gen_dir/third_party/blink/renderer/bindings/modules/v8/v8_ext_blend_min_max.cc",
+--- a/src/third_party/blink/renderer/bindings/idl_in_modules.gni
++++ b/src/third_party/blink/renderer/bindings/idl_in_modules.gni
+@@ -243,8 +243,6 @@
+   "//third_party/blink/renderer/modules/encryptedmedia/media_keys_get_status_for_policy.idl",
+   "//third_party/blink/renderer/modules/encryptedmedia/media_keys_policy.idl",
+   "//third_party/blink/renderer/modules/encryptedmedia/navigator_request_media_key_system_access.idl",
+-  "//third_party/blink/renderer/modules/environment_integrity/environment_integrity.idl",
+-  "//third_party/blink/renderer/modules/environment_integrity/navigator_environment_integrity.idl",
+   "//third_party/blink/renderer/modules/eventsource/event_source.idl",
+   "//third_party/blink/renderer/modules/eventsource/event_source_init.idl",
+   "//third_party/blink/renderer/modules/eyedropper/color_selection_options.idl",
+--- a/src/third_party/blink/renderer/core/origin_trials/origin_trial_context.cc
++++ b/src/third_party/blink/renderer/core/origin_trials/origin_trial_context.cc
+@@ -548,10 +548,6 @@
+     return base::FeatureList::IsEnabled(features::kComputePressure);
+   }
+ 
+-  if (trial_name == "WebEnvironmentIntegrity") {
+-    return base::FeatureList::IsEnabled(features::kWebEnvironmentIntegrity);
+-  }
+-
+   return true;
+ }
+ 
+--- a/src/third_party/blink/renderer/modules/BUILD.gn
++++ b/src/third_party/blink/renderer/modules/BUILD.gn
+@@ -90,7 +90,6 @@
+     "//third_party/blink/renderer/modules/donottrack",
+     "//third_party/blink/renderer/modules/encoding",
+     "//third_party/blink/renderer/modules/encryptedmedia",
+-    "//third_party/blink/renderer/modules/environment_integrity",
+     "//third_party/blink/renderer/modules/eventsource",
+     "//third_party/blink/renderer/modules/exported",
+     "//third_party/blink/renderer/modules/eyedropper",
+--- a/src/third_party/blink/renderer/platform/runtime_enabled_features.json5
++++ b/src/third_party/blink/renderer/platform/runtime_enabled_features.json5
+@@ -4112,17 +4112,6 @@
+       base_feature: "none",
+     },
+     {
+-      name: "WebEnvironmentIntegrity",
+-      status: "experimental",
+-      origin_trial_feature_name: "WebEnvironmentIntegrity",
+-      // base_feature is meant as kill-switch. The RuntimeFeature should follow
+-      // the `status` field or Origin Trial unless explicitly overriden by
+-      // Finch / command line flags.
+-      base_feature_status: "enabled",
+-      copied_from_base_feature_if: "overridden",
+-      origin_trial_allows_third_party: true,
+-    },
+-    {
+       name: "WebFontResizeLCP",
+       status: "experimental",
+     },

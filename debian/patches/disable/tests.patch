@@ -8,3 +8,34 @@
  ]
  
  group("devtools_all_files") {
+--- a/src/components/update_client/BUILD.gn
++++ b/src/components/update_client/BUILD.gn
+@@ -308,8 +308,6 @@ source_set("unit_tests") {
+     "//third_party/puffin:libpuffpatch",
+     "//third_party/re2",
+   ]
+-
+-  data_deps = [ "//components/test/data/update_client/puffin_patch_test:puffin_patch_test_files" ]
+ }
+ 
+ fuzzer_test("update_client_protocol_serializer_fuzzer") {
+--- a/src/third_party/puffin/BUILD.gn
++++ b/src/third_party/puffin/BUILD.gn
+@@ -115,7 +115,6 @@ executable("puffin_unittest") {
+     "src/unittest_common.cc",
+     "src/utils_unittest.cc",
+   ]
+-  data_deps = [ "//components/test/data/update_client/puffin_patch_test:puffin_patch_test_files" ]
+   deps = [
+     ":libpuffdiff",
+     ":libpuffpatch",
+--- a/src/chrome/test/variations/BUILD.gn
++++ b/src/chrome/test/variations/BUILD.gn
+@@ -7,7 +7,6 @@ python_library("test_utils") {
+ 
+   data = [ "//chrome/test/variations/test_utils/" ]
+ 
+-  data_deps = [ "//third_party/catapult/third_party/gsutil:gsutil" ]
+ }
+ 
+ python_library("fixtures") {
