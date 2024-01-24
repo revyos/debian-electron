@@ -56,3 +56,11 @@ ungoogled/core/ungoogled-chromium/disable-web-environment-integrity.patch
 electron/disable-catapult.patch
 electron/get-version-do-not-use-git.patch
 electron/std-vector-non-const.patch
+
+riscv64/angle.patch
+riscv64/base.patch
+riscv64/dav1d.patch
+riscv64/libgav1.patch
+riscv64/sandbox.patch
+riscv64/v8.patch
+riscv64/ffmpeg.patch

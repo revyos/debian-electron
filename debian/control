@@ -9,9 +9,9 @@ Vcs-Git: https://github.com/revyos/debian-electron.git
 Vcs-Browser: https://github.com/revyos/debian-electron
 Build-Depends:
  debhelper-compat (= 13),
- clang,
- clang-format,
- lld,
+ clang-17,
+ clang-format-17,
+ lld-17,
  generate-ninja,
  ninja-build,
  openjdk-11-jdk-headless,
