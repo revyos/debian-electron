@@ -64,3 +64,5 @@ riscv64/libgav1.patch
 riscv64/sandbox.patch
 riscv64/v8.patch
 riscv64/ffmpeg.patch
+
+gn-remove-unused.patch
