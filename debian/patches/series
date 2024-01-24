@@ -13,7 +13,6 @@ fixes/material-utils.patch
 fixes/perfetto.patch
 fixes/v8-compressed-ptrs.patch
 
-# upstream/mojo.patch
 upstream/sensor-reading.patch
 upstream/lweight.patch
 upstream/freetype.patch
@@ -56,5 +55,4 @@ ungoogled/core/ungoogled-chromium/disable-web-environment-integrity.patch
 
 electron/disable-catapult.patch
 electron/get-version-do-not-use-git.patch
-# electron/remove-mac-only-imports.patch
 electron/std-vector-non-const.patch
