@@ -1,5 +1,5 @@
---- a/src/src/chrome/browser/process_singleton.h
-+++ b/src/src/chrome/browser/process_singleton.h
+--- a/src/chrome/browser/process_singleton.h
++++ b/src/chrome/browser/process_singleton.h
 @@ -102,7 +102,7 @@
    using NotificationCallback =
         base::RepeatingCallback<bool(const base::CommandLine& command_line,
@@ -9,8 +9,8 @@
  
  #if BUILDFLAG(IS_WIN)
    ProcessSingleton(const std::string& program_name,
---- a/src/src/chrome/browser/process_singleton_posix.cc
-+++ b/src/src/chrome/browser/process_singleton_posix.cc
+--- a/src/chrome/browser/process_singleton_posix.cc
++++ b/src/chrome/browser/process_singleton_posix.cc
 @@ -607,7 +607,7 @@
    // |reader| is for sending back ACK message.
    void HandleMessage(const std::string& current_dir,
@@ -47,8 +47,8 @@
          additional_data_bits, additional_data_bits + additional_data_size);
    }
  
---- a/src/src/electron/shell/browser/api/electron_api_app.cc
-+++ b/src/src/electron/shell/browser/api/electron_api_app.cc
+--- a/src/electron/shell/browser/api/electron_api_app.cc
++++ b/src/electron/shell/browser/api/electron_api_app.cc
 @@ -523,10 +523,10 @@
      const base::RepeatingCallback<
          void(const base::CommandLine& command_line,
@@ -71,8 +71,8 @@
    v8::Isolate* isolate = JavascriptEnvironment::GetIsolate();
    v8::HandleScope handle_scope(isolate);
    v8::Local<v8::Value> data_value =
---- a/src/src/electron/shell/browser/api/electron_api_app.h
-+++ b/src/src/electron/shell/browser/api/electron_api_app.h
+--- a/src/electron/shell/browser/api/electron_api_app.h
++++ b/src/electron/shell/browser/api/electron_api_app.h
 @@ -194,7 +194,7 @@
    std::string GetSystemLocale(gin_helper::ErrorThrower thrower) const;
    void OnSecondInstance(const base::CommandLine& cmd,

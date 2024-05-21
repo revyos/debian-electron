@@ -60,3 +60,7 @@ riscv64/ffmpeg.patch
 riscv64/libgav1.patch
 riscv64/sandbox.patch
 gn-remove-unused.patch
+
+electron/std-vector-non-const.patch
+electron/disable-catapult.patch
+electron/get-version-do-not-use-git.patch
