@@ -1,5 +1,5 @@
---- a/src/electron/electron_paks.gni
-+++ b/src/electron/electron_paks.gni
+--- a/src/src/electron/electron_paks.gni
++++ b/src/src/electron/electron_paks.gni
 @@ -58,7 +58,6 @@
        "$root_gen_dir/chrome/dev_ui_browser_resources.pak",
        "$root_gen_dir/components/components_resources.pak",

@@ -6,8 +6,8 @@ later on when we drop more nodejs stuff.
 
 Index: chromium-112.0.5615.49/third_party/node/node_modules.py
 ===================================================================
---- chromium-112.0.5615.49.orig/third_party/node/node_modules.py
-+++ chromium-112.0.5615.49/third_party/node/node_modules.py
+--- chromium-112.0.5615.49.orig/src/third_party/node/node_modules.py
++++ chromium-112.0.5615.49/src/third_party/node/node_modules.py
 @@ -4,10 +4,13 @@
  # found in the LICENSE file.
  

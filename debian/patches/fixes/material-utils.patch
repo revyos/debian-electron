@@ -6,8 +6,8 @@
     if (round(chroma) == round(smallest_delta_hct.get_chroma())) {
         ^
 
---- a/third_party/material_color_utilities/src/cpp/palettes/tones.cc
-+++ b/third_party/material_color_utilities/src/cpp/palettes/tones.cc
+--- a/src/third_party/material_color_utilities/src/cpp/palettes/tones.cc
++++ b/src/third_party/material_color_utilities/src/cpp/palettes/tones.cc
 @@ -16,6 +16,8 @@
  
  #include "cpp/palettes/tones.h"

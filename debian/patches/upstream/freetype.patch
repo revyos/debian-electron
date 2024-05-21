@@ -22,8 +22,8 @@ Date:   Tue Sep 12 11:54:48 2023 +0000
 
 diff --git a/third_party/BUILD.gn b/third_party/BUILD.gn
 index 7b086f95413ff..4ce797ebad722 100644
---- a/src/third_party/BUILD.gn
-+++ b/src/third_party/BUILD.gn
+--- a/src/src/third_party/BUILD.gn
++++ b/src/src/third_party/BUILD.gn
 @@ -2,6 +2,7 @@
  # Use of this source code is governed by a BSD-style license that can be
  # found in the LICENSE file.
@@ -43,8 +43,8 @@ index 7b086f95413ff..4ce797ebad722 100644
 +}
 diff --git a/third_party/blink/renderer/platform/BUILD.gn b/third_party/blink/renderer/platform/BUILD.gn
 index 591d2f939605b..f6a2cd2168d1e 100644
---- a/src/third_party/blink/renderer/platform/BUILD.gn
-+++ b/src/third_party/blink/renderer/platform/BUILD.gn
+--- a/src/src/third_party/blink/renderer/platform/BUILD.gn
++++ b/src/src/third_party/blink/renderer/platform/BUILD.gn
 @@ -1717,6 +1717,7 @@ component("platform") {
      "//services/viz/public/cpp/gpu",
      "//skia",
@@ -55,8 +55,8 @@ index 591d2f939605b..f6a2cd2168d1e 100644
      "//third_party/blink/public:image_resources",
 diff --git a/third_party/blink/renderer/platform/fonts/simple_font_data.cc b/third_party/blink/renderer/platform/fonts/simple_font_data.cc
 index abe06f35c14a5..b2bfd88f0d85d 100644
---- a/src/third_party/blink/renderer/platform/fonts/simple_font_data.cc
-+++ b/src/third_party/blink/renderer/platform/fonts/simple_font_data.cc
+--- a/src/src/third_party/blink/renderer/platform/fonts/simple_font_data.cc
++++ b/src/src/third_party/blink/renderer/platform/fonts/simple_font_data.cc
 @@ -48,7 +48,7 @@
  #include "third_party/blink/renderer/platform/wtf/math_extras.h"
  #include "third_party/blink/renderer/platform/wtf/text/character_names.h"

@@ -1,8 +1,8 @@
 Disable Privacy Sandbox by default, based on
 https://github.com/ungoogled-software/ungoogled-chromium/blob/master/patches/core/ungoogled-chromium/disable-privacy-sandbox.patch
 
---- a/src/components/privacy_sandbox/privacy_sandbox_prefs.cc
-+++ b/src/components/privacy_sandbox/privacy_sandbox_prefs.cc
+--- a/src/src/components/privacy_sandbox/privacy_sandbox_prefs.cc
++++ b/src/src/components/privacy_sandbox/privacy_sandbox_prefs.cc
 @@ -11,7 +11,7 @@ namespace privacy_sandbox {
  
  void RegisterProfilePrefs(PrefRegistrySimple* registry) {
@@ -12,8 +12,8 @@ https://github.com/ungoogled-software/ungoogled-chromium/blob/master/patches/cor
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
    registry->RegisterBooleanPref(prefs::kPrivacySandboxApisEnabledV2, false);
    registry->RegisterBooleanPref(prefs::kPrivacySandboxM1ConsentDecisionMade,
---- a/src/content/browser/aggregation_service/aggregation_service_features.cc
-+++ b/src/content/browser/aggregation_service/aggregation_service_features.cc
+--- a/src/src/content/browser/aggregation_service/aggregation_service_features.cc
++++ b/src/src/content/browser/aggregation_service/aggregation_service_features.cc
 @@ -9,7 +9,7 @@ namespace content {
  // Enables the Aggregation Service. See crbug.com/1207974.
  BASE_FEATURE(kPrivacySandboxAggregationService,
@@ -23,8 +23,8 @@ https://github.com/ungoogled-software/ungoogled-chromium/blob/master/patches/cor
  
  const base::FeatureParam<std::string>
      kPrivacySandboxAggregationServiceTrustedServerUrlAwsParam{
---- a/src/third_party/blink/common/features.cc
-+++ b/src/third_party/blink/common/features.cc
+--- a/src/src/third_party/blink/common/features.cc
++++ b/src/src/third_party/blink/common/features.cc
 @@ -544,7 +544,7 @@ BASE_FEATURE(kContentCaptureConstantStre
  // Controls whether the Conversion Measurement API infrastructure is enabled.
  BASE_FEATURE(kConversionMeasurement,

@@ -1,5 +1,5 @@
---- a/build/linux/strip_binary.gni
-+++ b/build/linux/strip_binary.gni
+--- a/src/build/linux/strip_binary.gni
++++ b/src/build/linux/strip_binary.gni
 @@ -20,7 +20,7 @@ template("strip_binary") {
                             "testonly",
                           ])

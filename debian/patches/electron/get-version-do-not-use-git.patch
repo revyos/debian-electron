@@ -1,5 +1,5 @@
---- a/src/electron/script/lib/get-version.js
-+++ b/src/electron/script/lib/get-version.js
+--- a/src/src/electron/script/lib/get-version.js
++++ b/src/src/electron/script/lib/get-version.js
 @@ -6,6 +6,7 @@
  
  // Print the value of electron_version set in gn config.
@@ -8,8 +8,8 @@
    // Read the override_electron_version from args.gn file.
    try {
      const outDir = path.resolve(ELECTRON_DIR, '..', 'out', getOutDir());
---- a/src/electron/BUILD.gn
-+++ b/src/electron/BUILD.gn
+--- a/src/src/electron/BUILD.gn
++++ b/src/src/electron/BUILD.gn
 @@ -107,21 +107,7 @@
  if (override_electron_version != "") {
    electron_version = override_electron_version

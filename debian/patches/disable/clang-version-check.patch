@@ -9,8 +9,8 @@ clang.
 
 For now, let's just get this building in debian.
 
---- a/tools/clang/scripts/update.py
-+++ b/tools/clang/scripts/update.py
+--- a/src/tools/clang/scripts/update.py
++++ b/src/tools/clang/scripts/update.py
 @@ -355,7 +355,7 @@ def main():
        return 0
  

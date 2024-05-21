@@ -69,6 +69,7 @@ Build-Depends:
  libc-ares-dev,
  libva-dev,
  libevdev-dev,
+ libruy-dev,
 
 Package: electron-28
 Architecture: any

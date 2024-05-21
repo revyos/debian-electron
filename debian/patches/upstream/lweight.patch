@@ -13,8 +13,8 @@ Date:   Fri Sep 15 06:46:15 2023 +0000
 
 diff --git a/components/gwp_asan/client/lightweight_detector.h b/components/gwp_asan/client/lightweight_detector.h
 index 5caf14bc54c29..f1d125ff9626c 100644
---- a/src/components/gwp_asan/client/lightweight_detector.h
-+++ b/src/components/gwp_asan/client/lightweight_detector.h
+--- a/src/src/components/gwp_asan/client/lightweight_detector.h
++++ b/src/src/components/gwp_asan/client/lightweight_detector.h
 @@ -5,6 +5,8 @@
  #ifndef COMPONENTS_GWP_ASAN_CLIENT_LIGHTWEIGHT_DETECTOR_H_
  #define COMPONENTS_GWP_ASAN_CLIENT_LIGHTWEIGHT_DETECTOR_H_

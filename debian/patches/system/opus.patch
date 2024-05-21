@@ -1,5 +1,5 @@
---- a/media/audio/audio_opus_encoder.h
-+++ b/media/audio/audio_opus_encoder.h
+--- a/src/media/audio/audio_opus_encoder.h
++++ b/src/media/audio/audio_opus_encoder.h
 @@ -12,7 +12,7 @@
  #include "media/base/audio_converter.h"
  #include "media/base/audio_encoder.h"

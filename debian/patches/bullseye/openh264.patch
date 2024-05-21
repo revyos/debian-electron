@@ -1,8 +1,8 @@
 description: disable support for openh264, will be added later
 author: Michael Gilbert <mgilbert@debian.org>
 
---- a/third_party/webrtc/webrtc.gni
-+++ b/third_party/webrtc/webrtc.gni
+--- a/src/third_party/webrtc/webrtc.gni
++++ b/src/third_party/webrtc/webrtc.gni
 @@ -174,8 +174,7 @@ declare_args() {
    #
    # Enabling H264 when building with MSVC is currently not supported, see
@@ -13,8 +13,8 @@ author: Michael Gilbert <mgilbert@debian.org>
  
    # Enable this flag to make webrtc::Mutex be implemented by absl::Mutex.
    rtc_use_absl_mutex = false
---- a/media/media_options.gni
-+++ b/media/media_options.gni
+--- a/src/media/media_options.gni
++++ b/src/media/media_options.gni
 @@ -37,12 +37,9 @@ declare_args() {
      media_use_libvpx = false
    }

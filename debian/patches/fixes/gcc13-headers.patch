@@ -3,19 +3,8 @@ Fix a bunch of build errors with gcc-13's libstdc++ headers.
 These are technically correct and should go upstream.
 
 
---- a/third_party/ruy/src/ruy/profiler/instrumentation.h
-+++ b/third_party/ruy/src/ruy/profiler/instrumentation.h
-@@ -16,6 +16,8 @@ limitations under the License.
- #ifndef RUY_RUY_PROFILER_INSTRUMENTATION_H_
- #define RUY_RUY_PROFILER_INSTRUMENTATION_H_
- 
-+#include <string>
-+
- #ifdef RUY_PROFILER
- #include <cstdio>
- #include <mutex>
---- a/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
-+++ b/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
+--- a/src/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
++++ b/src/third_party/vulkan_memory_allocator/include/vk_mem_alloc.h
 @@ -2619,6 +2619,7 @@ VMA_CALL_PRE void VMA_CALL_POST vmaFreeS
  #undef VMA_IMPLEMENTATION
  
@@ -24,8 +13,8 @@ These are technically correct and should go upstream.
  #include <cstdlib>
  #include <cstring>
  #include <utility>
---- a/net/third_party/quiche/src/quiche/quic/core/qpack/qpack_stream_sender_delegate.h
-+++ b/net/third_party/quiche/src/quiche/quic/core/qpack/qpack_stream_sender_delegate.h
+--- a/src/net/third_party/quiche/src/quiche/quic/core/qpack/qpack_stream_sender_delegate.h
++++ b/src/net/third_party/quiche/src/quiche/quic/core/qpack/qpack_stream_sender_delegate.h
 @@ -9,6 +9,7 @@
  
  #include "absl/strings/string_view.h"

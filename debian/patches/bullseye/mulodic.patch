@@ -11,8 +11,8 @@ This symbol is in libclang_rt's builtins, but for whatever reason it doesn't
 get included. Not worth sending upstream since this doesn't happen in
 bookworm, only in bullseye.
 
---- a/src/third_party/dawn/src/tint/BUILD.gn
-+++ b/src/third_party/dawn/src/tint/BUILD.gn
+--- a/src/src/third_party/dawn/src/tint/BUILD.gn
++++ b/src/src/third_party/dawn/src/tint/BUILD.gn
 @@ -78,6 +78,15 @@ config("tint_public_config") {
      defines += [ "TINT_BUILD_GLSL_WRITER=0" ]
    }

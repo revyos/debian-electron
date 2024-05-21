@@ -6,8 +6,8 @@ The upstream commit https://chromium-review.googlesource.com/c/v8/v8/+/4753150
 introduced a build failure on armhf. I suspect this is what was intended,
 but we'll see what upstream says.
 
---- a/v8/src/maglev/maglev-code-generator.cc
-+++ b/v8/src/maglev/maglev-code-generator.cc
+--- a/src/v8/src/maglev/maglev-code-generator.cc
++++ b/src/v8/src/maglev/maglev-code-generator.cc
 @@ -418,12 +418,14 @@ class ParallelMoveResolver {
  
    void EmitMovesFromSource(RegisterT source_reg, GapMoveTargets&& targets) {

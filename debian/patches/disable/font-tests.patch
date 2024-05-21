@@ -1,8 +1,8 @@
 description: disable building font tests
 author: Michael Gilbert <mgilbert@debian.org>
 
---- a/skia/BUILD.gn
-+++ b/skia/BUILD.gn
+--- a/src/skia/BUILD.gn
++++ b/src/skia/BUILD.gn
 @@ -860,7 +860,7 @@ group("test_fonts_resources") {
    if (is_apple) {
      deps += [ ":test_fonts_bundle_data" ]
@@ -12,8 +12,8 @@ author: Michael Gilbert <mgilbert@debian.org>
      deps += [ "//third_party/test_fonts" ]
      data_deps += [ "//third_party/test_fonts" ]
    }
---- a/third_party/test_fonts/fontconfig/BUILD.gn
-+++ b/third_party/test_fonts/fontconfig/BUILD.gn
+--- a/src/third_party/test_fonts/fontconfig/BUILD.gn
++++ b/src/third_party/test_fonts/fontconfig/BUILD.gn
 @@ -8,9 +8,7 @@ if (is_linux || is_chromeos) {
    group("test_support") {
      testonly = true

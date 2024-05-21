@@ -2,8 +2,8 @@ author: Andres Salomon <dilinger@debian.org>
 
 More simple build fixes needed by libstdc++-dev 13
 
---- a/third_party/perfetto/src/trace_processor/perfetto_sql/engine/created_function.cc
-+++ b/third_party/perfetto/src/trace_processor/perfetto_sql/engine/created_function.cc
+--- a/src/third_party/perfetto/src/trace_processor/perfetto_sql/engine/created_function.cc
++++ b/src/third_party/perfetto/src/trace_processor/perfetto_sql/engine/created_function.cc
 @@ -107,7 +107,7 @@ struct StoredSqlValue {
    // the destructors run correctly for non-trivial members of the
    // union.

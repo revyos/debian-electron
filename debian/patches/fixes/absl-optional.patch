@@ -44,7 +44,7 @@ functions (where you see an '#if 0' commenting out the original function).
 We'll need to update this patch with major libstdc++ upgrades.
 
 --- /dev/null
-+++ b/optional
++++ b/src/optional
 @@ -0,0 +1,1549 @@
 +// <optional> -*- C++ -*-
 +

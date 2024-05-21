@@ -2,8 +2,8 @@ description: disable support for safe browsing inspection of rar files
 author: Andres Salomon <dilinger@debian.org>
 bug: http://bugs.debian.org/914487
 
---- a/chrome/common/safe_browsing/BUILD.gn
-+++ b/chrome/common/safe_browsing/BUILD.gn
+--- a/src/chrome/common/safe_browsing/BUILD.gn
++++ b/src/chrome/common/safe_browsing/BUILD.gn
 @@ -137,7 +137,6 @@ source_set("safe_browsing") {
        "//components/safe_browsing/content/common:file_type_policies",
        "//components/safe_browsing/core/common",
@@ -12,8 +12,8 @@ bug: http://bugs.debian.org/914487
      ]
  
      public_deps = [
---- a/chrome/browser/safe_browsing/download_protection/file_analyzer.cc
-+++ b/chrome/browser/safe_browsing/download_protection/file_analyzer.cc
+--- a/src/chrome/browser/safe_browsing/download_protection/file_analyzer.cc
++++ b/src/chrome/browser/safe_browsing/download_protection/file_analyzer.cc
 @@ -78,7 +78,10 @@ void FileAnalyzer::Start(const base::Fil
    if (inspection_type == DownloadFileType::ZIP) {
      StartExtractZipFeatures();
@@ -26,8 +26,8 @@ bug: http://bugs.debian.org/914487
  #if BUILDFLAG(IS_MAC)
    } else if (inspection_type == DownloadFileType::DMG) {
      StartExtractDmgFeatures();
---- a/chrome/services/file_util/safe_archive_analyzer.cc
-+++ b/chrome/services/file_util/safe_archive_analyzer.cc
+--- a/src/chrome/services/file_util/safe_archive_analyzer.cc
++++ b/src/chrome/services/file_util/safe_archive_analyzer.cc
 @@ -86,10 +86,10 @@ void SafeArchiveAnalyzer::AnalyzeRarFile
                                weak_factory_.GetWeakPtr());
    timeout_timer_.Start(FROM_HERE, kArchiveAnalysisTimeout, this,
@@ -43,8 +43,8 @@ bug: http://bugs.debian.org/914487
  }
  
  void SafeArchiveAnalyzer::AnalyzeSevenZipFile(
---- a/chrome/services/file_util/safe_archive_analyzer.h
-+++ b/chrome/services/file_util/safe_archive_analyzer.h
+--- a/src/chrome/services/file_util/safe_archive_analyzer.h
++++ b/src/chrome/services/file_util/safe_archive_analyzer.h
 @@ -7,7 +7,6 @@
  
  #include "chrome/common/safe_browsing/archive_analyzer_results.h"
@@ -61,8 +61,8 @@ bug: http://bugs.debian.org/914487
    safe_browsing::SevenZipAnalyzer seven_zip_analyzer_;
  #if BUILDFLAG(IS_MAC)
    safe_browsing::dmg::DMGAnalyzer dmg_analyzer_;
---- a/chrome/utility/safe_browsing/archive_analyzer.cc
-+++ b/chrome/utility/safe_browsing/archive_analyzer.cc
+--- a/src/chrome/utility/safe_browsing/archive_analyzer.cc
++++ b/src/chrome/utility/safe_browsing/archive_analyzer.cc
 @@ -8,7 +8,6 @@
  #include "build/build_config.h"
  #include "build/buildflag.h"
@@ -81,8 +81,8 @@ bug: http://bugs.debian.org/914487
    } else if (file_type == DownloadFileType::ZIP) {
      return std::make_unique<ZipAnalyzer>();
    } else if (file_type == DownloadFileType::SEVEN_ZIP) {
---- a/chrome/utility/safe_browsing/BUILD.gn
-+++ b/chrome/utility/safe_browsing/BUILD.gn
+--- a/src/chrome/utility/safe_browsing/BUILD.gn
++++ b/src/chrome/utility/safe_browsing/BUILD.gn
 @@ -31,8 +31,6 @@ source_set("safe_browsing") {
      sources = [
        "archive_analyzer.cc",

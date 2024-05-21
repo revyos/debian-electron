@@ -22,8 +22,8 @@ Date:   Wed Sep 6 19:40:47 2023 +0000
 
 diff --git a/services/device/public/cpp/generic_sensor/sensor_reading.h b/services/device/public/cpp/generic_sensor/sensor_reading.h
 index 7df8278649a23..c653bec632cc6 100644
---- a/src/services/device/public/cpp/generic_sensor/sensor_reading.h
-+++ b/src/services/device/public/cpp/generic_sensor/sensor_reading.h
+--- a/src/src/services/device/public/cpp/generic_sensor/sensor_reading.h
++++ b/src/src/services/device/public/cpp/generic_sensor/sensor_reading.h
 @@ -5,6 +5,9 @@
  #ifndef SERVICES_DEVICE_PUBLIC_CPP_GENERIC_SENSOR_SENSOR_READING_H_
  #define SERVICES_DEVICE_PUBLIC_CPP_GENERIC_SENSOR_SENSOR_READING_H_

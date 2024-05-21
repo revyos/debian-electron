@@ -5,8 +5,8 @@ support direct conversion between re2::StringPiece and base::StringPiece.
 So we have to convert to std::string first (via as_sring()), and then that
 can be converted to base::StringPiece.
 
---- a/src/components/feedback/redaction_tool/redaction_tool.cc
-+++ b/src/components/feedback/redaction_tool/redaction_tool.cc
+--- a/src/src/components/feedback/redaction_tool/redaction_tool.cc
++++ b/src/src/components/feedback/redaction_tool/redaction_tool.cc
 @@ -891,7 +891,7 @@ std::string RedactionTool::RedactCreditC
      }
  
