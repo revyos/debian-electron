@@ -18,5 +18,5 @@ git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 git clone https://github.com/electron/electron.git \
   --branch v$RULES_electron_ver
 
-git clone https://github.com/chromium/chromium \
+git clone https://chromium.googlesource.com/chromium/src chromium \
   --branch $RULES_chromium_ver

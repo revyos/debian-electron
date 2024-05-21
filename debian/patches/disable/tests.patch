@@ -1,5 +1,5 @@
---- a/src/third_party/devtools-frontend/src/BUILD.gn
-+++ b/src/third_party/devtools-frontend/src/BUILD.gn
+--- a/third_party/devtools-frontend/src/BUILD.gn
++++ b/third_party/devtools-frontend/src/BUILD.gn
 @@ -13,7 +13,6 @@ import("./third_party/blink/public/publi
  
  devtools_frontend_resources_deps = [
@@ -8,8 +8,8 @@
  ]
  
  group("devtools_all_files") {
---- a/src/components/update_client/BUILD.gn
-+++ b/src/components/update_client/BUILD.gn
+--- a/components/update_client/BUILD.gn
++++ b/components/update_client/BUILD.gn
 @@ -308,8 +308,6 @@ source_set("unit_tests") {
      "//third_party/puffin:libpuffpatch",
      "//third_party/re2",
@@ -19,8 +19,8 @@
  }
  
  fuzzer_test("update_client_protocol_serializer_fuzzer") {
---- a/src/third_party/puffin/BUILD.gn
-+++ b/src/third_party/puffin/BUILD.gn
+--- a/third_party/puffin/BUILD.gn
++++ b/third_party/puffin/BUILD.gn
 @@ -115,7 +115,6 @@ executable("puffin_unittest") {
      "src/unittest_common.cc",
      "src/utils_unittest.cc",
@@ -29,8 +29,8 @@
    deps = [
      ":libpuffdiff",
      ":libpuffpatch",
---- a/src/chrome/test/variations/BUILD.gn
-+++ b/src/chrome/test/variations/BUILD.gn
+--- a/chrome/test/variations/BUILD.gn
++++ b/chrome/test/variations/BUILD.gn
 @@ -7,7 +7,6 @@ python_library("test_utils") {
  
    data = [ "//chrome/test/variations/test_utils/" ]

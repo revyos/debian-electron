@@ -25,8 +25,8 @@ assertion.
 Since this is in ANGLE rather than Chromium, hopefully there's a chance they'll take a
 fix upstream; probably a revert combined with dropping the "constexpr".
 
---- a/src/third_party/angle/src/libANGLE/renderer/serial_utils.h
-+++ b/src/third_party/angle/src/libANGLE/renderer/serial_utils.h
+--- a/third_party/angle/src/libANGLE/renderer/serial_utils.h
++++ b/third_party/angle/src/libANGLE/renderer/serial_utils.h
 @@ -119,6 +119,7 @@ class Serial final
  class AtomicQueueSerial final
  {

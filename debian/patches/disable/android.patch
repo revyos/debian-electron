@@ -1,8 +1,8 @@
 description: disable dependency on chrome/android
 author: Michael Gilbert <mgilbert@debian.org>
 
---- a/src/BUILD.gn
-+++ b/src/BUILD.gn
+--- a/BUILD.gn
++++ b/BUILD.gn
 @@ -354,7 +354,7 @@ group("gn_all") {
      # Allow building md5sum tool for other OSes (android is added below).
      # For Windows, see: crbug.com/1090428.

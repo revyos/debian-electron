@@ -3,8 +3,8 @@ description: work around build failure with optimize_webui enabled on bullseye
 
 Can be dropped post-bullseye.
 
---- a/src/tools/polymer/html_minifier.js
-+++ b/src/tools/polymer/html_minifier.js
+--- a/tools/polymer/html_minifier.js
++++ b/tools/polymer/html_minifier.js
 @@ -14,7 +14,7 @@ const minify =
          .minify;
  

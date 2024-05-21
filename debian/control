@@ -1,4 +1,4 @@
-Source: electron-27
+Source: electron-28
 Section: unknown
 Priority: optional
 Maintainer: Eric Long <i@hack3r.moe>
@@ -70,7 +70,7 @@ Build-Depends:
  libva-dev,
  libevdev-dev,
 
-Package: electron-27
+Package: electron-28
 Architecture: any
 Multi-Arch: foreign
 Description: Build cross platform desktop apps with web technologies

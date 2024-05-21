@@ -1,5 +1,5 @@
---- a/src/third_party/pdfium/BUILD.gn
-+++ b/src/third_party/pdfium/BUILD.gn
+--- a/third_party/pdfium/BUILD.gn
++++ b/third_party/pdfium/BUILD.gn
 @@ -4,6 +4,7 @@
  
  import("//build/config/clang/clang.gni")

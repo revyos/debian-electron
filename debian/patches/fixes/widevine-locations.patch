@@ -2,8 +2,8 @@ description: try alternative locations for libwidevinecdm.so
   - $HOME/.local/lib/ (snap-friendly, see https://launchpad.net/bugs/1738149)
 author: Olivier Tilloy <olivier.tilloy@canonical.com>
 
---- a/src/chrome/common/chrome_paths.cc
-+++ b/src/chrome/common/chrome_paths.cc
+--- a/chrome/common/chrome_paths.cc
++++ b/chrome/common/chrome_paths.cc
 @@ -376,6 +376,11 @@ bool PathProvider(int key, base::FilePat
  
  #if BUILDFLAG(ENABLE_WIDEVINE)
@@ -16,8 +16,8 @@ author: Olivier Tilloy <olivier.tilloy@canonical.com>
        if (!GetComponentDirectory(&cur)) {
          return false;
        }
---- a/src/third_party/widevine/cdm/BUILD.gn
-+++ b/src/third_party/widevine/cdm/BUILD.gn
+--- a/third_party/widevine/cdm/BUILD.gn
++++ b/third_party/widevine/cdm/BUILD.gn
 @@ -22,7 +22,7 @@ buildflag_header("buildflags") {
  
    flags = [
