@@ -18,7 +18,7 @@ src/third_party/yasm/yasm_assemble.gni
 
 src/third_party/libjpeg.gni
 src/build/config/freetype/freetype.gni
-src/
+
 src/third_party/yasm/run_yasm.py
 
 src/third_party/jsoncpp/BUILD.gn
