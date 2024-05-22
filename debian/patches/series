@@ -42,6 +42,7 @@ system/clang-format.patch
 system/opus.patch
 system/eu-strip.patch
 system/rollup.patch
+system/rapidjson.patch
 
 bookworm/clang16.patch
 
@@ -64,3 +65,4 @@ gn-remove-unused.patch
 electron/std-vector-non-const.patch
 electron/disable-catapult.patch
 electron/get-version-do-not-use-git.patch
+electron/system-gtest.patch

@@ -40,7 +40,6 @@ gn_args += \
 	use_sysroot=false \
 	use_libjpeg_turbo=true \
 	use_custom_libcxx=false \
-	optimize_webui=false \
 	use_unofficial_version_number=false \
 	enable_vr=false \
 	enable_nacl=false \
@@ -58,6 +57,8 @@ gn_args += \
 	is_cfi=false \
 	use_thin_lto=false \
 	chrome_pgo_phase=0 \
+	build_with_tflite_lib=false \
+	build_tflite_with_xnnpack=false \
 
 # enabled features
 gn_args += \
@@ -99,7 +100,7 @@ override_dh_auto_configure:
 	ln -sf /usr/bin/node src/third_party/node/linux/node-linux-x64/bin
 
 	mkdir -p src/third_party/jdk
-	ln -s /usr/lib/jvm/java-11-openjdk-$(shell dpkg-architecture -q DEB_HOST_ARCH) \
+	ln -sfT /usr/lib/jvm/java-11-openjdk-$(shell dpkg-architecture -q DEB_HOST_ARCH) \
 		src/third_party/jdk/current
 
 	cd src && ../debian/scripts/unbundle.py
@@ -122,10 +123,12 @@ override_dh_auto_install:
 
 override_dh_auto_clean:
 	rm -rf src/out
-	rm -rf src/third_party/node/linux/node-linux-x64/bin
+	rm -rf src/third_party/node/linux/node-linux-x64
 	rm -rf src/third_party/jdk
 	rm -f debian/electron-$(RULES_electron_ver_major).install
 	rm -f debian/electron-$(RULES_electron_ver_major).links
+	find . -name \*.pyc -execdir rm -f {} \;
+	dh_auto_clean
 
 # Unknown debugging section .debug_str_offsets
 override_dh_dwz:
