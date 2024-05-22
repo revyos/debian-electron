@@ -60,6 +60,7 @@ riscv64/base.patch
 riscv64/ffmpeg.patch
 riscv64/libgav1.patch
 riscv64/sandbox.patch
+riscv64/HACK-devtools-remove-terser.patch
 gn-remove-unused.patch
 
 electron/std-vector-non-const.patch

@@ -1,0 +1,22 @@
+--- a/src/third_party/devtools-frontend/src/scripts/build/rollup.config.js
++++ b/src/third_party/devtools-frontend/src/scripts/build/rollup.config.js
+@@ -5,7 +5,6 @@
+ // @ts-check
+ 
+ import sourcemaps from 'rollup-plugin-sourcemaps';
+-import {terser} from 'rollup-plugin-terser';
+ 
+ const devtools_plugin = require('./devtools_plugin.js');
+ 
+@@ -19,11 +18,6 @@
+     sourcemap: Boolean(commandLineArgs.configSourcemaps),
+   }],
+   plugins: [
+-    terser({
+-      compress: {
+-        pure_funcs: commandLineArgs.configDCHECK ? ['Platform.DCHECK'] : [],
+-      },
+-    }),
+     {
+       name: 'devtools-plugin',
+       resolveId(source, importer) {
