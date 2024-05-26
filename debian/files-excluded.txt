@@ -67,7 +67,7 @@ third_party/devtools-frontend/src/node_modules/.bin
 third_party/devtools-frontend/src/third_party/esbuild/esbuild
 third_party/devtools-frontend/src/third_party/image_diff
 third_party/dom_distiller_js/dist/js/domdistiller_wrapped.js
-third_party/electron_node/deps/{googletest/{include,src},icu-small}
+third_party/electron_node/deps/googletest/{include,src}
 third_party/electron_node/{doc,test}
 third_party/expat/src
 third_party/ffmpeg/{doc,tests,tools,fftools,config*}
