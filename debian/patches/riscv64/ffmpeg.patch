@@ -9114,7 +9114,7 @@
 +#endif /* AVUTIL_FFVERSION_H */
 --- a/src/third_party/ffmpeg/ffmpeg_generated.gni
 +++ b/src/third_party/ffmpeg/ffmpeg_generated.gni
-@@ -650,3 +650,44 @@
+@@ -635,3 +635,48 @@
    ]
  }
  
@@ -9125,6 +9125,7 @@
 +    "libavcodec/riscv/audiodsp_init.c",
 +    "libavcodec/riscv/bswapdsp_init.c",
 +    "libavcodec/riscv/fmtconvert_init.c",
++    "libavcodec/riscv/g722dsp_init.c",
 +    "libavcodec/riscv/h264_chroma_init_riscv.c",
 +    "libavcodec/riscv/idctdsp_init.c",
 +    "libavcodec/riscv/opusdsp_init.c",
@@ -9147,6 +9148,7 @@
 +    "libavcodec/riscv/bswapdsp_rvb.S",
 +    "libavcodec/riscv/bswapdsp_rvv.S",
 +    "libavcodec/riscv/fmtconvert_rvv.S",
++    "libavcodec/riscv/g722dsp_rvv.S",
 +    "libavcodec/riscv/h264_mc_chroma.S",
 +    "libavcodec/riscv/idctdsp_rvv.S",
 +    "libavcodec/riscv/opusdsp_rvv.S",
@@ -9154,8 +9156,10 @@
 +    "libavcodec/riscv/pixblockdsp_rvv.S",
 +    "libavcodec/riscv/vorbisdsp_rvv.S",
 +    "libavutil/riscv/asm.S",
++    "libavutil/riscv/bswap_rvb.S",
 +    "libavutil/riscv/fixed_dsp_rvv.S",
 +    "libavutil/riscv/float_dsp_rvv.S",
++    "libswscale/riscv/rgb2rgb_rvb.S",
 +    "libswscale/riscv/rgb2rgb_rvv.S",
 +  ]
 +}
