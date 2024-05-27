@@ -25,6 +25,3 @@ src/third_party/jsoncpp/BUILD.gn
 src/base/third_party/double_conversion/BUILD.gn
 src/third_party/angle/src/third_party/libXNVCtrl/BUILD.gn
 src/third_party/woff2/BUILD.gn
-
-src/third_party/libsecret/BUILD.gn
-src/third_party/libusb/BUILD.gn

@@ -110,8 +110,6 @@ override_dh_auto_configure:
 	sed 's|@@ELECTRON_VER_MAJOR@@|$(RULES_electron_ver_major)|g' \
 		debian/electron.links.in > debian/electron-$(RULES_electron_ver_major).links
 
-	cp -r src/third_party/icu src/third_party/electron_node/deps
-
 override_dh_auto_build:
 	cd src && gn gen out/$(profile) --args="import(\"//electron/build/args/$(profile_lower).gn\") $(gn_args)"
 	cd src && ninja -j$(njobs) -C out/$(profile) electron
@@ -127,7 +125,6 @@ override_dh_auto_clean:
 	rm -rf src/out
 	rm -rf src/third_party/node/linux/node-linux-x64
 	rm -rf src/third_party/jdk
-	rm -rf src/third_party/electron_node/deps/icu
 	rm -f debian/electron-$(RULES_electron_ver_major).install
 	rm -f debian/electron-$(RULES_electron_ver_major).links
 	find . -name \*.pyc -execdir rm -f {} \;
