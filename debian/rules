@@ -10,7 +10,7 @@ export RULES_electron_ver_major = 28
 export RULES_pkgname = electron-28
 export RULES_chromium_ver = 120.0.6099.291
 export RULES_deb_chromium_ver = 120.0.6099.224-1
-export RULES_electron_ver = 28.3.1
+export RULES_electron_ver = 28.3.3
 
 export CC = clang-17
 export CXX = clang++-17
