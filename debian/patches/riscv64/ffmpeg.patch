@@ -9114,7 +9114,7 @@
 +#endif /* AVUTIL_FFVERSION_H */
 --- a/src/third_party/ffmpeg/ffmpeg_generated.gni
 +++ b/src/third_party/ffmpeg/ffmpeg_generated.gni
-@@ -635,3 +635,48 @@
+@@ -635,3 +635,45 @@
    ]
  }
  
@@ -9134,7 +9134,6 @@
 +    "libavutil/riscv/cpu.c",
 +    "libavutil/riscv/fixed_dsp_init.c",
 +    "libavutil/riscv/float_dsp_init.c",
-+    "libswscale/riscv/rgb2rgb.c",
 +    "libavutil/riscv/bswap.h",
 +    "libavutil/riscv/cpu.h",
 +    "libavutil/riscv/intmath.h",
@@ -9159,7 +9158,5 @@
 +    "libavutil/riscv/bswap_rvb.S",
 +    "libavutil/riscv/fixed_dsp_rvv.S",
 +    "libavutil/riscv/float_dsp_rvv.S",
-+    "libswscale/riscv/rgb2rgb_rvb.S",
-+    "libswscale/riscv/rgb2rgb_rvv.S",
 +  ]
 +}
