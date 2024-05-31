@@ -33,6 +33,10 @@ gn_args = \
 	clang_use_chrome_plugins=false \
 	symbol_level=1 \
 
+ifeq (riscv64,$(DEB_HOST_ARCH))
+gn_args += host_cpu=\"riscv64\" enable_validating_command_decoder=true
+endif
+
 # disabled features
 gn_args += \
 	is_debug=false \
