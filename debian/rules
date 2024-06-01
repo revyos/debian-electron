@@ -6,11 +6,11 @@ export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 # For utilities
-export RULES_electron_ver_major = 28
-export RULES_pkgname = electron-28
-export RULES_chromium_ver = 120.0.6099.291
-export RULES_deb_chromium_ver = 120.0.6099.224-1
-export RULES_electron_ver = 28.3.3
+export RULES_electron_ver_major = 29
+export RULES_pkgname = electron-29
+export RULES_chromium_ver = 122.0.6261.156
+export RULES_deb_chromium_ver = 122.0.6261.128-1
+export RULES_electron_ver = 29.4.2
 
 export CC = clang-17
 export CXX = clang++-17

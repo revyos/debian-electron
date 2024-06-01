@@ -1,5 +1,5 @@
-Source: electron-28
-Section: unknown
+Source: electron-29
+Section: web
 Priority: optional
 Maintainer: Eric Long <i@hack3r.moe>
 Standards-Version: 4.5.1
@@ -8,22 +8,34 @@ Rules-Requires-Root: no
 Vcs-Git: https://github.com/revyos/debian-electron.git
 Vcs-Browser: https://github.com/revyos/debian-electron
 Build-Depends:
- debhelper-compat (= 13),
+ debhelper (>= 11),
+ devscripts,
+ lld-17,
  clang-17,
  clang-format-17,
- lld-17,
- generate-ninja,
- ninja-build,
- openjdk-11-jdk-headless,
- npm,
- nodejs,
+ libclang-rt-17-dev,
+ rustc (>= 1.70.0+dfsg1-5),
  python3,
- elfutils,
- brotli,
  pkg-config,
+ ninja-build,
+ python3-jinja2,
+ python3-pkg-resources,
+ ca-certificates,
+ elfutils,
+ wget,
+ flex,
+ yasm,
+ xvfb,
+ wdiff,
  gperf,
- unzip,
- dos2unix,
+ bison,
+ nodejs,
+ rollup,
+ valgrind,
+ xz-utils,
+ x11-apps,
+ xcb-proto,
+ xfonts-base,
  libx11-xcb-dev,
  libxshmfence-dev,
  libgl-dev,
@@ -81,13 +93,10 @@ Build-Depends:
  libevdev-dev,
  libgcrypt20-dev,
  libcurl4-openssl-dev,
- libgtest-dev,
- libc-ares-dev,
- libnghttp2-dev,
- libnotify-dev,
- libicu-dev,
+ fonts-ipafont-gothic,
+ fonts-ipafont-mincho,
 
-Package: electron-28
+Package: electron-29
 Architecture: any
 Multi-Arch: foreign
 Description: Build cross platform desktop apps with web technologies
@@ -96,3 +105,4 @@ Depends:
  ${shlibs:Depends},
  x11-utils,
  xdg-utils,
+ libgtk-3-0 | xdg-desktop-portal-backend,

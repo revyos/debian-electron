@@ -11,13 +11,16 @@ fixes/rust-clanglib.patch
 fixes/material-utils.patch
 fixes/perfetto.patch
 fixes/blink-frags.patch
-fixes/v8-compressed-ptrs.patch
-fixes/atspi.patch
 fixes/absl-optional.patch
-fixes/libxml.patch
+#fixes/libxml-parseerr.patch
+fixes/std-to-address.patch
+fixes/optional.patch
 
-upstream/nullptr_t.patch
-upstream/string-include.patch
+#upstream/mojo.patch
+upstream/uniqptr.patch
+upstream/optional.patch
+upstream/bookmarknode.patch
+upstream/bitset.patch
 
 disable/tests.patch
 disable/unrar.patch
@@ -42,13 +45,16 @@ system/openjpeg.patch
 system/clang-format.patch
 system/opus.patch
 system/eu-strip.patch
-system/rollup.patch
 system/rapidjson.patch
+system/rollup.patch
 
 bookworm/clang16.patch
+bookworm/constexpr-equality.patch
+bookworm/nvt.patch
+bookworm/nvt2.patch
+bookworm/undo-internal-alloc.patch
 
 # Ungoogled Chromium
-ungoogled/disable-web-environment-integrity.patch
 ungoogled/disable-privacy-sandbox.patch
 
 # i386 support
@@ -56,10 +62,7 @@ i386/support-i386.patch
 i386/angle-lockfree.patch
 
 riscv64/dav1d.patch
-riscv64/angle.patch
-riscv64/base.patch
 riscv64/ffmpeg.patch
-riscv64/libgav1.patch
 riscv64/sandbox.patch
 riscv64/HACK-devtools-remove-terser.patch
 gn-remove-unused.patch
