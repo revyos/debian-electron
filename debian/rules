@@ -40,7 +40,7 @@ gn_args = \
 	symbol_level=1 \
 
 ifeq (riscv64,$(DEB_HOST_ARCH))
-gn_args += host_cpu=\"riscv64\" enable_validating_command_decoder=true
+gn_args += host_cpu=\"riscv64\"
 endif
 
 # disabled features
@@ -108,10 +108,6 @@ override_dh_auto_configure:
 	mkdir -p src/third_party/node/linux/node-linux-x64/bin
 	ln -sf /usr/bin/node src/third_party/node/linux/node-linux-x64/bin
 
-	mkdir -p src/third_party/jdk
-	ln -sfT /usr/lib/jvm/java-11-openjdk-$(shell dpkg-architecture -q DEB_HOST_ARCH) \
-		src/third_party/jdk/current
-
 	cd src && ../debian/scripts/unbundle.py
 
 	sed 's|@@ELECTRON_VER_MAJOR@@|$(RULES_electron_ver_major)|g' \
@@ -133,7 +129,6 @@ override_dh_auto_install:
 override_dh_auto_clean:
 	rm -rf src/out
 	rm -rf src/third_party/node/linux/node-linux-x64
-	rm -rf src/third_party/jdk
 	rm -f debian/electron-$(RULES_electron_ver_major).install
 	rm -f debian/electron-$(RULES_electron_ver_major).links
 	find . -name \*.pyc -execdir rm -f {} \;
