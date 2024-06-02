@@ -27,9 +27,15 @@ export CFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
 export CXXFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
 export CPPFLAGS += -D__DATE__= -D__TIME__= -D__TIMESTAMP__=
 
+export RUSTC_BOOTSTRAP = 1
+export CLANG_MVERS="$(shell $(CC) --version| sed -n 's/Debian clang version //p' | cut -d. -f1)"
 gn_args = \
 	custom_toolchain=\"//build/toolchain/linux/unbundle:default\" \
 	host_toolchain=\"//build/toolchain/linux/unbundle:default\" \
+	rust_sysroot_absolute=\"/usr\" \
+	rustc_version=\"$(shell rustc --version)\" \
+	clang_base_path=\"/usr/lib/llvm-$(CLANG_MVERS)\" \
+	clang_version=\"$(CLANG_MVERS)\" \
 	clang_use_chrome_plugins=false \
 	symbol_level=1 \
 
@@ -47,7 +53,6 @@ gn_args += \
 	use_unofficial_version_number=false \
 	enable_vr=false \
 	enable_nacl=false \
-	enable_rust=false \
 	enable_swiftshader=false \
 	dawn_use_swiftshader=false \
 	build_dawn_tests=false \

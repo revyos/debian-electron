@@ -80,7 +80,7 @@ find chrome/test/data -type f ! -name "*.gn" -a ! -name "*.gni" -delete
 find third_party/hunspell_dictionaries -type f ! -name "*.gn" -a ! -name "*.gni" -delete #262MB
 for _i in brotli cares nghttp2 openssl v8 zlib; do
   find third_party/electron_node/deps/$_i -type f \
-    ! -name "*.gn" -a ! -name "*.gni" -a ! -name "*.gyp" -a ! -name "*.gypi" \
+    ! -name "*.gn" -a ! -name "*.gni" -a ! -name "*.gyp" -a ! -name "*.gypi" -a ! -name "*.mjs" \
     -delete
 done
 

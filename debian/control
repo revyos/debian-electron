@@ -8,7 +8,7 @@ Rules-Requires-Root: no
 Vcs-Git: https://github.com/revyos/debian-electron.git
 Vcs-Browser: https://github.com/revyos/debian-electron
 Build-Depends:
- debhelper (>= 11),
+ debhelper-compat (= 13),
  devscripts,
  lld-17,
  clang-17,
@@ -31,7 +31,7 @@ Build-Depends:
  bison,
  nodejs,
  rollup,
- valgrind,
+ valgrind [!riscv64],
  xz-utils,
  x11-apps,
  xcb-proto,
@@ -95,6 +95,10 @@ Build-Depends:
  libcurl4-openssl-dev,
  fonts-ipafont-gothic,
  fonts-ipafont-mincho,
+ libgtest-dev,
+ libc-ares-dev,
+ libnghttp2-dev,
+ libnotify-dev,
 
 Package: electron-29
 Architecture: any
