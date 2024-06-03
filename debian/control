@@ -30,6 +30,7 @@ Build-Depends:
  gperf,
  bison,
  nodejs,
+ npm,
  rollup,
  valgrind [!riscv64],
  xz-utils,
