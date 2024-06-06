@@ -32,6 +32,7 @@ Build-Depends:
  nodejs,
  npm,
  rollup,
+ unzip,
  valgrind [!riscv64],
  xz-utils,
  x11-apps,
