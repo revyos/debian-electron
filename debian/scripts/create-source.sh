@@ -34,7 +34,7 @@ _oldpath=$PATH
 export PATH+=":$_root/repos/depot_tools"
 export DEPOT_TOOLS_UPDATE=0
 
-gclient sync -D --nohooks --with_branch_heads --with_tags
+gclient sync -D --nohooks --with_branch_heads --with_tags -vvv
 
 cd src
 
@@ -49,8 +49,7 @@ python3 build/util/lastchange.py \
   -s third_party/dawn --revision gpu/webgpu/DAWN_VERSION
 # python3 tools/update_pgo_profiles.py --target=linux update \
 #   --gs-url-base=chromium-optimization-profiles/pgo_profiles
-download_from_google_storage --no_resume --extract --no_auth \
-  --bucket chromium-nodejs -s third_party/node/node_modules.tar.gz.sha1
+third_party/node/update_npm_deps
 
 export PATH=$_oldpath
 unset DEPOT_TOOLS_UPDATE

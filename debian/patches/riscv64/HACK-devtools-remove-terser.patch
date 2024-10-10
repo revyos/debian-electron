@@ -8,15 +8,11 @@
  
  const devtools_plugin = require('./devtools_plugin.js');
  
-@@ -19,11 +18,6 @@
+@@ -19,7 +18,6 @@
      sourcemap: Boolean(commandLineArgs.configSourcemaps),
    }],
    plugins: [
--    terser({
--      compress: {
--        pure_funcs: commandLineArgs.configDCHECK ? ['Platform.DCHECK'] : [],
--      },
--    }),
+-    terser(),
      {
        name: 'devtools-plugin',
        resolveId(source, importer) {

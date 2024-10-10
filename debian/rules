@@ -6,14 +6,14 @@ export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 # For utilities
-export RULES_electron_ver_major = 29
-export RULES_pkgname = electron-29
-export RULES_chromium_ver = 122.0.6261.156
-export RULES_deb_chromium_ver = 122.0.6261.128-1
-export RULES_electron_ver = 29.4.2
+export RULES_electron_ver_major = 32
+export RULES_pkgname = electron-32
+export RULES_chromium_ver = 128.0.6613.162
+export RULES_deb_chromium_ver = 128.0.6613.137-1
+export RULES_electron_ver = 32.1.2
 
-export CC = clang-17
-export CXX = clang++-17
+export CC = clang-18
+export CXX = clang++-18
 export AR = ar
 export NM = nm
 
@@ -33,6 +33,7 @@ gn_args = \
 	custom_toolchain=\"//build/toolchain/linux/unbundle:default\" \
 	host_toolchain=\"//build/toolchain/linux/unbundle:default\" \
 	rust_sysroot_absolute=\"/usr\" \
+	rust_bindgen_root=\"/usr\" \
 	rustc_version=\"$(shell rustc --version)\" \
 	clang_base_path=\"/usr/lib/llvm-$(CLANG_MVERS)\" \
 	clang_version=\"$(CLANG_MVERS)\" \

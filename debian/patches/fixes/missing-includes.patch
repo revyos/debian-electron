@@ -1,0 +1,20 @@
+--- a/src/base/containers/span.h
++++ b/src/base/containers/span.h
+@@ -7,6 +7,7 @@
+ 
+ #include <stddef.h>
+ #include <stdint.h>
++#include <string.h>
+ 
+ #include <algorithm>
+ #include <array>
+--- a/src/build/rust/std/remap_alloc.cc
++++ b/src/build/rust/std/remap_alloc.cc
+@@ -3,6 +3,7 @@
+ // found in the LICENSE file.
+ 
+ #include <cstddef>
++#include <cstring>
+ 
+ #include "build/build_config.h"
+ #include "build/rust/std/alias.h"

@@ -1,4 +1,4 @@
-Source: electron-29
+Source: electron-32
 Section: web
 Priority: optional
 Maintainer: Eric Long <i@hack3r.moe>
@@ -10,11 +10,12 @@ Vcs-Browser: https://github.com/revyos/debian-electron
 Build-Depends:
  debhelper-compat (= 13),
  devscripts,
- lld-17,
- clang-17,
- clang-format-17,
- libclang-rt-17-dev,
- rustc (>= 1.70.0+dfsg1-5),
+ lld-18,
+ clang-18,
+ clang-format-18,
+ libclang-rt-18-dev,
+ rustc (>= 1.74),
+ bindgen,
  python3,
  pkg-config,
  ninja-build,
@@ -75,11 +76,8 @@ Build-Depends:
  libpam0g-dev,
  libdouble-conversion-dev,
  libxnvctrl-dev,
- libwoff-dev,
- libsnappy-dev,
  libglib2.0-dev,
  libasound2-dev,
- libjsoncpp-dev,
  libsecret-1-dev,
  libspeechd-dev,
  libminizip-dev,
@@ -101,8 +99,10 @@ Build-Depends:
  libc-ares-dev,
  libnghttp2-dev,
  libnotify-dev,
+ libdav1d-dev,
+ libhwy-dev,
 
-Package: electron-29
+Package: electron-32
 Architecture: any
 Multi-Arch: foreign
 Description: Build cross platform desktop apps with web technologies

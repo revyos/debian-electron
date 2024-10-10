@@ -11,22 +11,11 @@ https://github.com/ungoogled-software/ungoogled-chromium/blob/master/patches/cor
 -             base::FEATURE_ENABLED_BY_DEFAULT);
 +             base::FEATURE_DISABLED_BY_DEFAULT);
  
- BASE_FEATURE(kAttributionReportingTriggerConfig,
-              "AttributionReportingTriggerConfig",
---- a/src/components/privacy_sandbox/privacy_sandbox_prefs.cc
-+++ b/src/components/privacy_sandbox/privacy_sandbox_prefs.cc
-@@ -12,7 +12,7 @@ namespace privacy_sandbox {
- 
- void RegisterProfilePrefs(PrefRegistrySimple* registry) {
-   registry->RegisterBooleanPref(
--      prefs::kPrivacySandboxApisEnabled, true,
-+      prefs::kPrivacySandboxApisEnabled, false,
-       user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
-   registry->RegisterBooleanPref(prefs::kPrivacySandboxM1ConsentDecisionMade,
-                                 false);
+ BASE_FEATURE(kAttributionAggregatableDebugReporting,
+              "AttributionAggregatableDebugReporting",
 --- a/src/components/privacy_sandbox/privacy_sandbox_settings_impl.cc
 +++ b/src/components/privacy_sandbox/privacy_sandbox_settings_impl.cc
-@@ -121,7 +121,7 @@ std::set<browsing_topics::Topic> GetTopi
+@@ -125,7 +125,7 @@ std::set<browsing_topics::Topic> GetTopi
  
  // static
  bool PrivacySandboxSettingsImpl::IsAllowed(Status status) {
@@ -35,7 +24,7 @@ https://github.com/ungoogled-software/ungoogled-chromium/blob/master/patches/cor
  }
  
  // static
-@@ -704,7 +704,7 @@ void PrivacySandboxSettingsImpl::SetTopi
+@@ -775,7 +775,7 @@ void PrivacySandboxSettingsImpl::SetTopi
  }
  
  bool PrivacySandboxSettingsImpl::IsPrivacySandboxRestricted() const {
@@ -44,7 +33,7 @@ https://github.com/ungoogled-software/ungoogled-chromium/blob/master/patches/cor
  }
  
  bool PrivacySandboxSettingsImpl::IsPrivacySandboxCurrentlyUnrestricted() const {
-@@ -773,11 +773,7 @@ PrivacySandboxSettingsImpl::GetPrivacySa
+@@ -844,11 +844,7 @@ PrivacySandboxSettingsImpl::GetPrivacySa
      return Status::kIncognitoProfile;
    }
  

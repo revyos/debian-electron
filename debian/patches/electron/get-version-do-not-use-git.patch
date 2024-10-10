@@ -29,7 +29,7 @@
 -                                   ".git/packed-refs",
 -                                   ".git/HEAD",
 -                                 ])
-+  electron_version = "29.4.2"
++  electron_version = "32.1.2"
  }
  
  if (is_mas_build) {

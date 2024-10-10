@@ -4,11 +4,9 @@ src/build/secondary/third_party/libjpeg_turbo/BUILD.gn
 src/third_party/flac/BUILD.gn
 src/third_party/zlib/BUILD.gn
 src/third_party/opus/BUILD.gn
-src/third_party/snappy/BUILD.gn
 src/third_party/libxml/BUILD.gn
 src/third_party/libdrm/BUILD.gn
 src/third_party/libpng/BUILD.gn
-src/third_party/libwebp/BUILD.gn
 src/third_party/libjpeg/BUILD.gn
 src/third_party/libxslt/BUILD.gn
 src/third_party/openh264/BUILD.gn
@@ -21,7 +19,5 @@ src/build/config/freetype/freetype.gni
 
 src/third_party/yasm/run_yasm.py
 
-src/third_party/jsoncpp/BUILD.gn
 src/base/third_party/double_conversion/BUILD.gn
 src/third_party/angle/src/third_party/libXNVCtrl/BUILD.gn
-src/third_party/woff2/BUILD.gn
