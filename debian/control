@@ -14,6 +14,8 @@ Build-Depends:
  clang-18,
  clang-format-18,
  libclang-rt-18-dev,
+ libc++-18-dev,
+ libc++abi-18-dev,
  rustc (>= 1.74),
  bindgen,
  python3,

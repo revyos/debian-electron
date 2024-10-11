@@ -12,6 +12,7 @@ src/third_party/libxslt/BUILD.gn
 src/third_party/openh264/BUILD.gn
 src/third_party/freetype/BUILD.gn
 src/third_party/fontconfig/BUILD.gn
+src/third_party/dav1d/BUILD.gn
 src/third_party/yasm/yasm_assemble.gni
 
 src/third_party/libjpeg.gni

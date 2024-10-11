@@ -27,6 +27,9 @@ export CFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
 export CXXFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
 export CPPFLAGS += -D__DATE__= -D__TIME__= -D__TIMESTAMP__=
 
+export CXXFLAGS += -stdlib=libc++ -I/usr/lib/llvm-18/include/c++/v1
+export LDFLAGS += -stdlib=libc++ -Wl,-rpath,/usr/lib/llvm-18/lib
+
 export RUSTC_BOOTSTRAP = 1
 export CLANG_MVERS="$(shell $(CC) --version| sed -n 's/Debian clang version //p' | cut -d. -f1)"
 gn_args = \
