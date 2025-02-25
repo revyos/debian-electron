@@ -19,4 +19,4 @@ git clone https://github.com/electron/electron.git \
   --branch v$RULES_electron_ver
 
 git clone https://github.com/chromium/chromium chromium \
-  --branch $RULES_chromium_ver
+  --branch $RULES_chromium_ver --depth=2
