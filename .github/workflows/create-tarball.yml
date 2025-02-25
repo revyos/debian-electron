@@ -1,0 +1,56 @@
+name: Create Electron tarball
+
+on:
+  workflow_dispatch:
+    inputs:
+      rev:
+        required: true
+        description: 'Revision to create tarball on'
+        default: 'master'
+        type: string
+
+run-name: Create Electron tarball (${{ github.event.inputs.rev }})
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: jlumbroso/free-disk-space@main
+        with:
+          # this might remove tools that are actually needed,
+          # if set to "true" but frees about 6 GB
+          tool-cache: true
+          # all of these default to true, but feel free to set to
+          # "false" if necessary for your workflow
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.rev }}
+      - name: Step0 - Install Packages
+        run: sudo apt update && sudo apt install -y build-essential yarnpkg dos2unix debhelper
+      - name: Step1 - Fetch necessary repos
+        run: debian/rules fetch-repos
+      - name: Step2 - Create source directory structure from repos
+        run: debian/rules create-source
+      - name: Step3 - Pack source directory
+        run: debian/rules pack-tarball
+      - name: Step4 - Setup directory
+        run: mkdir packaging && mv debian ./packaging/
+      - name: Step5 - Make source package
+        run: cd ./packaging && dpkg-buildpackage -S -d
+      - name: Step6 - Upload source tarball
+        uses: actions/upload-artifact@v4
+        with:
+          name: electron-${{ github.event.inputs.rev }}
+          path: |
+            electron-*.orig.tar.*
+            electron-*.debian.tar.*
+            electron-*.dsc
+            electron-*_source.changes
+            electron-*_source.buildinfo
+          compression-level: 0
