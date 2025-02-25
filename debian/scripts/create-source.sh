@@ -34,7 +34,7 @@ _oldpath=$PATH
 export PATH+=":$_root/repos/depot_tools"
 export DEPOT_TOOLS_UPDATE=0
 
-gclient sync -D --nohooks --with_branch_heads --with_tags -vvv
+gclient sync -D --nohooks --with_branch_heads --with_tags
 
 cd src
 
