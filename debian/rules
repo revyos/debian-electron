@@ -6,32 +6,27 @@ export DEB_CFLAGS_MAINT_APPEND = -Wall -pedantic
 export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 
 # For utilities
-export RULES_electron_ver_major = 32
-export RULES_pkgname = electron-32
-export RULES_chromium_ver = 128.0.6613.186
-export RULES_deb_chromium_ver = 128.0.6613.137-1
-export RULES_electron_ver = 32.3.1
+export RULES_electron_ver_major = 34
+export RULES_pkgname = electron-34
+export RULES_chromium_ver = 132.0.6834.196
+export RULES_deb_chromium_ver = 132.0.6834.159-1
+export RULES_electron_ver = 34.2.0
 
-export CC = clang-18
-export CXX = clang++-18
+export CC = clang-19
+export CXX = clang++-19
 export AR = ar
 export NM = nm
 
 # https://github.com/webpack/webpack/issues/14532
-export NODE_OPTIONS = --openssl-legacy-provider
+# export NODE_OPTIONS = --openssl-legacy-provider
 
 export DEB_CXXFLAGS_MAINT_STRIP = -g
 
-# facilitate deterministic builds
-export CFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
-export CXXFLAGS += -Wno-builtin-macro-redefined -Wno-unknown-warning-option
-export CPPFLAGS += -D__DATE__= -D__TIME__= -D__TIMESTAMP__=
-
-export CXXFLAGS += -stdlib=libc++ -I/usr/lib/llvm-18/include/c++/v1
-export LDFLAGS += -stdlib=libc++ -Wl,-rpath,/usr/lib/llvm-18/lib
+export CXXFLAGS := $(shell dpkg-buildflags --get CXXFLAGS)
+export LDFLAGS := $(shell dpkg-buildflags --get LDFLAGS)
 
 export RUSTC_BOOTSTRAP = 1
-export CLANG_MVERS="$(shell $(CC) --version| sed -n 's/Debian clang version //p' | cut -d. -f1)"
+export CLANG_MVERS = "$(shell $(CC) --version| sed -n 's/Debian clang version //p' | cut -d. -f1)"
 gn_args = \
 	custom_toolchain=\"//build/toolchain/linux/unbundle:default\" \
 	host_toolchain=\"//build/toolchain/linux/unbundle:default\" \
