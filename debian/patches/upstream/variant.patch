@@ -1,0 +1,41 @@
+In file included from ../../chrome/browser/browsing_data/chrome_browsing_data_lifetime_manager.cc:37:
+In file included from ../../components/sync/service/sync_service.h:20:
+../../components/sync/service/local_data_description.h:28:18: error: no template named 'variant' in namespace 'std'; did you mean 'absl::variant'?
+   28 |   using DataId = std::variant<
+      |                  ^~~~~~~~~~~~
+      |                  absl::variant
+../../third_party/abseil-cpp/absl/types/variant.h:123:7: note: 'absl::variant' declared here
+  123 | class variant;
+      |       ^
+1 error generated.
+
+Fixed by three commits:
+
+commit 33af9dc7d2801995990d1bb36ef1d98e3f80ca18
+Author: Ivan Murashov <ivan.murashov@lge.com>
+Date:   Mon Nov 18 20:26:50 2024 +0000
+
+    IWYU: Add missing include for std::variant usage in local_data_description.h
+    
+    In the CL https://crrev.com/c/5934368 used std::variant in the
+    components/sync/service/local_data_description.h, but required
+    include was missed. Added missing include for std::variant usage.
+    
+    Bug: 41455655
+    Change-Id: If67c513d3b9b89775afb2e36a9913ea67a284e0c
+    Reviewed-on: https://chromium-review.googlesource.com/c/chromium/src/+/6028535
+    Reviewed-by: Ted Choc <tedchoc@chromium.org>
+    Commit-Queue: Ivan Murashov <ivan.murashov@lge.com>
+    Reviewed-by: Sylvain Defresne <sdefresne@chromium.org>
+    Cr-Commit-Position: refs/heads/main@{#1384535}
+
+--- a/src/components/sync/service/local_data_description.h
++++ b/src/components/sync/service/local_data_description.h
+@@ -6,6 +6,7 @@
+ #define COMPONENTS_SYNC_SERVICE_LOCAL_DATA_DESCRIPTION_H_
+ 
+ #include <string>
++#include <variant>
+ #include <vector>
+ 
+ #include "components/sync/base/data_type.h"

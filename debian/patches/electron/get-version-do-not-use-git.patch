@@ -4,7 +4,7 @@
  
  // Print the value of electron_version set in gn config.
  module.exports.getElectronVersion = () => {
-+  return '29.4.2';
++  return '34.5.3';
    // Read the override_electron_version from args.gn file.
    try {
      const outDir = path.resolve(ELECTRON_DIR, '..', 'out', getOutDir());
@@ -29,7 +29,7 @@
 -                                   ".git/packed-refs",
 -                                   ".git/HEAD",
 -                                 ])
-+  electron_version = "32.1.2"
++  electron_version = "34.5.3"
  }
  
  if (is_mas_build) {

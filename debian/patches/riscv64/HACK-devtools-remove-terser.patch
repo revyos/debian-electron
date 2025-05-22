@@ -1,12 +1,12 @@
---- a/src/third_party/devtools-frontend/src/scripts/build/rollup.config.js
-+++ b/src/third_party/devtools-frontend/src/scripts/build/rollup.config.js
+--- a/src/third_party/devtools-frontend/src/scripts/build/rollup.config.mjs
++++ b/src/third_party/devtools-frontend/src/scripts/build/rollup.config.mjs
 @@ -5,7 +5,6 @@
  // @ts-check
  
- import sourcemaps from 'rollup-plugin-sourcemaps';
--import {terser} from 'rollup-plugin-terser';
+ import sourcemaps from 'rollup-plugin-sourcemaps2';
+-import terser from '@rollup/plugin-terser';
  
- const devtools_plugin = require('./devtools_plugin.js');
+ import { devtoolsPlugin } from './devtools_plugin.js';
  
 @@ -19,7 +18,6 @@
      sourcemap: Boolean(commandLineArgs.configSourcemaps),

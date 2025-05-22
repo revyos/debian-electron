@@ -11,7 +11,7 @@ doing the same thing that upstream does w/ chromeos.
 
 --- a/src/build/config/clang/BUILD.gn
 +++ b/src/build/config/clang/BUILD.gn
-@@ -142,7 +142,24 @@ template("clang_lib") {
+@@ -142,7 +142,22 @@ template("clang_lib") {
          }
        } else if (is_apple) {
          _dir = "darwin"
@@ -28,8 +28,6 @@ doing the same thing that upstream does w/ chromeos.
 +          _suffix = "-armhf"
 +        } else if (current_cpu == "ppc64") {
 +          _suffix = "-powerpc64le"
-+        } else if (current_cpu == "riscv64") {
-+          _suffix = "-riscv64"
 +        } else {
 +          assert(false)  # Unhandled cpu type
 +        }
