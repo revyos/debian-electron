@@ -9,7 +9,7 @@ mkdir $_dirname
 _dirpath=$(realpath $_dirname)
 cd $_dirname
 
-( cd ../repos/electron && git checkout v$RULES_electron_ver )
+( cd ../repos/electron && git checkout v$RULES_electron_ver-riscv )
 
 ( cd ../repos/chromium && \
   git checkout $RULES_chromium_ver && \
@@ -19,7 +19,7 @@ cat > .gclient <<EOF
 solutions = [
   {
     "name": "src/electron",
-    "url": "file://$_root/repos/electron@v$RULES_electron_ver",
+    "url": "file://$_root/repos/electron@v$RULES_electron_ver-riscv",
     "deps_file": "DEPS",
     "managed": False,
     "custom_deps": {
@@ -34,7 +34,7 @@ _oldpath=$PATH
 export PATH+=":$_root/repos/depot_tools"
 export DEPOT_TOOLS_UPDATE=0
 
-gclient sync -D --nohooks --with_branch_heads --with_tags
+gclient sync -D --nohooks --with_branch_heads --with_tags -j 2
 
 cd src
 
@@ -60,7 +60,7 @@ unset DEPOT_TOOLS_UPDATE
     src/electron/patches/config.json )
 
 # same as yarn install
-( cd electron && yarnpkg install )
+( cd electron && corepack yarn install )
 
 set +e
 

@@ -15,8 +15,8 @@ git clone https://gitlab.archlinux.org/archlinux/packaging/packages/electron$RUL
 
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
-git clone https://github.com/electron/electron.git \
-  --branch v$RULES_electron_ver
+git clone https://github.com/riscv-forks/electron.git \
+  --branch v$RULES_electron_ver-riscv
 
 git clone https://github.com/chromium/chromium chromium \
   --branch $RULES_chromium_ver --depth=2

@@ -8,9 +8,9 @@ export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
 # For utilities
 export RULES_electron_ver_major = 34
 export RULES_pkgname = electron-34
-export RULES_chromium_ver = 132.0.6834.196
+export RULES_chromium_ver = 132.0.6834.210
 export RULES_deb_chromium_ver = 132.0.6834.159-1
-export RULES_electron_ver = 34.2.0
+export RULES_electron_ver = 34.5.3
 
 export CC = clang-19
 export CXX = clang++-19
