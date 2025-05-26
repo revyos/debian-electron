@@ -43,6 +43,8 @@ disable/driver-chrome-path.patch
 disable/widevine-cdm-cu.patch
 disable/clang-version-check.patch
 disable/screen-ai-blob.patch
+disable/swiftshader.patch
+disable/swiftshader-2.patch
 
 system/icu-shim.patch
 system/jpeg.patch
