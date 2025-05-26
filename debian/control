@@ -57,7 +57,6 @@ Build-Depends:
  libelf-dev,
  libpci-dev,
  libcap-dev,
- libdrm-dev,
  libffi-dev,
  libkrb5-dev,
  libexif-dev,

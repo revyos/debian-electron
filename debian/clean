@@ -5,7 +5,6 @@ src/third_party/flac/BUILD.gn
 src/third_party/zlib/BUILD.gn
 src/third_party/opus/BUILD.gn
 src/third_party/libxml/BUILD.gn
-src/third_party/libdrm/BUILD.gn
 src/third_party/libpng/BUILD.gn
 src/third_party/libjpeg/BUILD.gn
 src/third_party/libxslt/BUILD.gn

@@ -79,7 +79,6 @@ third_party/google_input_tools/src/chrome/os/inputview/_locales/*.js
 third_party/instrumented_libraries
 third_party/jdk
 third_party/libaom/fuzz
-third_party/libdrm
 third_party/libei
 third_party/libevent
 third_party/libjpeg.gni
