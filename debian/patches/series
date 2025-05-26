@@ -2,7 +2,7 @@ debianization/manpage.patch
 debianization/sandbox.patch
 debianization/master-preferences.patch
 debianization/clang-version.patch
-# debianization/swiftshader-use-llvm-16.patch
+debianization/swiftshader-use-llvm-16.patch
 
 fixes/ps-print.patch
 fixes/widevine-revision.patch
@@ -32,7 +32,7 @@ upstream/array.patch
 upstream/uint.patch
 
 disable/tests.patch
-# disable/tests-swiftshader.patch
+disable/tests-swiftshader.patch
 disable/signin.patch
 disable/android.patch
 disable/catapult.patch
@@ -43,8 +43,6 @@ disable/driver-chrome-path.patch
 disable/widevine-cdm-cu.patch
 disable/clang-version-check.patch
 disable/screen-ai-blob.patch
-disable/swiftshader.patch
-disable/swiftshader-2.patch
 
 system/icu-shim.patch
 system/jpeg.patch

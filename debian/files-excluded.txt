@@ -107,7 +107,9 @@ third_party/skia/site/docs/user/api
 third_party/skia/tools/perf-canvaskit-puppeteer/path_translate_assets/car.svg
 third_party/sqlite/fuzz
 third_party/sqlite/src/test
-third_party/swiftshader
+third_party/swiftshader/tests
+third_party/swiftshader/third_party/SPIRV-Tools/tools
+third_party/swiftshader/third_party/llvm-10.0
 third_party/test_fonts/{test_fonts*,README*}
 third_party/tflite/src/tensorflow/examples/multibox_detector/data/surfers.jpg
 third_party/tflite/src/tensorflow/lite/experimental/acceleration/mini_benchmark/models/blazeface_mlkit_v1.tfl
