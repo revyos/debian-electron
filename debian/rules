@@ -105,6 +105,10 @@ override_dh_auto_configure:
 	mkdir -p src/third_party/node/linux/node-linux-x64/bin
 	ln -sf /usr/bin/node src/third_party/node/linux/node-linux-x64/bin
 
+	# use system rollup
+	cp -ra /usr/share/nodejs/rollup src/third_party/node/node_modules/
+	- test -L src/third_party/devtools-frontend/src/node_modules/rollup3 || ln -s /usr/share/nodejs/rollup src/third_party/devtools-frontend/src/node_modules/rollup3
+
 	cd src && ../debian/scripts/unbundle.py
 
 	sed 's|@@ELECTRON_VER_MAJOR@@|$(RULES_electron_ver_major)|g' \
@@ -126,6 +130,8 @@ override_dh_auto_install:
 override_dh_auto_clean:
 	rm -rf src/out
 	rm -rf src/third_party/node/linux/node-linux-x64
+	rm -rf src/third_party/node/node_modules/rollup
+	rm -f src/third_party/devtools-frontend/src/node_modules/rollup3
 	rm -f debian/electron-$(RULES_electron_ver_major).install
 	rm -f debian/electron-$(RULES_electron_ver_major).links
 	find . -name \*.pyc -execdir rm -f {} \;
