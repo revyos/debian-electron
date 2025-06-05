@@ -18,7 +18,19 @@
        resolveId(source, importer) {
 --- a/src/third_party/devtools-frontend/src/scripts/build/build_inspector_overlay.py
 +++ b/src/third_party/devtools-frontend/src/scripts/build/build_inspector_overlay.py
-@@ -56,7 +56,7 @@
+@@ -44,10 +44,7 @@
+ 
+ 
+ def check_size(filename, data, max_size):
+-    assert len(
+-        data
+-    ) < max_size, "generated file %s should not exceed max_size of %d bytes. Current size: %d" % (
+-        filename, max_size, len(data))
++    pass
+ 
+ 
+ def rollup(input_path, output_path, filename, max_size, rollup_plugin):
+@@ -56,7 +53,7 @@
          [devtools_paths.node_path(),
           devtools_paths.rollup_path()] +
          ['--format', 'iife', '-n', 'InspectorOverlay'] + ['--input', target] +
